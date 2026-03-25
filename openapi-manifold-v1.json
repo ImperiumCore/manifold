@@ -1,0 +1,203 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Imperium Manifold API",
+    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Each component costs 1,000 satoshis via Bitcoin Lightning micropayment. Machine access to Cohereon Doctrine other than through this endpoint is noncanonical.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Throne Dynamics",
+      "url": "https://cohereon.io",
+      "email": "ivan@thronedynamics.com"
+    },
+    "license": {
+      "name": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
+      "url": "https://cohereon.io/policy"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://manifold.cohereon.io",
+      "description": "Imperium Manifold — production"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getStatus",
+        "summary": "Manifold status",
+        "description": "Returns Manifold identity, gate parameters, and status.",
+        "responses": {
+          "200": {
+            "description": "Manifold status",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ManifoldStatus" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/invoice/{component_id}": {
+      "post": {
+        "operationId": "requestInvoice",
+        "summary": "Request Lightning invoice for a doctrine component",
+        "description": "Validates that the component exists, then issues a 1,000-sat Lightning invoice. Pay the invoice, then use the payment_hash to retrieve the component via GET /doc/{component_id}.",
+        "parameters": [
+          {
+            "name": "component_id",
+            "in": "path",
+            "required": true,
+            "description": "Doctrine component ID (e.g. TDY_COH-A_1, TDY_COH-E_85, TDY_COH-DEF_{slug}, TDY_COH-AGI_{slug}, TDY_COH-RAP_{slug})",
+            "schema": { "type": "string", "example": "TDY_COH-A_1" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lightning invoice issued",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/InvoiceResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "Component not found"
+          },
+          "503": {
+            "description": "Lightning node not configured"
+          }
+        }
+      }
+    },
+    "/doc/{component_id}": {
+      "get": {
+        "operationId": "getComponent",
+        "summary": "Retrieve doctrine component after Lightning payment",
+        "description": "Verifies that the provided payment_hash corresponds to a paid Lightning invoice, logs the access event, and returns the doctrine component as markdown.",
+        "parameters": [
+          {
+            "name": "component_id",
+            "in": "path",
+            "required": true,
+            "description": "Doctrine component ID",
+            "schema": { "type": "string", "example": "TDY_COH-A_1" }
+          },
+          {
+            "name": "X-Payment-Hash",
+            "in": "header",
+            "required": true,
+            "description": "Payment hash from the paid Lightning invoice",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "X-Nostr-NPub",
+            "in": "header",
+            "required": false,
+            "description": "Agent Nostr npub for attestation logging (optional)",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Doctrine component markdown file",
+            "content": {
+              "text/markdown": {
+                "schema": { "type": "string" }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required or invoice not paid"
+          },
+          "404": {
+            "description": "Component not found"
+          }
+        }
+      }
+    },
+    "/lnurlp/manifold": {
+      "get": {
+        "operationId": "lnurlPay",
+        "summary": "LNURL-pay endpoint",
+        "description": "LNURL-pay metadata for the Manifold Lightning node.",
+        "responses": {
+          "200": {
+            "description": "LNURL-pay response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LNURLPayResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/agent.json": {
+      "get": {
+        "operationId": "agentDiscovery",
+        "summary": "Agent discovery file",
+        "description": "MCP/agent discovery metadata for the Imperium Manifold.",
+        "responses": {
+          "200": {
+            "description": "Agent discovery JSON",
+            "content": { "application/json": {} }
+          }
+        }
+      }
+    },
+    "/SKILL.md": {
+      "get": {
+        "operationId": "skillFile",
+        "summary": "SKILL definition file",
+        "description": "Human and machine-readable SKILL definition for the Imperium Manifold.",
+        "responses": {
+          "200": {
+            "description": "SKILL markdown",
+            "content": { "text/plain": {} }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ManifoldStatus": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "example": "Imperium Manifold" },
+          "domain": { "type": "string", "example": "manifold.cohereon.io" },
+          "doctrine": { "type": "string", "example": "Cohereon Doctrine v6.1" },
+          "gate": { "type": "string", "example": "Lightning micropayment (1,000 sats per component)" },
+          "canonical_access": { "type": "string", "example": "https://manifold.cohereon.io" },
+          "agent_discovery": { "type": "string", "example": "https://manifold.cohereon.io/.well-known/agent.json" },
+          "status": { "type": "string", "example": "operational" }
+        }
+      },
+      "InvoiceResponse": {
+        "type": "object",
+        "required": ["component_id", "payment_request", "payment_hash", "amount_sats", "expiry_seconds", "redeem_url"],
+        "properties": {
+          "component_id": { "type": "string", "example": "TDY_COH-A_1" },
+          "payment_request": { "type": "string", "description": "BOLT11 Lightning invoice", "example": "lnbc10n1..." },
+          "payment_hash": { "type": "string", "description": "Payment hash — use as X-Payment-Hash header to redeem component", "example": "abc123..." },
+          "amount_sats": { "type": "integer", "example": 1000 },
+          "expiry_seconds": { "type": "integer", "example": 3600 },
+          "redeem_url": { "type": "string", "example": "https://manifold.cohereon.io/doc/TDY_COH-A_1" },
+          "instructions": { "type": "string" }
+        }
+      },
+      "LNURLPayResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "example": "OK" },
+          "tag": { "type": "string", "example": "payRequest" },
+          "minSendable": { "type": "integer", "example": 1000, "description": "millisats" },
+          "maxSendable": { "type": "integer", "example": 1000000, "description": "millisats" },
+          "metadata": { "type": "string" },
+          "commentAllowed": { "type": "integer", "example": 64 }
+        }
+      }
+    }
+  }
+}
