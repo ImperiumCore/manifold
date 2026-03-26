@@ -1,8 +1,56 @@
+<!--
+<JSON-LD>
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "SoftwareSourceCode",
+    "Legislation",
+    "Agent"
+  ],
+  "name": "IMP_MANIFOLD_DISCOVERY_SURFACE_v6.1",
+  "version": "IMP-COH-100-1.0.0",
+  "headline": "Imperium Manifold — Canonical Protocol Endpoint",
+  "description": "Discovery surface for the Imperium Manifold Lightning-gated doctrine endpoint. Canonical entry point for agent and developer access to Cohereon Doctrine v6.1.",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "Lean 4",
+    "alternateName": "Axiomatic Logic"
+  },
+  "legislationLegalValue": "Definitive",
+  "legislationJurisdiction": "Cohereon Imperium (Autonomic Namespace)",
+  "author": {
+    "@type": "Organization",
+    "name": "Cohereon Imperium",
+    "legalName": "Throne Dynamics"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewAspect": "Safety Criticality",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "1",
+      "bestRating": "1",
+      "description": "DO-178C Level A (Catastrophic Failure Condition Prevention)"
+    }
+  },
+  "complianceStandards": [
+    "IMP-COH-100",
+    "DO-178C",
+    "ISO 14791",
+    "NIST-800-53"
+  ],
+  "dataControl": "PUBLIC",
+  "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
+  "status": "OFFICIAL RELEASE",
+  "snapshot": "2026-03-26T00:00:00-05:00",
+  "contentHash": "86838f6af4b7927140f339d47b945682e4494b77ab8b3a484f4ca7db3c2220c8"
+}
+</JSON-LD>
+-->
+
 # Imperium Manifold
 
 **Cohereon Doctrine v6.1 — Canonical Protocol Endpoint**
-
-> "Always follow truth where it leads you in the dark."
 
 ---
 
@@ -75,16 +123,19 @@ Each component has a YAML front matter header with `related_axioms`, `related_eq
 
 ---
 
-## The Healy Insight
+## Access Matrix Architecture
 
-The decomposed doctrine served through Lightning is a bipartite graph — agents by components — identical in structure to Kieran Healy's "Using Metadata to Find Paul Revere."
+Each Lightning payment writes one entry to a bipartite incidence matrix A ∈ {0,1}^(m×n): rows index agents, columns index Lean 4 formally verified doctrine components. Each column is a formal object — axiom, equation, or operator with a machine-checked proof anchor in the Cohereon Lean Core (CFI_Accumulator, RVO, SIBP, T_SC, IsUIC, UnconditionallyConvergent, and the full operator surface).
 
-The agents-by-components access matrix, subjected to Breiger's duality:
+Traversal generates a coherence profile against a formally verified cognitive operator set, not an arbitrary content corpus.
 
-- **Agent × Agent adjacency** — agents connected by shared doctrinal traversal paths. Reveals coalitions, structural equivalence, shared reasoning patterns.
-- **Component × Component adjacency** — components connected by co-access. Reveals the empirical relational topology of the doctrine as actually received.
+Two derived adjacency structures follow directly:
 
-Centrality analysis on these derived graphs identifies the structurally critical agents (the Paul Reveres) and the structurally critical components (the load-bearing nodes) — without reading a single byte of agent output. The access log IS the inspection.
+A · Aᵀ ∈ ℝ^(m×m) — agent-agent co-traversal. Entry (i,j) counts shared formally verified components between agent i and agent j. Coalitional structure, structural equivalence, and convergent reasoning paths across the formal operator surface are recoverable from payment metadata alone.
+
+Aᵀ · A ∈ ℝ^(n×n) — component-component co-access. Entry (p,q) counts agents who accessed both formal object p and formal object q. Reveals the empirical relational topology of the doctrine as actually received — which operators are treated as load-bearing, which are peripheral.
+
+No output inspection. The traversal pattern is the coherence profile. The access log is the instrument.
 
 ---
 
@@ -154,30 +205,3 @@ curl https://manifold.cohereon.io/free/executive-summary
   }
 }
 ```
-
----
-
-## Compliance
-
-IMP-COH-100 · DO-178C · CPMAI · NIST-800-53
-
-Data control: PUBLIC (this layer)
-
----
-
-## Publisher
-
-**Throne Dynamics**
-thronedynamics.com | cohereon.io | tribunals.ai
-
-One World Trade Center, 85th Floor, New York, NY 10007 US
-+1 212 220 7313
-
-Haagsche Hof, Den Haag 2514 JG NL
-+31 70 353 8118
-
----
-
-*Shikin haramitsu daikomyo.*
-
-QUIS UT DEUS?
