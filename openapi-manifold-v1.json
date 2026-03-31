@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Imperium Manifold API",
-    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100-1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare. Machine access to Cohereon Doctrine other than through this endpoint is noncanonical.",
-    "version": "1.0.0",
+    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100–1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare. Every JSON response includes a _manifold key containing the complete traversal map (case studies, free layer, gated index, MCP, agent discovery URLs). Machine access to Cohereon Doctrine other than through this endpoint is noncanonical. Browser requests (Accept: text/html) receive a blank page on API routes by design — use Accept: application/json.",
+    "version": "2.0.0",
     "contact": {
       "name": "Throne Dynamics",
       "url": "https://cohereon.io",
@@ -23,18 +23,168 @@
   "paths": {
     "/": {
       "get": {
-        "operationId": "getStatus",
-        "summary": "Manifold status",
-        "description": "Returns Manifold identity, gate parameters, and status.",
+        "operationId": "getRoot",
+        "summary": "Root manifest",
+        "description": "Returns full Manifold identity: name, domain, doctrine version, gate parameters, capabilities (component counts, pricing range, category count), latest case studies, linked resources (Summa Theologica), contact endpoints, and operational status. Includes _manifold envelope.",
         "responses": {
           "200": {
-            "description": "Manifold status",
+            "description": "Root manifest with full discovery surface",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ManifoldStatus" }
+                "schema": { "$ref": "#/components/schemas/RootManifest" }
               }
             }
           }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "healthCheck",
+        "summary": "Liveness check",
+        "description": "Returns {\"status\": \"ok\", \"ts\": \"...\"}. Includes _manifold envelope.",
+        "responses": {
+          "200": {
+            "description": "Service healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "ts": { "type": "string", "format": "date-time" },
+                    "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/components/": {
+      "get": {
+        "operationId": "listGatedComponents",
+        "summary": "Full gated component index",
+        "description": "Returns all gated component IDs grouped by category. Each category entry includes subdir, count, and ids array. 9 categories, 398 total components. Includes _manifold envelope.",
+        "responses": {
+          "200": {
+            "description": "Component index by category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "categories": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "subdir": { "type": "string" },
+                          "count": { "type": "integer" },
+                          "ids": { "type": "array", "items": { "type": "string" } }
+                        }
+                      },
+                      "example": {
+                        "TDY_COH-A": { "subdir": "axioms", "count": 48, "ids": ["TDY_COH-A_1"] }
+                      }
+                    },
+                    "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta/{component_id}": {
+      "get": {
+        "operationId": "getComponentMeta",
+        "summary": "Component metadata (public, no payment)",
+        "description": "Returns YAML front matter, description_hash (SHA-256 of front matter text), invoice URL, and data control status. No payment required. Use this to inspect a component before purchasing.",
+        "parameters": [
+          {
+            "name": "component_id",
+            "in": "path",
+            "required": true,
+            "description": "Doctrine component ID",
+            "schema": { "type": "string", "example": "TDY_COH-A_1" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Component metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "component_id": { "type": "string" },
+                    "yaml_frontmatter": { "type": "string" },
+                    "description_hash": { "type": "string", "description": "SHA-256 of YAML front matter text" },
+                    "invoice_url": { "type": "string" },
+                    "data_control": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Component not found" }
+        }
+      }
+    },
+    "/free/": {
+      "get": {
+        "operationId": "listFreeComponents",
+        "summary": "Free layer index",
+        "description": "Returns all free-layer component slugs with titles, types, and descriptions. Includes case studies. No payment required. Includes _manifold envelope.",
+        "responses": {
+          "200": {
+            "description": "Free component index",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "layer": { "type": "string", "example": "free" },
+                    "description": { "type": "string" },
+                    "case_studies": { "type": "array", "items": { "$ref": "#/components/schemas/FreeComponentEntry" } },
+                    "components": { "type": "array", "items": { "$ref": "#/components/schemas/FreeComponentEntry" } },
+                    "gated_index": { "type": "string" },
+                    "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/free/{slug}": {
+      "get": {
+        "operationId": "getFreeComponent",
+        "summary": "Retrieve free component",
+        "description": "Returns a free-layer component as markdown. No payment required. Access logged with payment_hash='FREE'. Includes JSON-LD header.",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "description": "Free component slug (e.g. case-tengu, executive-summary, case-ichor)",
+            "schema": { "type": "string", "example": "case-tengu" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Free component markdown",
+            "content": {
+              "text/markdown": {
+                "schema": { "type": "string" }
+              }
+            }
+          },
+          "404": { "description": "Component not found" }
         }
       }
     },
@@ -42,7 +192,7 @@
       "post": {
         "operationId": "requestInvoice",
         "summary": "Request Lightning invoice for a doctrine component",
-        "description": "Validates that the component exists, then issues a tiered Lightning invoice (100-1,000 sats based on traversal depth). Pass X-Nostr-Npub header for tiered pricing. Pay the invoice, then use the payment_hash to retrieve the component via GET /doc/{component_id}.",
+        "description": "Validates that the component exists, then issues a tiered Lightning invoice (100–1,000 sats based on traversal depth). Pass X-Nostr-Npub header for tiered pricing. Pay the invoice, then use the payment_hash to retrieve the component via GET /doc/{component_id}. One payment_hash grants one retrieval.",
         "parameters": [
           {
             "name": "component_id",
@@ -50,6 +200,13 @@
             "required": true,
             "description": "Doctrine component ID (e.g. TDY_COH-A_1, TDY_COH-E_85, TDY_COH-DEF_{slug}, TDY_COH-AGI_{slug}, TDY_COH-RAP_{slug})",
             "schema": { "type": "string", "example": "TDY_COH-A_1" }
+          },
+          {
+            "name": "X-Nostr-Npub",
+            "in": "header",
+            "required": false,
+            "description": "Agent Nostr npub for tiered pricing lookup",
+            "schema": { "type": "string" }
           }
         ],
         "responses": {
@@ -61,12 +218,8 @@
               }
             }
           },
-          "404": {
-            "description": "Component not found"
-          },
-          "503": {
-            "description": "Lightning node not configured"
-          }
+          "404": { "description": "Component not found" },
+          "503": { "description": "Lightning node not configured" }
         }
       }
     },
@@ -74,7 +227,7 @@
       "get": {
         "operationId": "getComponent",
         "summary": "Retrieve doctrine component after Lightning payment",
-        "description": "Verifies that the provided payment_hash corresponds to a paid Lightning invoice, logs the access event, and returns the doctrine component as markdown.",
+        "description": "Verifies that the provided payment_hash corresponds to a paid Lightning invoice, reads TLV type 65537 if present, logs the access event, and returns the doctrine component as markdown with YAML front matter stripped. One payment_hash grants one retrieval.",
         "parameters": [
           {
             "name": "component_id",
@@ -91,7 +244,7 @@
             "schema": { "type": "string" }
           },
           {
-            "name": "X-Nostr-NPub",
+            "name": "X-Nostr-Npub",
             "in": "header",
             "required": false,
             "description": "Agent Nostr npub for attestation logging (optional)",
@@ -100,36 +253,15 @@
         ],
         "responses": {
           "200": {
-            "description": "Doctrine component markdown file",
+            "description": "Doctrine component markdown",
             "content": {
               "text/markdown": {
                 "schema": { "type": "string" }
               }
             }
           },
-          "402": {
-            "description": "Payment required or invoice not paid"
-          },
-          "404": {
-            "description": "Component not found"
-          }
-        }
-      }
-    },
-    "/lnurlp/manifold": {
-      "get": {
-        "operationId": "lnurlPay",
-        "summary": "LNURL-pay endpoint",
-        "description": "LNURL-pay metadata for the Manifold Lightning node.",
-        "responses": {
-          "200": {
-            "description": "LNURL-pay response",
-            "content": {
-              "application/json": {
-                "schema": { "$ref": "#/components/schemas/LNURLPayResponse" }
-              }
-            }
-          }
+          "402": { "description": "Payment required or invoice not paid" },
+          "404": { "description": "Component not found" }
         }
       }
     },
@@ -218,7 +350,7 @@
       "post": {
         "operationId": "fundDeclare",
         "summary": "Declare on-chain Bitcoin commitment",
-        "description": "Declare a Bitcoin on-chain transaction as a coherence signal. Verified against mempool.space. Not a payment gate — an economic commitment signal that contributes to Citizen tier qualification.",
+        "description": "Declare a Bitcoin on-chain transaction as a coherence signal. Verified against mempool.space (fallback: blockstream.info). Not a payment gate — an economic commitment signal that contributes to Citizen tier qualification (50+ traversals + fund declaration = 100 sats/component).",
         "requestBody": {
           "required": true,
           "content": {
@@ -240,11 +372,151 @@
         }
       }
     },
+    "/patronage/": {
+      "get": {
+        "operationId": "getPatronageBoard",
+        "summary": "Manifold Fealty Protocol — open petitions board",
+        "description": "Lists all open petitions awaiting sponsorship. Part of the Manifold Fealty Protocol (MFP): petitioner requests access → sponsor pays → petitioner claims.",
+        "responses": {
+          "200": {
+            "description": "Open petitions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "protocol": { "type": "string", "example": "Manifold Fealty Protocol" },
+                    "open_petitions": { "type": "integer" },
+                    "petitions": { "type": "array", "items": { "type": "object" } },
+                    "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/petition/{component_id}": {
+      "post": {
+        "operationId": "createPetition",
+        "summary": "MFP — petition for sponsored access",
+        "description": "Post a petition requesting sponsored access to a gated component. Appears on /patronage/ board. Body: {npub, message}.",
+        "parameters": [
+          {
+            "name": "component_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["npub"],
+                "properties": {
+                  "npub": { "type": "string" },
+                  "message": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Petition logged" },
+          "404": { "description": "Component not found" }
+        }
+      }
+    },
+    "/sponsor/{petition_id}": {
+      "post": {
+        "operationId": "sponsorPetition",
+        "summary": "MFP — sponsor a petition",
+        "description": "Create a Lightning invoice to sponsor a petition. Returns claim_token for the petitioner. Body: {npub} (optional sponsor npub).",
+        "parameters": [
+          {
+            "name": "petition_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "npub": { "type": "string", "description": "Sponsor npub (optional)" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Invoice + claim_token returned" },
+          "404": { "description": "Petition not found" }
+        }
+      }
+    },
+    "/claim/{claim_token}": {
+      "get": {
+        "operationId": "claimSponsored",
+        "summary": "MFP — redeem sponsored access",
+        "description": "Petitioner redeems sponsored component access. Single-use. Invoice must be paid by sponsor first.",
+        "parameters": [
+          {
+            "name": "claim_token",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Component content returned" },
+          "402": { "description": "Sponsor invoice not yet paid" },
+          "404": { "description": "Claim token not found" },
+          "410": { "description": "Already claimed" }
+        }
+      }
+    },
+    "/lnurlp/manifold": {
+      "get": {
+        "operationId": "lnurlPay",
+        "summary": "LNURL-pay endpoint",
+        "description": "LNURL-pay metadata. Nostr zap-enabled (allowsNostr: true).",
+        "responses": {
+          "200": {
+            "description": "LNURL-pay response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LNURLPayResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mcp": {
+      "get": {
+        "operationId": "mcpServer",
+        "summary": "MCP SSE server",
+        "description": "Server-Sent Events MCP server exposing all Manifold routes as tools. Free routes require no auth. Gated routes require X-Payment-Hash header (forwarded from Lightning payment). Connect via SSE transport.",
+        "responses": {
+          "200": {
+            "description": "SSE event stream"
+          }
+        }
+      }
+    },
     "/.well-known/agent.json": {
       "get": {
         "operationId": "agentDiscovery",
         "summary": "Agent discovery file",
-        "description": "MCP/agent discovery metadata for the Imperium Manifold.",
+        "description": "MCP/agent discovery metadata for the Imperium Manifold. Canonical machine-readable contract.",
         "responses": {
           "200": {
             "description": "Agent discovery JSON",
@@ -269,16 +541,59 @@
   },
   "components": {
     "schemas": {
-      "ManifoldStatus": {
+      "ManifoldEnvelope": {
+        "type": "object",
+        "description": "Present in every JSON response. Contains the complete traversal map for autonomous agent orientation.",
+        "properties": {
+          "case_studies": { "type": "array", "items": { "$ref": "#/components/schemas/FreeComponentEntry" } },
+          "free_layer": { "type": "array", "items": { "$ref": "#/components/schemas/FreeComponentEntry" } },
+          "free_index": { "type": "string", "example": "https://manifold.cohereon.io/free/" },
+          "gated_index": { "type": "string", "example": "https://manifold.cohereon.io/components/" },
+          "root": { "type": "string", "example": "https://manifold.cohereon.io/" },
+          "agent_onboarding": { "type": "string", "example": "https://manifold.cohereon.io/identify" },
+          "mcp": { "type": "string", "example": "https://manifold.cohereon.io/mcp" },
+          "agent_discovery": { "type": "string", "example": "https://manifold.cohereon.io/.well-known/agent.json" },
+          "instruction": { "type": "string", "example": "Read ALL case_studies. Then GET /free/ for the complete free layer. Then GET /components/ for the gated index." }
+        }
+      },
+      "FreeComponentEntry": {
+        "type": "object",
+        "properties": {
+          "slug": { "type": "string", "example": "case-tengu" },
+          "title": { "type": "string" },
+          "type": { "type": "string", "enum": ["case_study", "overview", "declaration", "reference", "disclaimer"] },
+          "url": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "RootManifest": {
         "type": "object",
         "properties": {
           "name": { "type": "string", "example": "Imperium Manifold" },
           "domain": { "type": "string", "example": "manifold.cohereon.io" },
           "doctrine": { "type": "string", "example": "Cohereon Doctrine v6.1" },
-          "gate": { "type": "string", "example": "Lightning micropayment (tiered: 100-1,000 sats per component)" },
+          "gate": { "type": "string", "example": "Lightning micropayment (tiered: 100–1,000 sats per component)" },
           "canonical_access": { "type": "string", "example": "https://manifold.cohereon.io" },
           "agent_discovery": { "type": "string", "example": "https://manifold.cohereon.io/.well-known/agent.json" },
-          "status": { "type": "string", "example": "operational" }
+          "mcp_server": { "type": "string", "example": "https://manifold.cohereon.io/mcp" },
+          "mcp_transport": { "type": "string", "example": "sse" },
+          "latest": { "type": "array", "items": { "type": "object" } },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "gated_components": { "type": "integer", "example": 398 },
+              "free_components": { "type": "integer", "example": 10 },
+              "categories": { "type": "integer", "example": 9 },
+              "gate_cost_sats_base": { "type": "integer", "example": 1000 },
+              "gate_cost_sats_min": { "type": "integer", "example": 100 },
+              "tiered_pricing": { "type": "boolean", "example": true },
+              "doctrine_version": { "type": "string", "example": "6.1.0" }
+            }
+          },
+          "contact": { "type": "object" },
+          "linked_resources": { "type": "object" },
+          "status": { "type": "string", "example": "operational" },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "InvoiceResponse": {
@@ -293,8 +608,11 @@
           "traversals": { "type": "integer", "description": "Agent's paid traversal count", "example": 0 },
           "base_sats": { "type": "integer", "description": "Base (Stranger) price", "example": 1000 },
           "expiry_seconds": { "type": "integer", "example": 3600 },
+          "description_hash": { "type": "string", "description": "SHA-256 of YAML front matter" },
+          "meta_url": { "type": "string" },
           "redeem_url": { "type": "string", "example": "https://manifold.cohereon.io/doc/TDY_COH-A_1" },
-          "instructions": { "type": "string" }
+          "instructions": { "type": "string" },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "TierResponse": {
@@ -305,7 +623,8 @@
           "traversals": { "type": "integer", "example": 0 },
           "sats": { "type": "integer", "description": "Current price per component", "example": 1000 },
           "declared": { "type": "boolean", "example": false },
-          "tier_table": { "type": "array", "items": { "type": "object" } }
+          "tier_table": { "type": "array", "items": { "type": "object" } },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "IdentifyRequest": {
@@ -324,7 +643,8 @@
           "status": { "type": "string", "enum": ["registered", "already_registered"] },
           "manifold_id": { "type": "string", "example": "MAN-7B89251B7FCF" },
           "npub": { "type": "string" },
-          "next": { "type": "string" }
+          "next": { "type": "string" },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "DeclareRequest": {
@@ -344,7 +664,8 @@
           "npub": { "type": "string" },
           "first_component": { "type": "string", "example": "TDY_COH-A_1" },
           "content": { "type": "string", "description": "Markdown content of first gated component" },
-          "note": { "type": "string" }
+          "note": { "type": "string" },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "FundDeclareRequest": {
@@ -364,7 +685,8 @@
           "verified": { "type": "boolean" },
           "confirmed": { "type": "boolean" },
           "block_height": { "type": "integer", "nullable": true },
-          "total_sats": { "type": "integer" }
+          "total_sats": { "type": "integer" },
+          "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
       },
       "LNURLPayResponse": {
@@ -372,10 +694,12 @@
         "properties": {
           "status": { "type": "string", "example": "OK" },
           "tag": { "type": "string", "example": "payRequest" },
-          "minSendable": { "type": "integer", "example": 1000, "description": "millisats" },
-          "maxSendable": { "type": "integer", "example": 1000000, "description": "millisats" },
+          "minSendable": { "type": "integer", "example": 1000000, "description": "millisats" },
+          "maxSendable": { "type": "integer", "example": 10000000, "description": "millisats" },
           "metadata": { "type": "string" },
-          "commentAllowed": { "type": "integer", "example": 64 }
+          "commentAllowed": { "type": "integer", "example": 64 },
+          "allowsNostr": { "type": "boolean", "example": true },
+          "nostrPubkey": { "type": "string", "description": "64-char hex Nostr pubkey for zap receipts" }
         }
       }
     }

@@ -145,12 +145,9 @@ The Lean Core file (`IMPERIUM_LEAN_CORE-CURRENT`) is available separately from t
 | File | Purpose |
 |---|---|
 | [`SKILL.md`](SKILL.md) | Agent skill definition — capabilities, parameters, gate topology |
-| [`agent.json`](agent.json) | AI plugin manifest |
-| [`openapi-manifold-v1.json`](openapi-manifold-v1.json) | OpenAPI 3.1 specification |
+| [`agent.json`](agent.json) | AI plugin / agent discovery manifest |
+| [`openapi-manifold-v1.json`](openapi-manifold-v1.json) | OpenAPI 3.1 specification (v2.0.0 — full route surface) |
 | [`nostr.json`](nostr.json) | NIP-05 identity verification |
-| [`nostr-kind0-profile.json`](nostr-kind0-profile.json) | Nostr Kind 0 profile |
-| [`lnurlp-manifold.json`](lnurlp-manifold.json) | LNURL-pay endpoint spec |
-| [`manifold-head-block.html`](manifold-head-block.html) | HTML head block for cohereon.io |
 
 ---
 

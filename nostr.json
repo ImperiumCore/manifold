@@ -1,13 +1,14 @@
 {
   "names": {
-    "manifold": "025c3da8ff07d6703b95d02f0058c464b8e762e3f295f13b87d114ceae42f49379"
+    "manifold": "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642"
   },
   "relays": {
-    "025c3da8ff07d6703b95d02f0058c464b8e762e3f295f13b87d114ceae42f49379": [
+    "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642": [
       "wss://relay.damus.io",
-      "wss://nos.lol",
       "wss://relay.nostr.band",
-      "wss://nostr.mom"
+      "wss://nos.lol",
+      "wss://nostr.wine",
+      "wss://relay.snort.social"
     ]
   }
 }
