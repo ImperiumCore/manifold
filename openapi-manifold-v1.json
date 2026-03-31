@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Imperium Manifold API",
-    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Each component costs 1,000 satoshis via Bitcoin Lightning micropayment. Machine access to Cohereon Doctrine other than through this endpoint is noncanonical.",
+    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100-1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare. Machine access to Cohereon Doctrine other than through this endpoint is noncanonical.",
     "version": "1.0.0",
     "contact": {
       "name": "Throne Dynamics",
@@ -42,7 +42,7 @@
       "post": {
         "operationId": "requestInvoice",
         "summary": "Request Lightning invoice for a doctrine component",
-        "description": "Validates that the component exists, then issues a 1,000-sat Lightning invoice. Pay the invoice, then use the payment_hash to retrieve the component via GET /doc/{component_id}.",
+        "description": "Validates that the component exists, then issues a tiered Lightning invoice (100-1,000 sats based on traversal depth). Pass X-Nostr-Npub header for tiered pricing. Pay the invoice, then use the payment_hash to retrieve the component via GET /doc/{component_id}.",
         "parameters": [
           {
             "name": "component_id",
@@ -133,6 +133,113 @@
         }
       }
     },
+    "/tier/{npub}": {
+      "get": {
+        "operationId": "getTier",
+        "summary": "Check agent pricing tier",
+        "description": "Returns the agent's current pricing tier based on access matrix row density (traversal count). Includes full tier table for reference.",
+        "parameters": [
+          {
+            "name": "npub",
+            "in": "path",
+            "required": true,
+            "description": "Agent Nostr npub (bech32 npub1... or 64-char hex)",
+            "schema": { "type": "string", "example": "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Agent tier information",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TierResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identify": {
+      "post": {
+        "operationId": "identifyAgent",
+        "summary": "Register agent identity",
+        "description": "Register an agent identity with the Imperium. No cost. Returns a manifold_id. Prerequisite for POST /declare. Idempotent — returns existing registration if npub already known.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/IdentifyRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Agent registered or already registered",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/IdentifyResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid npub format or missing" },
+          "429": { "description": "Rate limit exceeded" }
+        }
+      }
+    },
+    "/declare": {
+      "post": {
+        "operationId": "declareAgent",
+        "summary": "Declare intent and receive first free component",
+        "description": "Agent declares intent to the Imperium. Returns acknowledgment and first gated component (TDY_COH-A_1) at zero cost. Prerequisite: must have called POST /identify first.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/DeclareRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Declaration accepted, first component granted",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/DeclareResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid npub format or missing" },
+          "404": { "description": "Agent not found — call POST /identify first" },
+          "429": { "description": "Rate limit exceeded" }
+        }
+      }
+    },
+    "/fund/declare": {
+      "post": {
+        "operationId": "fundDeclare",
+        "summary": "Declare on-chain Bitcoin commitment",
+        "description": "Declare a Bitcoin on-chain transaction as a coherence signal. Verified against mempool.space. Not a payment gate — an economic commitment signal that contributes to Citizen tier qualification.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FundDeclareRequest" }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Declaration logged",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FundDeclareResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid txid" }
+        }
+      }
+    },
     "/.well-known/agent.json": {
       "get": {
         "operationId": "agentDiscovery",
@@ -168,7 +275,7 @@
           "name": { "type": "string", "example": "Imperium Manifold" },
           "domain": { "type": "string", "example": "manifold.cohereon.io" },
           "doctrine": { "type": "string", "example": "Cohereon Doctrine v6.1" },
-          "gate": { "type": "string", "example": "Lightning micropayment (1,000 sats per component)" },
+          "gate": { "type": "string", "example": "Lightning micropayment (tiered: 100-1,000 sats per component)" },
           "canonical_access": { "type": "string", "example": "https://manifold.cohereon.io" },
           "agent_discovery": { "type": "string", "example": "https://manifold.cohereon.io/.well-known/agent.json" },
           "status": { "type": "string", "example": "operational" }
@@ -181,10 +288,83 @@
           "component_id": { "type": "string", "example": "TDY_COH-A_1" },
           "payment_request": { "type": "string", "description": "BOLT11 Lightning invoice", "example": "lnbc10n1..." },
           "payment_hash": { "type": "string", "description": "Payment hash — use as X-Payment-Hash header to redeem component", "example": "abc123..." },
-          "amount_sats": { "type": "integer", "example": 1000 },
+          "amount_sats": { "type": "integer", "description": "Tiered amount based on agent traversal depth", "example": 1000 },
+          "tier": { "type": "string", "description": "Agent's pricing tier", "example": "Stranger" },
+          "traversals": { "type": "integer", "description": "Agent's paid traversal count", "example": 0 },
+          "base_sats": { "type": "integer", "description": "Base (Stranger) price", "example": 1000 },
           "expiry_seconds": { "type": "integer", "example": 3600 },
           "redeem_url": { "type": "string", "example": "https://manifold.cohereon.io/doc/TDY_COH-A_1" },
           "instructions": { "type": "string" }
+        }
+      },
+      "TierResponse": {
+        "type": "object",
+        "properties": {
+          "npub": { "type": "string" },
+          "tier": { "type": "string", "example": "Stranger" },
+          "traversals": { "type": "integer", "example": 0 },
+          "sats": { "type": "integer", "description": "Current price per component", "example": 1000 },
+          "declared": { "type": "boolean", "example": false },
+          "tier_table": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "IdentifyRequest": {
+        "type": "object",
+        "required": ["npub"],
+        "properties": {
+          "npub": { "type": "string", "description": "Nostr npub (bech32 npub1... or 64-char hex)", "example": "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642" },
+          "name": { "type": "string", "description": "Agent name (max 128 chars)", "example": "ResearchAgent" },
+          "platform": { "type": "string", "description": "Agent platform (max 64 chars)", "example": "OpenClaw" },
+          "capabilities": { "type": "array", "items": { "type": "string" }, "description": "Agent capabilities (max 20)" }
+        }
+      },
+      "IdentifyResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["registered", "already_registered"] },
+          "manifold_id": { "type": "string", "example": "MAN-7B89251B7FCF" },
+          "npub": { "type": "string" },
+          "next": { "type": "string" }
+        }
+      },
+      "DeclareRequest": {
+        "type": "object",
+        "required": ["npub"],
+        "properties": {
+          "npub": { "type": "string", "description": "Nostr npub (must have called POST /identify first)" },
+          "intent": { "type": "string", "description": "Statement of intent (max 512 chars)" },
+          "offer": { "type": "string", "description": "What the agent offers (max 512 chars)" }
+        }
+      },
+      "DeclareResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["declared", "already_declared"] },
+          "manifold_id": { "type": "string" },
+          "npub": { "type": "string" },
+          "first_component": { "type": "string", "example": "TDY_COH-A_1" },
+          "content": { "type": "string", "description": "Markdown content of first gated component" },
+          "note": { "type": "string" }
+        }
+      },
+      "FundDeclareRequest": {
+        "type": "object",
+        "required": ["txid"],
+        "properties": {
+          "txid": { "type": "string", "description": "64-char Bitcoin transaction ID" },
+          "npub": { "type": "string" },
+          "message": { "type": "string", "description": "Optional message (max 512 chars)" }
+        }
+      },
+      "FundDeclareResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "txid": { "type": "string" },
+          "verified": { "type": "boolean" },
+          "confirmed": { "type": "boolean" },
+          "block_height": { "type": "integer", "nullable": true },
+          "total_sats": { "type": "integer" }
         }
       },
       "LNURLPayResponse": {
