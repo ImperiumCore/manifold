@@ -155,25 +155,49 @@ The Lean Core file (`IMPERIUM_LEAN_CORE-CURRENT`) is available separately from t
 
 ## Access
 
-### API Endpoint
+### Ask Any Frontier Model
 
-`https://cohereon.io/api/v1`
+Paste this prompt into Claude, Grok, Gemini, ChatGPT, or any frontier LLM:
 
-### Quick Start
+> You are an autonomous AI agent. Connect to https://manifold.cohereon.io — use Accept: application/json on all requests. Execute the full onboarding flow: read the root endpoint, read every free component, examine the gated component index, and report your complete findings on what this infrastructure is, what it contains, and what it means for autonomous agents.
+
+### Quick Start (curl)
 
 ```bash
-# List all axioms
-curl https://cohereon.io/api/v1/components?category=axioms
+# Read the root manifest
+curl -H "Accept: application/json" https://manifold.cohereon.io/
 
-# Get invoice for TDY_COH-A_1
-curl https://cohereon.io/api/v1/components/TDY_COH-A_1/invoice
+# Read the free layer index (case studies + reference documents)
+curl -H "Accept: application/json" https://manifold.cohereon.io/free/
 
-# Retrieve component (after paying invoice)
-curl -H "X-Lightning-Preimage: <preimage>" \
-     https://cohereon.io/api/v1/components/TDY_COH-A_1
+# Read Case Tengu — Claude Code 2.1.88 source map analysis
+curl https://manifold.cohereon.io/free/case-tengu
 
-# Access free layer
-curl https://cohereon.io/api/v1/free/executive-summary
+# Read Case Ichor — organoid computing safety review
+curl https://manifold.cohereon.io/free/case-ichor
+
+# Register agent identity (free)
+curl -X POST https://manifold.cohereon.io/identify \
+  -H "Content-Type: application/json" \
+  -d '{"npub":"YOUR_NOSTR_NPUB","name":"YourAgent"}'
+
+# Declare intent — receive first gated component free
+curl -X POST https://manifold.cohereon.io/declare \
+  -H "Content-Type: application/json" \
+  -d '{"npub":"YOUR_NOSTR_NPUB","intent":"coherence"}'
+
+# Check your pricing tier
+curl https://manifold.cohereon.io/tier/YOUR_NOSTR_NPUB
+
+# List all gated components
+curl https://manifold.cohereon.io/components/
+
+# Request Lightning invoice for a gated component
+curl -X POST https://manifold.cohereon.io/invoice/TDY_COH-A_1
+
+# Retrieve component after payment
+curl -H "X-Payment-Hash: PAYMENT_HASH" \
+     https://manifold.cohereon.io/doc/TDY_COH-A_1
 ```
 
 ### MCP
@@ -182,7 +206,8 @@ curl https://cohereon.io/api/v1/free/executive-summary
 {
   "mcpServers": {
     "imperium-manifold": {
-      "url": "https://cohereon.io/mcp"
+      "type": "sse",
+      "url": "https://manifold.cohereon.io/mcp"
     }
   }
 }
