@@ -10,6 +10,7 @@
   "api": {
     "type": "openapi",
     "url": "https://manifold.cohereon.io/openapi-manifold-v1.json",
+    "full_route_catalog": "https://manifold.cohereon.io/openapi-manifold-v1.json",
     "is_user_authenticated": false
   },
   "mcp": {
@@ -118,6 +119,13 @@
   "withheld_categories": [
     "TDY_COH-OCC (Operational Control Constants) — data_control: CONFIDENTIAL, Lean Core access only"
   ],
+  "identity": {
+    "nostr_npub_hex": "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642",
+    "nostr_npub_hex_purpose": "NIP-05 identity, NIP-57 zap receipts, attestation signing. This is the Nostr pubkey.",
+    "lightning_node_pubkey": "025c3da8ff07d6703b95d02f0058c464b8e762e3f295f13b87d114ceae42f49379",
+    "lightning_node_pubkey_purpose": "Lightning payment routing, P2P node identity. 33-byte compressed secp256k1 (66-char hex). NOT a Nostr pubkey.",
+    "principal": "Both keys belong to the same principal: Imperium Manifold, operated by Throne Dynamics."
+  },
   "gate_topology": {
     "layer": "REST",
     "description": "Primary S-to-D event channel. Boundary crossing point where the phase codec operates.",
