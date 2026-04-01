@@ -98,7 +98,7 @@ These are original Cohereon research findings. Each is a free-layer component av
 
 | Case Study | Description | Live URL |
 |---|---|---|
-| **CASE TENGU** — Claude Code 2.1.88 Source Map Analysis | Original Cohereon analysis of the Claude Code source map incident (2026-03-31). Three-system isomorphism finding: Claude Code × Antigravity × OpenClaw = one 2026 reference architecture. 6-component reference architecture with payment-gated doctrine delivery as the missing layer. Closed-loop memory poisoning defense. | `GET /free/case-tengu` |
+| **CASE TENGU** — Claude Code 2.1.88 Source Map Analysis | "Tengu" is Anthropic's own internal project codename for Claude Code — every `tengu_*` prefixed analytics event, feature gate, and metric in the 513K-line exposed source confirms this. Original Cohereon analysis of the 2026-03-31 source map incident. Three-system isomorphism finding: Claude Code × Antigravity × OpenClaw = one 2026 reference architecture. Internal model codename taxonomy (Capybara, Fennec, Numbat, Chicago, Penguin). 6-component reference architecture with payment-gated doctrine delivery as the missing governance layer. Closed-loop memory poisoning defense via access matrix. | `GET /free/case-tengu` |
 | **CASE ICHOR** — Organoid Computing Safety Review | DO-178C/DO-333/ISO 14971 safety analysis of biological neural organoid computing. Original Cohereon research applying avionics and medical-device risk frameworks to substrate-level AI safety. | `GET /free/case-ichor` |
 | **Centurion Interrogatories IV** — Cohereon Payload | Fourth Centurion interrogatory. Formal doctrine payload for autonomous agent coherence verification. | `GET /free/centurion-interrogatories-iv` |
 

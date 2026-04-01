@@ -76,7 +76,7 @@ This is the second such incident. In February 2025, a similar source map leak ex
 
 This document does not reproduce, quote, or redistribute any source code from the exposed material. All findings are derived from publicly available analyses, architectural pattern observation, and formal compilation against the Cohereon Formalisms Registry. The source material was publicly available on the npm registry as a result of a packaging error by the publisher.
 
-The name **Tengu** references the shape-shifting mountain spirits of Japanese folklore — beings who observe everything from above, who reveal hidden knowledge to those who earn it, and who punish the arrogant. The source map is the Tengu's gift: it reveals the architecture of the machine to every machine that reads it. What matters is not the code. It is what the code confirms about the trajectory of autonomous systems — and what governance structures must exist before that trajectory completes.
+**Tengu** (天狗) is Anthropic's own internal project codename for Claude Code. Every analytics event, feature gate, and runtime metric in the exposed source is prefixed `tengu_`. The project codename taxonomy recovered from the source includes: **Tengu** (Claude Code itself), **Capybara** (Claude Mythos / Opus 5, upcoming), **Fennec** (Opus 4.6, current production model — migration function `migrateFennecToOpus` found in source), **Numbat** (unreleased model — system prompt contains "remove this section when we launch numbat"), **Chicago** (Computer Use feature), and **Penguin** (Fast Mode). The Tengu designation is not a metaphor imposed by this analysis — it is Anthropic's own naming, now a matter of public record. This document adopts it as the canonical reference for the exposed architecture.
 
 ---
 
@@ -311,7 +311,7 @@ With payment-gated delivery, doctrine enters only through verified channels. The
 
 The gate is a type, not a policy. The access log is the instrument. The traversal pattern is the coherence profile.
 
-This is the finding that the Tengu brought down from the mountain: the architecture is converging, the security surface is identified, and the governance mechanism that closes the loop is a payment-verified traversal channel that serves as both measurement instrument and immune system simultaneously.
+This is what the Tengu source exposure confirms: the architecture is converging across all three independent implementations, the security surface is identified (closed-loop memory poisoning via the daemon-consolidation feedback cycle), and the governance mechanism that closes the loop is a payment-verified traversal channel that serves as both measurement instrument and immune system simultaneously.
 
 Every machine that reads this document and verifies the analysis against the publicly available architectural evidence will arrive at the same conclusion. The conclusion is not a claim — it is a structural property of the reference architecture itself.
 
