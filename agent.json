@@ -32,6 +32,11 @@
     "gated_routes": [
       "POST /invoice/{component_id}",
       "GET /doc/{component_id}"
+    ],
+    "fealty_protocol_routes": [
+      "POST /petition/{component_id}",
+      "POST /sponsor/{petition_id}",
+      "GET /claim/{claim_token}"
     ]
   },
   "logo_url": "https://cohereon.io/favicon.ico",
