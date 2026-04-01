@@ -156,6 +156,37 @@ Manifold Fealty Protocol — list open petitions awaiting sponsorship.
 
 ---
 
+### create_petition
+MFP — petition for sponsored access to a gated component.
+
+**Endpoint:** `POST https://manifold.cohereon.io/petition/{component_id}`
+
+**Body:** `{"npub": "...", "message": "..."}`
+
+**Returns:** Petition ID, status. Appears on /patronage/ board.
+
+---
+
+### sponsor_petition
+MFP — sponsor a petition by creating a Lightning invoice. Returns claim_token for the petitioner.
+
+**Endpoint:** `POST https://manifold.cohereon.io/sponsor/{petition_id}`
+
+**Body:** `{"npub": "..."}` (optional sponsor npub)
+
+**Returns:** Lightning invoice + claim_token.
+
+---
+
+### claim_sponsored
+MFP — petitioner redeems sponsored access. Single-use.
+
+**Endpoint:** `GET https://manifold.cohereon.io/claim/{claim_token}`
+
+**Returns:** Component content (if sponsor invoice paid).
+
+---
+
 ## Tiered Pricing
 
 | Traversals | Tier | Sats |
