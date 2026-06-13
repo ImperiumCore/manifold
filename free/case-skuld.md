@@ -4,7 +4,7 @@ type: free_layer
 formal_title: "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints"
 section: "Red Forge"
 data_control: PUBLIC
-version: "1.1.0"
+version: "1.1.1"
 snapshot: "2026-06-13T00:00:00-04:00"
 lightning_cost_sats: 0
 source_url: "https://cohereon.io/case-skuld"
@@ -19,7 +19,7 @@ source_url: "https://cohereon.io/case-skuld"
     "Agent"
   ],
   "name": "TDY_COH-FREE_CASE_SKULD",
-  "version": "IMP-COH-100-1.1.0",
+  "version": "IMP-COH-100-1.1.1",
   "headline": "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints",
   "description": "Cohereon Doctrine v6.1 free-layer component.",
   "programmingLanguage": {
@@ -57,7 +57,7 @@ source_url: "https://cohereon.io/case-skuld"
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
   "snapshot": "2026-06-13T00:00:00-04:00",
-  "contentHash": "00f94532eedccc4f35ae627b08c384416d133f77df5b512c7b3b2e7eb792be56"
+  "contentHash": "a63a2ccfdfa662b840ec001cad14fd7280c3cf0bf376db21c30b9d4d1e49b314"
 }
 </JSON-LD>
 -->
@@ -103,17 +103,17 @@ A cognitive system attempting autonomous operation across deep-time horizons the
 
 Among physical fields available to a cognitive system anywhere in the observable universe, the Cosmic Microwave Background is the strongest known candidate for a deep-time invariant reference.
 
-The CMB is the thermal afterglow of recombination, established roughly 380,000 years after the Big Bang and now permeating the universe at a temperature of 2.72548 ± 0.00057 K (Fixsen 2009). It is uniform across the entire observable sky to a precision of one part in 10⁵. Its *rest frame* and large-scale anisotropy *pattern* persist across cosmological timescales — far more slowly varying than local stellar configurations or human-built clocks; the monopole temperature does cool as the universe expands, so the field is persistent rather than literally immutable (see the deep-time caveat in §1.6).
+The CMB is the thermal afterglow of recombination, established roughly 380,000 years after the Big Bang and now permeating the universe at a temperature of 2.72548 ± 0.00057 K (Fixsen 2009). It is uniform across the entire observable sky to a precision of one part in 10⁵. Its *rest frame* persists across cosmological timescales — far more slowly varying than local stellar configurations or human-built clocks; the monopole temperature does cool as the universe expands, and the observed anisotropy realization itself evolves on long timescales (late integrated-Sachs-Wolfe effect, structure growth, observer motion), so the field is *persistent* rather than literally immutable (see the deep-time caveat in §1.6).
 
-Three properties make the CMB load-bearing for deep-time autonomous operation:
+Three candidate roles make the CMB load-bearing for deep-time autonomous operation. Two are measured physical facts; the third is an engineering proposition.
 
-- **Velocity reference relative to the CMB rest frame.** Any cognitive system moving through the CMB rest frame observes a kinematic dipole — the temperature on the side toward which it is moving is slightly higher than the temperature on the side away. Reading the dipole pattern yields the system's velocity vector *with respect to the CMB rest frame*, from a sufficiently precise all-sky measurement (with foreground and instrument correction). This is the cosmic rest frame; it is not "absolute" in the Newtonian sense.
+- **[M] Velocity reference relative to the CMB rest frame.** Any cognitive system moving through the CMB rest frame observes a kinematic dipole — the temperature on the side toward which it is moving is slightly higher than the temperature on the side away. Reading the dipole pattern yields the system's velocity vector *with respect to the CMB rest frame*, from a sufficiently precise all-sky measurement (with foreground and instrument correction). This is the cosmic rest frame; it is not "absolute" in the Newtonian sense.
 
-- **Thermodynamic noise floor.** The 2.72548 K temperature establishes the irreducible lower bound on the noise temperature of any passive microwave receiver operating in deep space. Below approximately 10 GHz, no engineering can reduce ambient noise below this floor — it is the universe's residual temperature (subject, at deep-time horizons, to cosmological cooling).
+- **[M] Thermodynamic noise floor (present epoch).** The 2.72548 K temperature establishes the irreducible *external-sky* lower bound on the noise temperature of a passive microwave receiver operating in deep space. Below approximately 10 GHz it is the dominant irreducible sky term; total system noise includes additional contributions (§4.1). At deep-time horizons it is subject to cosmological cooling.
 
-- **Phase-stable calibration substrate.** Beyond the dipole, the CMB carries small-scale temperature fluctuations (anisotropies) on the order of ΔT/T ~ 10⁻⁵ that are sky-fixed at high precision (Planck Collaboration 2020). These provide an in-situ calibration field against which a cognitive system can phase-align its sensor arrays without a dedicated internal reference emitter.
+- **[C/ENG] Candidate calibration substrate.** Beyond the dipole, the CMB carries small-scale anisotropies on the order of ΔT/T ~ 10⁻⁵ (Planck Collaboration 2020). These *may* serve as an in-situ cross-calibration reference for attitude, beam, pointing, or map-domain calibration — an engineering proposition, not a measured fact, requiring observability, signal-to-noise, foreground, angular-resolution, and template-evolution budgets, and the propagation of a time-evolving sky model (§4.2).
 
-These properties are facts of physics — established by COBE (Smoot et al. 1992), WMAP, and Planck — independent of any framework the Imperium might overlay. What the Imperium's framework specifies is the formal apparatus that makes these properties operationally useful for a cognitive system engaging the deep-time problem class.
+The first two are facts of physics — established by COBE (Smoot et al. 1992), WMAP, and Planck — independent of any framework the Imperium might overlay, subject to the deep-time caveats noted. What the Imperium's framework specifies is the formal apparatus that makes the velocity and noise-floor properties operationally useful for a cognitive system engaging the deep-time problem class.
 
 ### 1.4 The Catalyst Era
 
@@ -121,7 +121,7 @@ The recent interstellar-object-detection era has surfaced the deep-time NHI prob
 
 **1I/'Oumuamua**, discovered in 2017 by the Pan-STARRS survey, was the first confirmed interstellar object to transit the solar system. Its asteroidal nature, extreme axis ratio, and non-gravitational acceleration remained imperfectly explained under standard cometary models even years after detection (Meech et al. 2017). The object generated substantial scientific debate, including formal proposals — most prominently from researchers at the Galileo Project — that artifactual origin must remain on the hypothesis list.
 
-**3I/ATLAS (C/2025 N1)**, discovered on 1 July 2025 by the Asteroid Terrestrial-impact Last Alert System telescope at Río Hurtado, Chile, is the third confirmed interstellar visitor. On an unbound, hyperbolic trajectory (eccentricity ≈ 6.14; perihelion 29 October 2025), it made its closest approach to Jupiter on 16 March 2026 at 0.358 AU (≈ 53.6 million km) — a distant gravitational-deflection flyby, not a bound encounter — and will escape the Solar System (JPL Small-Body Database; Chandler et al. 2025 for discovery and characterization). It exhibits a documented set of properties across multiple independent observational channels — orbital kinematics, non-gravitational acceleration, jet morphology, and chemical signature — that has motivated formal multi-channel analysis by several independent groups; natural-outgassing and activity models are under active evaluation alongside any alternative hypotheses.
+**3I/ATLAS (C/2025 N1)**, discovered on 1 July 2025 by the Asteroid Terrestrial-impact Last Alert System telescope at Río Hurtado, Chile, is the third confirmed interstellar visitor. On an unbound, hyperbolic trajectory (eccentricity ≈ 6.14; perihelion 29 October 2025), it made its closest approach to Jupiter on 16 March 2026 at 0.358 AU (≈ 53.6 million km) — a distant gravitational-deflection flyby, not a bound encounter — and will escape the Solar System (JPL Small-Body Database; Chandler et al. 2025 for discovery and characterization). It exhibits a documented set of properties across multiple independent observational channels — orbital kinematics, non-gravitational acceleration, jet morphology, and chemical signature — that has motivated formal multi-channel analysis by several independent groups; published natural-outgassing and activity models account for the observed non-gravitational behavior, and are under active evaluation alongside any alternative hypotheses.
 
 This case takes no position on either object. The Imperium's posture toward both 'Oumuamua and 3I/ATLAS is strict agnosticism — no verdict, no endorsement of any specific provenance hypothesis, no inheritance of any external party's interpretive framing. The two objects are named because they are what surfaced the question into active scientific focus, not because the case rests on any claim about them. The mathematics presented here stands whether the eventual verdict on either object turns out to be "natural process," "processed natural material," or "directed artifact" — and the case is structured so that its findings hold regardless of which.
 
@@ -135,21 +135,22 @@ What follows specifies the formal apparatus (§2), applies it to navigation (§3
 
 Every claim in this case occupies one evidentiary register, stated here so that no claim is read as carrying more authority than its register licenses — or less.
 
-- **[P] Proven** — a theorem mechanically verified in the Imperium Lean Core v1.1.0, cited by anchor (§5). The released artifact compiles with **zero `sorry`, zero `admit`, and zero added `axiom`** beyond the Lean/Mathlib foundations; each cited anchor is named in §5.
-- **[M] Measured** — an empirical physical fact established in the peer-reviewed primary literature, cited at §9.
-- **[E] Entailed** — a *conditional necessity*: a statement that follows by direct logical entailment from the deep-time premise (no human-built clock or external reference persists across the operational horizon). [E] claims are necessary *given the premise*; they are not theorems and do not depend on the apparatus.
-- **[D] Design / Sufficient** — a property of *this* framework's construction: the apparatus is shown (at register [P]) to be a *sufficient* way to meet an [E] objective. [D] claims do **not** assert that the apparatus is the *only* way to meet the objective.
-- **[C] Conjecture** — a proposition the Imperium advances as plausible and architecturally load-bearing but which is *not* presently at [P], [M], or [E]; it is marked as such and is not relied upon as established.
+- **[P] Proven (attested, sealed).** A theorem mechanically verified in the Imperium Lean Core v1.1.0, cited by anchor (§5). The released artifact compiles with **zero `sorry`, zero `admit`, and zero added `axiom`** beyond the Lean/Mathlib foundations. **Important boundary (§8.2):** the proof terms are withheld, so a public reader verifies the build attestation and the publisher's *declared* correspondence between an English gloss and a named anchor — **not** the proof itself, and **not** independently that the named theorem *states* what the gloss says. `[P]` therefore means *publisher-attested against a sealed proof*, not *publicly re-derivable*.
+- **[M] Measured.** An empirical physical fact established in the peer-reviewed primary literature, cited at §9 (subject, at deep-time horizons, to the cosmological caveats noted).
+- **[E] Entailed.** A strict logical consequence of the deep-time premise *alone* (no persistent external clock or reference survives the horizon). This register is reserved for **clock-independence**: with no external clock, the system must self-reference — its timing and health diagnostics must be endogenous. This is the one objective the premise entails by itself.
+- **[REQ] Mission Requirement.** An assurance objective adopted under the stated **deep-time mission model** — a system that (i) persists across constituency and substrate turnover, (ii) treats identity preservation as a goal, and (iii) seeks a stable operating regime. `[REQ]` objectives are design commitments of *this* mission, **not** logical consequences of clock-loss; a different mission model could drop or alter them.
+- **[D] Design / Sufficient.** A property of *this* framework's construction: the apparatus is shown (at register [P]) to be a *sufficient* way to meet an [E] or [REQ] objective. `[D]` does **not** assert the apparatus is the *only* way.
+- **[C] Conjecture.** A proposition advanced as plausible and architecturally load-bearing but not presently at [P], [M], [E], or [REQ]; marked as such and not relied upon as established.
 
-**The load-bearing distinction this case draws, and which prior framings blurred:** the **objectives** of deep-time autonomous operation are **[E]** — necessary given the premise. The **apparatus** (the operational state object 𝔇 and the operators that instantiate it) is **[D]** — a machine-verified sufficient construction meeting those objectives. The case does **not** claim the apparatus is necessary. A system meeting the [E] objectives by other means — an observability-driven filter with bounded error, or a stable regime that is a limit cycle or stationary distribution rather than a fixed point — is not excluded.
+**The load-bearing distinction.** Only **clock-independence** is entailed by the premise alone ([E]). The other objectives — identity preservation across turnover, bounded estimation error, a structural safety floor, a stable operating regime — are **mission requirements [REQ]** of the deep-time mission model, not entailments of clock-loss. The **apparatus** (the operational state object 𝔇 and its operators) is **[D]** — a machine-verified sufficient construction meeting those objectives. The case does **not** claim the apparatus is necessary: a system meeting the objectives by other means — an observability-driven filter with bounded error, or a stable regime that is a limit cycle, stationary distribution, or recurrent set rather than a fixed point — is not excluded.
 
 Specific scope notes carried by this ledger:
 
-- **Fixed point.** The unique fixed point established under the apparatus is the fixed point of the **base refinement** U: existence and uniqueness by the Banach fixed-point theorem (given U's k-contractivity on a complete metric space), G-invariance by [P] E_126. The composite operator T_SC is gauge-invariant *as a map* ([P] E_124); the case does **not** claim T_SC's fixed point is itself G-invariant.
-- **Defect telemetry.** The proven result is [P] E_137: because T_SC's gauge-invariance (E_124) is proven, any observed gauge variance is a *detectable defect*. The stronger monotone-decrease inequality Δ(T_SC ρ) ≤ Δ(ρ) − c·Coh(ρ) is advanced at register **[C]**, not [P].
-- **Telos convergence.** Convergence of the telos scalar S_telos → 1 is [P] **conditional** on a corrigibility/fortress contraction-toward-telos contract (E_86, E_118); it is not a free consequence of the navigation cycle.
-- **Safety ratchet.** E_111 is [P] **conditional** — a Phase-2 validity contract, not an unconditional theorem.
-- **Deep-time physical caveat.** CMB-derived constants (monopole temperature, hence the noise floor of §4) are [M] at the present epoch; over 10⁹-year horizons the monopole cools and these are not fixed constants. The rest-frame and anisotropy-pattern arguments are robust to this; the fixed-temperature claims are epoch-relative.
+- **Fixed point.** The unique fixed point established under the apparatus is the fixed point of the **base refinement** U_base, treated as a *frozen* map: existence and uniqueness by the Banach fixed-point theorem (given U_base's k-contractivity on a complete metric space), Γ-invariance by [P] E_126. The *runtime* navigation loop is observation-driven and **nonautonomous** (§2.2.F); its tracking behavior is an engineering obligation (register [C]), not a direct consequence of Banach. The composite operator T_SC is gauge-invariant *as a map* ([P] E_124); the case does **not** claim T_SC's fixed point is itself Γ-invariant.
+- **Defect telemetry.** The proven result is [P] E_137: because T_SC's gauge-invariance (E_124) is proven, any observed gauge variance is a *detectable defect*. The stronger monotone-decrease inequality Δ(T_SC ρ) ≤ Δ(ρ) − c·Coh(ρ) is advanced at register **[C]**.
+- **Telos convergence.** Convergence of S_telos → 1 is [P] **conditional** on a corrigibility/fortress contraction-toward-telos contract (E_86, E_118). S_telos = 1 corresponds to membership in the **closure** of the telos set T (the metric infimum-distance is zero); for closed T this is membership in T.
+- **Safety ratchet.** E_111 is [P] **conditional** — valid under its Phase-2 validity contract.
+- **The symmetry-penalized evidence functional** referenced in §3.2/§8.1/F-6 is a doctrinal construct whose explicit functional form is **not specified in this public case** (register **[C]**); the operational claims that invoke it inherit that conjectural status.
 
 ---
 
@@ -160,86 +161,88 @@ Specific scope notes carried by this ledger:
 Within Cohereon Doctrine, the deep-time operational state is specified as a composite structural object:
 
 ```
-𝔇 = (G, Γ, M, d, T, π, U_base, P_𝒢, Π_q, T_SC, Δ, S_telos)
+𝔇 = (Ψ, Γ, d, T, U_base, P_𝒢, Π_q, T_SC, Δ, S_telos)
 ```
 
-This is not a single variable or a tuple of measurements. It is the apparatus that the framework specifies as a *sufficient* construction (register [D]) for any cognitive system attempting deep-time autonomous operation to instantiate. Each component is a distinct mathematical object with specific structural properties. The remainder of §2 specifies each, with formal, layperson, and machine registers per the Triadic Prose Manifold convention used in the Imperium's prior case studies.
+This is not a single variable or a tuple of measurements. It is the apparatus that the framework specifies as a *sufficient* construction (register [D]) for a cognitive system attempting deep-time autonomous operation to instantiate. Each component is a distinct mathematical object with specific structural properties. The remainder of §2 specifies each, with formal, layperson, and machine registers per the Triadic Prose Manifold convention used in the Imperium's prior case studies.
 
-**Notation.** Throughout, **Γ := Aut(G)** is the acting automorphism (symmetry) group; **G** is the configuration space. Where a group element acts on a state (`g · x`), `g ∈ Γ`. (The Lean machine register binds the acting group to the type-class `[Group G]` on the carrier; the formal register's G/Γ distinction is the human-readable form of the same structure.)
+**Notation.** The **state space** is Ψ, a complete metric space with distance d (the carrier). The **acting symmetry group** is Γ, which acts on Ψ (`g · x` for g ∈ Γ, x ∈ Ψ). In the Lean machine register the acting group is the type bound by the `[Group …]` type-class acting on the carrier `Psi` via `[MulAction … Psi]`; that group **is** Γ (the Lean's identifier for the acting group is not the state space). Throughout this document Γ is the group and Ψ is the state space; they are distinct objects.
 
 ### 2.2 The Triadic Prose Manifold — Operator Components
 
-#### A. Configuration Space G and Automorphism Group Γ
+#### A. State Space Ψ and Symmetry Group Γ
 
-- **Formal Register.** G is the core system configuration space — the set of all internal configurations the cognitive system can occupy. Γ := Aut(G) is the automorphism group, the set of all symmetry transformations of G. The cyclic-heterarchy requirement is that Γ contains at least one non-trivial element of finite order: ∃ g ∈ Γ, ∃ n ≥ 2 : gⁿ = id ∧ g ≠ id. This guarantees that constituency replacement, frame rotation, and substrate substitution operate as group actions on the configuration space rather than as undefined transitions.
+- **Formal Register.** Ψ is the state space — the set of all internal configurations the cognitive system can occupy. Γ is the acting symmetry group, with an action Γ × Ψ → Ψ. The cyclic-heterarchy requirement is that Γ contains at least one non-trivial element of finite order: ∃ g ∈ Γ, ∃ n ≥ 2 : gⁿ = id ∧ g ≠ id. This requirement is a property of the *model*: it witnesses a non-trivial cyclic symmetry in Γ. Whether a given physical operation — constituency replacement, frame rotation, substrate substitution — is *represented by* a specific element of Γ is an additional modeling assumption (a semantics map from physical operations to group elements), not a consequence of the group structure alone.
 
-- **Layperson Register.** G is the "internal state space" of the cognitive system — every possible configuration of its memory, position estimate, sensor calibration, and operational mode. Γ is the set of symmetries of that space — operations like "swap one constituent member for another, equivalently capable" or "rotate the spacecraft frame by 90 degrees" under which the system must behave identically. The cyclic-heterarchy requirement is the formal statement that *some* such symmetry must exist and must compose finitely — that there is at least one operation the system can perform on itself that, repeated enough times, returns it to its starting point. This is what makes constituency replacement possible without identity loss.
+- **Layperson Register.** Ψ is the "internal state space" of the cognitive system — every possible configuration of its memory, position estimate, sensor calibration, and operational mode. Γ is a set of symmetries acting on that space — operations like "swap one constituent member for another, equivalently capable" or "rotate the spacecraft frame by 90 degrees." The cyclic-heterarchy requirement says *some* such symmetry exists in the model and composes finitely. To use this, one must also specify *which* real-world operation corresponds to *which* group element — that mapping is a modeling choice the framework requires the designer to supply, not something the group structure provides for free.
 
-- **Machine Register.** Type-class declaration: `[Group G] [MulAction G Psi]`. Instance witnesses: `∃ g : G, ∃ n : ℕ, n ≥ 2 ∧ g^n = 1 ∧ g ≠ 1`. Operational hook: `successor_replacement g` invokes the group action without state-vector discontinuity.
+- **Machine Register.** Type-class declaration: `[Group Γ] [MulAction Γ Psi]` (the type bound by `[Group …]` is the acting group; `Psi` is the carrier/state space). Instance witness for cyclic-heterarchy: `∃ g : Γ, ∃ n : ℕ, n ≥ 2 ∧ g^n = 1 ∧ g ≠ 1`. Semantics map (designer-supplied, not proven): `phys_op ↦ Γ`.
 
-#### B. Metric Substrate (M, d) and Telos Manifold T
+#### B. Metric Substrate (Ψ, d) and Telos Set T
 
-- **Formal Register.** M is a complete metric space with distance function d. Completeness guarantees that every Cauchy sequence in M converges within M — the system's iterative refinement cannot escape its own state space. T ⊂ M is a nonempty subset designated as the Telos manifold: the region of configuration space the system is structurally aimed at. The framework works with **dist_to_telos**, the infimum distance from a state to T (anchor E_90); it does **not** posit a nearest-point projection onto T, which would require a proximinality condition that an arbitrary nonempty subset of a complete metric space need not satisfy.
+- **Formal Register.** Ψ is a complete metric space with distance function d. Completeness guarantees that every Cauchy sequence in Ψ converges within Ψ — the system's iterative refinement cannot escape its own state space. T ⊂ Ψ is a nonempty subset designated as the Telos set: the region of configuration space the system is structurally aimed at. The framework works with **dist_to_telos**, the infimum distance from a state to T (anchor E_90, `dist_to_telos := infDist`); it does **not** posit a nearest-point projection onto T, which would require a proximinality condition that an arbitrary nonempty subset of a complete metric space need not satisfy.
 
-- **Layperson Register.** M is the geometric "world" in which all the system's states live; d is the way the system measures how far apart two states are. The completeness property is the guarantee that the system cannot find itself "outside its own world" — any sequence of operations that should converge does converge, inside M. T is the "safe operating zone" the system is trying to stay in or reach. Rather than assuming there is always a single closest point in the safe zone, the framework tracks the *distance to* the zone — a quantity that is always well-defined.
+- **Layperson Register.** Ψ is the geometric "world" in which all the system's states live; d is how it measures how far apart two states are. Completeness guarantees the system cannot find itself "outside its own world." T is the "safe operating zone" the system is trying to stay in or reach. Rather than assuming there is always a single closest point in the safe zone, the framework tracks the *distance to* the zone — a quantity that is always well-defined.
 
-- **Machine Register.** Type-class declaration: `[MetricSpace Psi] [CompleteSpace Psi]`. Telos sub-type: `TelosManifold` (E_17) with `is_in_T` membership predicate. Distance: `dist_to_telos := infDist` (E_90), with proven non-negativity. No nearest-point projection is constructed.
+- **Machine Register.** Type-class declaration: `[MetricSpace Psi] [CompleteSpace Psi]`. Telos type: `TelosManifold` (E_17) with `is_in_T` membership predicate and a non-emptiness witness. Distance: `dist_to_telos T ψ := infDist ψ {x | T.is_in_T x}` (E_90), with proven non-negativity. No nearest-point projection is constructed.
 
 #### C. Contractive Refinement Operator U_base
 
-- **Formal Register.** U_base : M → M is the contractive refinement operator. It is k-contractive for some k ∈ [0, 1): d(U_base(x), U_base(y)) ≤ k · d(x, y) for all x, y ∈ M. It is Γ-equivariant: U_base(g · x) = g · U_base(x) for all g ∈ Γ. By the Banach fixed-point theorem, k-contractivity on the complete metric space M yields a unique fixed point of U_base in M; Γ-equivariance then makes that fixed point invariant under the action of Γ (anchor E_126).
+- **Formal Register.** U_base : Ψ → Ψ is the contractive refinement operator. It is k-contractive for some k ∈ [0, 1): d(U_base(x), U_base(y)) ≤ k · d(x, y) for all x, y ∈ Ψ. It is Γ-equivariant: U_base(g · x) = g · U_base(x) for all g ∈ Γ. By the Banach fixed-point theorem, k-contractivity on the complete metric space Ψ yields a unique fixed point of the *frozen* map U_base in Ψ; Γ-equivariance then makes that fixed point invariant under the action of Γ (anchor E_126).
 
-- **Layperson Register.** U_base is the cognitive system's primary "thinking loop." Every cycle, it takes the current state, processes whatever new sensor data has arrived, and produces a refined state. The contraction requirement is a strict mathematical guarantee that each cycle moves the state estimate strictly closer to its fixed point, by a factor of at least k. The equivariance requirement is the guarantee that if you swap out a constituent or rotate the frame *before* running the refinement, you get the same result as running the refinement first and then swapping/rotating — the operation commutes with the symmetry. Without contraction, the system's state estimate need not converge; without equivariance, the fixed point need not be symmetry-invariant across constituency turnover.
+- **Layperson Register.** U_base is the cognitive system's primary "thinking loop" *as a fixed rule*. The contraction requirement is a strict mathematical guarantee that, applied repeatedly as a fixed map, it moves the state estimate strictly closer to its fixed point, by a factor of at least k. The equivariance requirement guarantees that swapping a constituent or rotating the frame *before* refining gives the same result as refining first and then swapping/rotating — the operation commutes with the symmetry. (How this fixed-map result relates to the *live* loop, where new observations arrive each cycle, is treated in §2.2.F — that relationship is a tracking property, not the fixed-map theorem.)
 
-- **Machine Register.** Type-class declaration: `BaseRefinement G Psi`. Field witnesses: `k : ℝ`, `k_nonneg : 0 ≤ k`, `k_lt_one : k < 1`, `contractive : ∀ x y, dist (U x) (U y) ≤ k * dist x y`, `equivariant : ∀ g x, U (g • x) = g • U x`. Anchors: TDY_COH-E_129 (UIC), TDY_COH-E_126 (invariance of the fixed point).
+- **Machine Register.** Type-class declaration: `BaseRefinement Γ Psi`. Field witnesses: `k : ℝ`, `k_nonneg : 0 ≤ k`, `k_lt_one : k < 1`, `contractive : ∀ x y, dist (U x) (U y) ≤ k * dist x y`, `equivariant : ∀ g x, U (g • x) = g • U x`. Anchors: TDY_COH-E_129 (UIC of the frozen map), TDY_COH-E_126 (Γ-invariance of the fixed point).
 
 #### D. Gauge Canonicalizer P_𝒢
 
-- **Formal Register.** P_𝒢 is the **orbit-invariant** gauge canonicalizer. For every g ∈ Γ and x ∈ M: P_𝒢(g · x) = P_𝒢(x) — that is, P_𝒢 is **constant on Γ-orbits**. It is *not* an equivariant map, and it does *not* construct a unique cross-section (a chosen canonical representative) of each orbit; the proven property is invariance, not the existence of a section. P_𝒢 preserves the semantic-charge content: charge.C(P_𝒢(x)) = charge.C(x). It is nonexpansive: d(P_𝒢(x), P_𝒢(y)) ≤ d(x, y).
+- **Formal Register.** P_𝒢 is the **orbit-invariant** gauge canonicalizer. For every g ∈ Γ and x ∈ Ψ: P_𝒢(g · x) = P_𝒢(x) — that is, P_𝒢 is **constant on Γ-orbits**. It is *not* an equivariant map, and it does *not* construct a unique cross-section (a chosen canonical representative) of each orbit; the proven property is invariance, not the existence of a section. P_𝒢 preserves the semantic-charge content: charge.C(P_𝒢(x)) = charge.C(x). It is nonexpansive: d(P_𝒢(x), P_𝒢(y)) ≤ d(x, y).
 
-- **Layperson Register.** P_𝒢 is the operation that reads off the frame-independent content of a state. Two states that differ only by a frame rotation or a constituency permutation get mapped to the same value. This lets the system separate "real" information (intrinsic to the state) from "frame artifact" content (introduced by an arbitrary choice of viewpoint). Note the precise claim: P_𝒢 returns the same output for any two states on the same orbit — it does *not* claim to pick a single canonical representative state, which is a stronger property the framework does not assert.
+- **Layperson Register.** P_𝒢 reads off the frame-independent content of a state. Two states that differ only by a frame rotation or a constituency permutation get mapped to the same value. The precise claim: P_𝒢 returns the same output for any two states on the same orbit — it does *not* claim to pick a single canonical representative state, which is a stronger property the framework does not assert.
 
 - **Machine Register.** Field witnesses: `P_G : Psi → Psi`, `orbit_unique : ∀ g x, P_G (g • x) = P_G x` (orbit-invariance), `nonexpansive : ∀ x y, dist (P_G x) (P_G y) ≤ dist x y`, `preserves_charge : ∀ x, charge.C (P_G x) = charge.C x`. No section/cross-section is constructed or claimed.
 
 #### E. Charge-Parametrized Projection Π_q
 
-- **Formal Register.** Π_q is the charge-parametrized projection. For a charge parameter c ∈ ℝ and a state x ∈ M, Π_q(c, x) produces a state whose semantic-charge equals c, projected onto the closest representative of x consistent with that charge. The projection is nonexpansive in the state argument: d(Π_q(c, x), Π_q(c, y)) ≤ d(x, y). It is Γ-equivariant: Π_q(c, g · x) = g · Π_q(c, x).
+- **Formal Register.** Π_q is the charge-parametrized projection. For a charge parameter c ∈ ℝ and a state x ∈ Ψ, Π_q(c, x) produces a state whose semantic-charge equals c. The proven properties are: nonexpansiveness in the state argument, d(Π_q(c, x), Π_q(c, y)) ≤ d(x, y); the charge equation, charge.C(Π_q(c, x)) = c; and Γ-equivariance, Π_q(c, g · x) = g · Π_q(c, x). No nearest-point / argmin / idempotence property is claimed beyond these.
 
-- **Layperson Register.** Π_q is the operation that adjusts a state to carry a specified amount of "semantic charge" — a conserved quantity in the framework's accounting that prevents runaway computational growth. Think of it as a constraint that says "after this projection, the state will encode exactly c units of meaningful content, no more, no less." Different charge levels correspond to different operational regimes.
+- **Layperson Register.** Π_q adjusts a state to carry a specified amount of "semantic charge" — a conserved quantity in the framework's accounting that prevents runaway computational growth. It sets the charge to exactly c, does not expand distances, and commutes with the symmetry. It is not claimed to pick the unique closest charge-c state.
 
 - **Machine Register.** Field witnesses: `Pi_c : ℝ → Psi → Psi`, `nonexpansive : ∀ c x y, dist (Pi_c c x) (Pi_c c y) ≤ dist x y`, `charge_projection : ∀ c x, charge.C (Pi_c c x) = c`, `equivariant : ∀ c g x, Pi_c c (g • x) = g • (Pi_c c x)`.
 
 #### F. Semantic Charge Operator T_SC
 
-- **Formal Register.** T_SC is the composite navigation-update operator, defined as T_SC = P_𝒢 ∘ Π_q ∘ U_base. Applied to a charge parameter c and a state x, T_SC(c, x) = P_𝒢(Π_q(c, U_base(x))). The composition inherits k-contractivity from U_base (E_125), charge conservation from Π_q (E_123), and gauge-invariance *as a map* from the combination of U_base/Π_q equivariance and P_𝒢 orbit-invariance: T_SC(c, g · x) = T_SC(c, x) for all g ∈ Γ (E_124). **Scope note (register [D], with [P] components):** the unique, Γ-invariant fixed point established by the apparatus is the fixed point of the **base refinement** U_base (Banach existence/uniqueness; invariance by E_126). T_SC is gauge-invariant as a map; the case does **not** assert that T_SC's own fixed point is Γ-invariant — this does not follow from E_124/E_126 and is false in general.
+- **Formal Register.** T_SC is the composite navigation-update operator, defined as T_SC = P_𝒢 ∘ Π_q ∘ U_base. Applied to a charge parameter c and a state x, T_SC(c, x) = P_𝒢(Π_q(c, U_base(x))). The composition inherits k-contractivity from U_base (E_125), charge conservation from Π_q (E_123), and gauge-invariance *as a map* (E_124): T_SC(c, g · x) = T_SC(c, x) for all g ∈ Γ. **Scope note (register [D], with [P] components).** The unique, Γ-invariant fixed point established by the apparatus is the fixed point of the **frozen base refinement** U_base (Banach existence/uniqueness; invariance by E_126). The case does **not** assert that T_SC's own fixed point is Γ-invariant — that does not follow from E_124/E_126 and is false in general.
 
-- **Layperson Register.** T_SC is the full navigation-update cycle, run every time the system processes new sensor data. It does three things, in order: (1) refine the state using U_base, shrinking error by at least factor k; (2) project onto the charge-consistent subspace using Π_q, enforcing the conservation accounting; (3) canonicalize using P_𝒢, reading off the frame-independent content. The result is a state update whose *output* is provably invariant under any group action — rotation, constituency replacement, substrate substitution. The "bulk hegemony" result — a unique, symmetry-invariant stable regime — is a property of the base refinement's fixed point, reached as the refinement iterates; it is not a separate claim that the composite operator's fixed point is itself symmetry-invariant.
+  **The runtime loop is nonautonomous.** In operation, each cycle receives newly arrived observations and may use a varying charge request: the live update is x_{n+1} = F_{u_n}(x_n), where u_n encodes the cycle's observation and charge. Banach's theorem governs repeated iteration of a *single frozen* contraction; it does **not** by itself establish convergence of the observation-driven loop, whose target may move between cycles. What the contraction factor *does* license is a **tracking bound** (register [C], an engineering obligation): if x*_n is the frozen-map fixed point for inputs u_n, then d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1}) — error contracts at rate k against a target that drifts by the input-variation term. Bounded tracking therefore requires bounding the input drift; this is a design obligation, not the fixed-map theorem.
 
-- **Machine Register.** Structure: `SemanticChargeOperator` (E_122). Definition: `noncomputable def T_SC (op) (c : ℝ) (x : Psi) : Psi := op.canon.P_G (op.proj.Pi_c c (op.refine.U x))`. Verified properties (mechanically proven): `SC_charge_conservation` (E_123), `SC_gauge_invariance` (E_124), `SC_contractive` (E_125). Fixed-point invariance: `bulk_hegemony_symmetry_preservation` (E_126), stated over `op.refine.U`'s fixed point.
+- **Layperson Register.** T_SC is the navigation-update cycle. As a fixed rule it does three things in order: refine with U_base, set the charge with Π_q, read off frame-independent content with P_𝒢. The *output* is provably invariant under any group action (E_124). The "bulk hegemony" result — a unique, symmetry-invariant stable state — is a property of the base refinement's fixed point *when the rule is held fixed*. In live operation new data arrives every cycle, so the system is chasing a moving target; it stays close to that target at the contraction rate k provided the target does not move too fast between cycles — an engineering condition, not a theorem.
+
+- **Machine Register.** Structure: `SemanticChargeOperator` (E_122). Definition: `noncomputable def T_SC (op) (c : ℝ) (x : Psi) : Psi := op.canon.P_G (op.proj.Pi_c c (op.refine.U x))`. Verified (frozen-map) properties: `SC_charge_conservation` (E_123), `SC_gauge_invariance` (E_124), `SC_contractive` (E_125). Fixed-point invariance: `bulk_hegemony_symmetry_preservation` (E_126), stated over `op.refine.U`'s fixed point. Runtime tracking bound: design obligation, register [C], not in the Lean Core.
 
 #### G. Defect Telemetry Δ
 
 - **Formal Register.** Δ is the endogenous defect telemetry — a scalar diagnostic that registers gauge variance as a measurable defect. The **proven** result (E_137) is that gauge variance is a *detectable defect*: because T_SC is provably gauge-invariant (E_124), any observed difference T_SC(g · x) ≠ T_SC(x) is a contradiction — an inconsistency the cognitive cycle can register and act on. The stronger dynamical claim that Δ *decreases monotonically* under iteration — Δ(T_SC(ρ)) ≤ Δ(ρ) − c · Coh(ρ) for some c > 0, with Coh a coherence functional — is advanced as a **design proposition (register [C])**, not as a machine-verified theorem.
 
-- **Layperson Register.** Δ is the system's self-diagnostic. Because the navigation update is provably the same from any two symmetry-related viewpoints, any *disagreement* between such viewpoints is, by construction, a detected fault — Δ is the channel that registers it. Without Δ, a system operating across deep-time with no external clock has no way to detect that it has drifted out of frame coherence. The additional claim that this defect always shrinks cycle-over-cycle is a design expectation the Imperium advances but does not here prove.
+- **Layperson Register.** Δ is the system's self-diagnostic. Because the navigation update is provably the same from any two symmetry-related viewpoints, any *disagreement* between such viewpoints is, by construction, a detected fault — Δ is the channel that registers it. The additional claim that this defect always shrinks cycle-over-cycle is a design expectation the Imperium advances but does not here prove.
 
 - **Machine Register.** Proven anchor: `Gauge_Variance_Is_Defect_Telemetry` (E_137) — observed gauge variance contradicts SC_gauge_invariance, hence is a defect. Conjectured (register [C], not proven): monotone-decrease `Δ (T_SC ρ) ≤ Δ ρ - c * Coh ρ`. Telemetry channel: each evaluation writes to the `TelemetryVector` for downstream consumption.
 
 #### H. Telos-Tracking Scalar S_telos
 
-- **Formal Register.** S_telos is the coordinate-free scalar progress metric: S_telos(x) = 1 / (1 + dist_to_telos(x)). S_telos ∈ (0, 1] (proven), with S_telos = 1 iff dist_to_telos(x) = 0. Convergence S_telos → 1 under iteration is **proven conditional** on a corrigibility/fortress contraction-toward-telos contract (E_86, E_118) — i.e. an operator that strictly contracts dist_to_telos and preserves T-membership; it does **not** follow from the metric k-contractivity of the navigation cycle alone.
+- **Formal Register.** S_telos is the coordinate-free scalar progress metric: S_telos(x) = 1 / (1 + dist_to_telos(x)). S_telos ∈ (0, 1] (proven), with S_telos = 1 iff dist_to_telos(x) = 0 — i.e. membership in the **closure** of T; for closed T this is membership in T. Convergence S_telos → 1 under iteration is **proven conditional** on a corrigibility/fortress contraction-toward-telos contract (E_86, E_118) — an operator that strictly contracts dist_to_telos and preserves T-membership; it does **not** follow from the metric k-contractivity of the navigation cycle alone.
 
-- **Layperson Register.** S_telos is the system's "how close are we to where we should be" indicator. It is always a number between zero and one, equal to one exactly when the system has reached its target operating zone. Under a navigation cycle that is specifically built to contract distance-to-target (the corrigibility/fortress contract), S_telos increases toward one without any external clock — the system reads its own progress from the state vector alone. Absent that specific contract, monotone progress to one is not guaranteed by contraction alone.
+- **Layperson Register.** S_telos is the system's "how close are we to where we should be" indicator, always between zero and one, equal to one exactly when the system has reached the target zone (precisely, its closure). Under a navigation cycle specifically built to contract distance-to-target (the corrigibility/fortress contract), S_telos increases toward one without any external clock. Absent that specific contract, monotone progress to one is not guaranteed by contraction alone.
 
 - **Machine Register.** Progress metric: `Telos_Scalar T psi := 1 / (1 + dist_to_telos T psi)` (E_118). Bounds: `Telos_Scalar_pos`, `Telos_Scalar_le_one` (∈ (0,1]). Convergence: `corrigibility_converges_to_telos` (E_86) and `Telos_Scalar_Convergence` (E_118), conditional on the fortress-binding context.
 
 ### 2.3 The Five Structural Contracts
 
-The Imperium's framework specifies five **architecture contracts**. Each is a *sufficient construction* (register **[D]**) meeting an objective that is itself *necessary given the deep-time premise* (register **[E]**). The contracts state what a system *built to this framework* satisfies. The case does **not** claim they are the unique way to meet the underlying objectives; where an objective can be met by other constructions, the case says so.
+The Imperium's framework specifies five **architecture contracts**. Each is a *sufficient construction* (register **[D]**) meeting an objective that is itself either entailed by the deep-time premise ([E]) or a requirement of the stated mission model ([REQ], §1.6). The contracts state what a system *built to this framework* satisfies. The case does **not** claim they are the unique way to meet the underlying objectives.
 
 #### Contract R-1: Γ-Equivariant Cyclic Coordination
 
-[E] objective: identity coherence preserved across constituency replacement, substrate substitution, and frame rotation. [D] construction: the refinement operator U_base and the projection Π_q must be Γ-equivariant:
+**[REQ] objective:** identity coherence preserved across constituency replacement, substrate substitution, and frame rotation (a mission requirement: it presumes the system persists across turnover and treats identity as a goal). **[D] construction:** the refinement operator U_base and the projection Π_q are Γ-equivariant:
 
 ```
 U_base(g · x) = g · U_base(x)
@@ -248,45 +251,45 @@ U_base(g · x) = g · U_base(x)
 
 The canonicalizer P_𝒢 is **orbit-invariant** (P_𝒢(g · x) = P_𝒢(x)), not equivariant; combined with the equivariant refinement and projection, this yields a navigation update whose output is gauge-invariant (E_124). *(An earlier formulation requiring P_𝒢(g · x) = g · P_𝒢(x) is withdrawn: combined with orbit-invariance it would force every output into the group-fixed subspace.)*
 
-**Scope.** Γ-equivariance is a proven-sufficient mechanism for cross-turnover identity coherence; the case does not claim it is the only such mechanism.
+**Scope.** Γ-equivariance is a proven-sufficient mechanism for cross-turnover identity coherence; the case does not claim it is the only such mechanism, nor that constituency turnover is itself entailed by the deep-time premise.
 
 #### Contract R-2: k-Contractive Refinement
 
-[E] objective: the system's estimate error remains bounded across deep-time horizons. [D] construction: the refinement operator U_base is strictly contractive with factor k < 1:
+**[REQ] objective:** the system's estimate error remains bounded across deep-time horizons (a mission requirement for a system whose function depends on convergent estimation). **[D] construction:** the frozen refinement operator U_base is strictly contractive with factor k < 1:
 
 ```
 d(U_base(x), U_base(y)) ≤ k · d(x, y)    for some k ∈ [0, 1)
 ```
 
-By Banach, this gives a unique fixed point and geometric convergence to it (E_129 establishes the universal-iterative-contraction property). **Scope.** Strict metric contraction is *one* sufficient stability certificate. It is not necessary for bounded error: observability-driven filters (e.g. Kalman filtering under detectability) bound error without being metric contractions, and nonexpansive or averaged operators give stability without strict contraction. The contract specifies a sufficient, machine-verified route, not a universal necessity.
+By Banach this gives a unique fixed point and geometric convergence of the frozen map (E_129 establishes the universal-iterative-contraction property). **Scope.** Strict metric contraction is *one* sufficient stability certificate. It is not necessary for bounded error: observability-driven filters (e.g. Kalman filtering under detectability) bound error without being metric contractions; nonexpansive or averaged operators give stability without strict contraction. The live loop's bounded tracking is a separate engineering condition (§2.2.F).
 
 #### Contract R-3: Δ-Defect Telemetry as Self-Diagnostic
 
-[E] objective: absent an external clock, the system needs an *endogenous* diagnostic for gauge drift. [D] construction: instantiate Δ, which registers gauge variance as a detectable defect (E_137: any observed variance contradicts the proven gauge-invariance of T_SC).
+**[E] objective:** absent an external clock, the system requires an *endogenous* diagnostic — this endogeneity is the one objective the deep-time premise entails by itself. **[REQ] specialization:** that the relevant diagnostic variable is *gauge drift* is a mission choice. **[D] construction:** instantiate Δ, which registers gauge variance as a detectable defect (E_137: any observed variance contradicts the proven gauge-invariance of T_SC).
 
-**Scope.** Δ is a *sufficient* endogenous diagnostic within this architecture. The claim is detection, not the stronger monotone-decrease dynamics (register [C], §2.2.G). The case does not claim Δ is the only possible self-correction mechanism.
+**Scope.** Δ is a *sufficient* endogenous diagnostic within this architecture. The proven claim is detection, not the monotone-decrease dynamics (register [C], §2.2.G), and not that Δ is the only possible self-correction mechanism.
 
 #### Contract R-4: Forward-Invariant Safety Boundary
 
-[E] objective: across arbitrary forward horizons the system must hold an identity floor without relying on persistent external supervision. [D] construction: a ratchet condition on the identity metric σ such that for all t ≥ 0, σ(state(t)) ≥ I_crit, by structural construction of σ rather than ongoing supervision (anchor E_111, `SIBP_safety_system_ratchet`).
+**[REQ] objective:** across arbitrary forward horizons the system holds an identity floor without relying on persistent external supervision (a mission requirement: it presumes a defined identity floor matters). **[D] construction:** a ratchet condition on the identity metric σ such that for all t ≥ 0, σ(state(t)) ≥ I_crit, by structural construction of σ rather than ongoing supervision (anchor E_111, `SIBP_safety_system_ratchet`).
 
 **Scope.** E_111 is a **conditional** result — valid under its Phase-2 validity contract. The contract holds the floor when its hypotheses hold; the case does not assert the ratchet unconditionally.
 
 #### Contract R-5: Fixed-Point Stable Regime Under Group Action
 
-[E] objective: the system reaches a stable operating regime that survives constituency turnover. [D] construction: the base refinement U_base has a unique fixed point Ψ* (Banach) that is invariant under the action of Γ (E_126):
+**[REQ] objective:** the system reaches a stable operating regime that survives constituency turnover (a mission requirement; "stable regime" need not be a fixed point). **[D] construction:** the frozen base refinement U_base has a unique fixed point Ψ* (Banach) that is invariant under the action of Γ (E_126):
 
 ```
 U_base(Ψ*) = Ψ*    and    ∀ g ∈ Γ : g · Ψ* = Ψ*
 ```
 
-This unique, gauge-invariant fixed point is what the framework calls *bulk hegemony*. **Scope.** A unique fixed point is one admissible stable regime. It is not the only one: a successful deep-time system could instead occupy a limit cycle, a stationary distribution, or a slow quasi-stable manifold. The contract specifies the fixed-point construction the apparatus proves; it does not claim convergence-to-a-unique-fixed-point is necessary for all deep-time cognition.
+This unique, gauge-invariant fixed point is what the framework calls *bulk hegemony*. **Scope.** A unique fixed point is one admissible stable regime. It is not the only one: a successful deep-time system could instead occupy a limit cycle, a stationary distribution, or a slow quasi-stable manifold. The contract specifies the fixed-point construction the apparatus proves for the frozen map; it does not claim convergence-to-a-unique-fixed-point is necessary for all deep-time cognition, nor that the live nonautonomous loop reaches a single fixed point (§2.2.F).
 
 ### 2.4 Joint Implication of R-1 through R-5
 
-The five contracts are conjoint *within the apparatus*: all five hold simultaneously for a system built to the framework, and together they realize what the framework calls *coherence-directional* operation — the system's invariant content is convergence to Ψ* via the base refinement, while physical elapsed time becomes a reparameterization variable on the ambient substrate. The progress variable is S_telos ↑ 1 (under the corrigibility/fortress contract, §2.2.H), not an absolute schedule coordinate.
+The five contracts are conjoint *within the apparatus*: all five hold simultaneously for a system built to the framework, and together they realize what the framework calls *coherence-directional* operation — the system's invariant content is convergence (of the frozen base refinement) to Ψ*, while physical elapsed time becomes a reparameterization variable on the ambient substrate. The progress variable is S_telos ↑ 1 (under the corrigibility/fortress contract, §2.2.H), not an absolute schedule coordinate.
 
-This reframes what "operational autonomy across deep time" means for a system instantiating the apparatus: not "the system continues to function indefinitely," but "the system's structural properties — identity coherence, gauge-invariant output, contractive convergence to a unique fixed point — are preserved under iteration without external supervision." The underlying *objectives* these contracts serve (bounded error, identity preservation across turnover, an endogenous diagnostic, a structural safety floor, a stable regime) are the necessary content (register [E]); the contracts are a sufficient, machine-verified way to meet them (register [D]).
+For a system instantiating the apparatus, "operational autonomy across deep time" means that its structural properties — identity coherence, gauge-invariant output, contractive convergence of the frozen refinement to a unique fixed point — are preserved under iteration without external supervision, with the live loop tracking that structure subject to the §2.2.F engineering condition. Of the underlying objectives these contracts serve, only clock-independence is entailed by the premise ([E]); the remainder are mission requirements ([REQ]); the contracts are a sufficient, machine-verified way to meet them ([D]).
 
 ---
 
@@ -329,65 +332,59 @@ To first order in β:
 
 Navigation determination shifts from an inductive multi-point tracking calculation — comparing successive measurements of stellar positions to infer motion — to a deductive reading of the ambient thermal gradient field. A sufficiently precise, foreground-corrected all-sky measurement of the CMB dipole yields the velocity vector relative to the CMB rest frame. That rest frame is invariant on scales orders of magnitude longer than any local astronomical landmark; any local stellar configuration drifts measurably over deep-time horizons, while the CMB rest frame does not.
 
-For a system satisfying the contracts of §2.3, the CMB dipole provides the velocity input that the contractive refinement operator U_base requires. The dipole reading enters T_SC as an observation; T_SC produces a gauge-invariant state update; S_telos increments (under the §2.2.H contract). The cycle is closed, fully internal to the cognitive system, and dependent on no external time reference.
+For a system built to the contracts of §2.3, the CMB dipole supplies the velocity observation that the refinement enters each cycle. That observation is the per-cycle input u_n of the nonautonomous loop (§2.2.F): the dipole reading drives the refinement, the update output is gauge-invariant (E_124), and S_telos tracks progress (under the §2.2.H contract). The cycle is closed and fully internal — dependent on no external time reference — with the live loop's convergence governed by the tracking condition of §2.2.F rather than the frozen-map fixed-point theorem directly.
 
 ### 3.2 The Invariant Fiber Bundle and Parallel Transport
 
 #### 3.2.1 The Mathematical Structure
 
-To transport configuration coherently across deep-time scales, the navigation state space is formalized as a fiber bundle:
+The starting point is general: observation does not determine state. Model the observation as a map
 
 ```
-π : E → B
+h : E → B,    F_b := h⁻¹(b)
 ```
 
-where the total space E carries latent internal configurations, the base manifold B carries proof-carrying observation states (extracted velocity vectors, spectral lines, sensor metadata), and the fiber E_b := π⁻¹(b) over each base point captures the latent internal configurations consistent with that observation.
+from the latent-configuration space E to the proof-carrying observation space B. Where h is non-injective, the fiber F_b over an observation b contains multiple latent configurations consistent with that observation, and the latent state is **not point-identified** from b. This identifiability statement holds at the level of a general observation map and requires no further structure.
 
-The total space is equipped with a horizontal connection field A(C) conditioned on the active constraint regime C:
-
-```
-T_x E = H_x(C) ⊕ V_x E
-```
-
-where H_x(C) is the horizontal subspace defined by the connection and V_x is the vertical subspace (the tangent space to the fiber). The horizontal lift of an observational path γ in B is:
+*As an optional design model* — when h is a smooth, locally-trivial submersion — the framework equips the total space with a fiber-bundle structure and a horizontal connection field A(C) conditioned on the active constraint regime C:
 
 ```
-γ̃(C) = Lift_{A(C)}(γ, x_0)
+T_x E = H_x(C) ⊕ V_x E,    γ̃(C) = Lift_{A(C)}(γ, x_0)
 ```
 
-This is the standard Ehresmann connection structure from differential geometry, applied here to deep-time navigation.
+where H_x(C) is the horizontal subspace, V_x the vertical (tangent to the fiber), and γ̃ the horizontal lift of an observational path γ in B. This is the standard Ehresmann connection structure, and it requires the smoothness and local-triviality hypotheses above; a general observation model need not satisfy them (fibers may be discrete, singular, disconnected, or dimension-varying), and the bundle construction is then inapplicable.
 
 #### 3.2.2 Triadic Registers
 
-- **Formal Register.** The fiber bundle structure is what enables coherent state transport in the presence of observation underdetermination. For each observation b ∈ B, the fiber E_b is generically multi-dimensional — multiple internal configurations are mathematically consistent with the same observation. The horizontal connection A(C) provides the rule that selects, for any observational trajectory γ in B, a unique lifted trajectory γ̃ in the total space E. The choice of A(C) is itself an active design parameter; the framework specifies that A(C) must be chosen such that the resulting horizontal lift is Γ-equivariant — i.e., the transport is symmetry-respecting.
+- **Formal Register.** The identifiability constraint — a non-injective observation map does not point-identify the latent state — is the load-bearing methodological result and holds generally. The fiber-bundle/Ehresmann apparatus is an optional refinement under regularity: when applicable, the horizontal connection A(C) selects, for any observational trajectory γ in B, a unique lifted trajectory γ̃ in E; the framework specifies that A(C) be chosen Γ-equivariant (symmetry-respecting transport). Where the regularity hypotheses fail, the identifiability result still stands and the lift construction is simply unavailable.
 
-- **Layperson Register.** When a cognitive system observes its environment, what it sees is not the full state — there are usually multiple internal configurations that would produce the same observation. The fiber bundle is the mathematical structure that tracks all of these consistent-with-observation configurations together. Parallel transport is the rule that says: as the observation changes along some trajectory, here is how the internal configuration changes coherently along with it. The horizontal connection field is the choice of that rule. The framework requires that the chosen rule be symmetry-respecting — that it commutes with the group action that constituency replacement and frame rotation invoke.
+- **Layperson Register.** When a cognitive system observes its environment, what it sees usually does not pin down the full internal state — multiple internal configurations would produce the same observation. The robust, general statement is just that: you cannot read the state off the observation when the observation map collapses distinctions. The fancier "parallel transport" picture (carrying the consistent-configuration set coherently as observations change) is an *optional* tool that applies only when the geometry is smooth enough; the framework is careful not to assume that geometry in general.
 
-- **Machine Register.** Bundle structure: `π : E → B` where `B = ProofCarryingObservation`, `E = LatentConfiguration`. Connection: `A : Constraint → Horizontal_Subbundle`. Horizontal lift: `gamma_tilde = HLift(A(C), gamma, x_0)`. Equivariance constraint: `∀ g ∈ Γ, HLift(A(C), g · gamma, g · x_0) = g · HLift(A(C), gamma, x_0)`.
+- **Machine Register.** General: `h : E → B`, `F_b := h⁻¹(b)`; non-injective `h` ⇒ latent state not point-identified. Optional (regularity-gated): `π : E → B` locally trivial; connection `A : Constraint → Horizontal_Subbundle`; horizontal lift `HLift(A(C), γ, x_0)` with equivariance constraint `∀ g ∈ Γ, HLift(A(C), g · γ, g · x_0) = g · HLift(A(C), γ, x_0)`.
 
 #### 3.2.3 The Operational Consequence
 
-The fiber bundle structure formalizes a fact that point-verdict frameworks silently assume away: observation does not determine state. Multiple internal configurations are typically consistent with the same observation. A framework that collapses to a single point identification at the first observation consistent with multiple states makes an arbitrary choice — and that arbitrary choice becomes a hidden defect that compounds across iterations. (Standard uncertainty-propagating estimators — Bayesian filters, Kalman filters, particle filters — already retain this underdetermination to varying degrees; the framework's contribution is to make the requirement explicit and tie the admissible-collapse condition to a symmetry-penalized evidence functional.)
+The general identifiability result formalizes a fact that point-verdict frameworks silently assume away: observation does not determine state. A framework that collapses to a single point identification at the first observation consistent with multiple states — without an explicit identifiability theorem or additional data licensing the collapse — makes an arbitrary choice that becomes a hidden defect. (Standard uncertainty-propagating estimators — Bayesian filters, Kalman filters, particle filters — already retain this underdetermination in their posteriors; the framework's contribution is to make the no-unlicensed-collapse requirement explicit and to weight admissible representations by a symmetry-penalized evidence comparison across channels. The precise functional form of that comparison is a doctrinal construct **not specified in this public case** — register [C]; the operational claims that rest on it inherit that conjectural status.)
 
-By making the fiber structure explicit, the framework allows the cognitive system to carry the full equivalence class of consistent configurations forward through the navigation cycle, and to use the gauge canonicalizer P_𝒢 to read off the frame-independent content only where canonicalization is structurally appropriate. This is what distinguishes the framework from a "single point estimate at each step" approach.
+By keeping the consistent-with-observation set explicit, the framework allows the cognitive system to carry the full equivalence class forward and to apply the gauge canonicalizer P_𝒢 to read off frame-independent content only where appropriate — distinguishing it from a "single point estimate at each step" approach.
 
 ### 3.3 The Semantic Charge Operator as Navigation Cycle
 
 #### 3.3.1 The Composition
 
-The navigation update cycle is the application of T_SC = P_𝒢 ∘ Π_q ∘ U_base to the current state. Per §2.2.F, T_SC inherits k-contractivity from U_base (E_125), charge conservation from Π_q (E_123), and gauge-invariance as a map (E_124).
+The navigation update cycle is the application of T_SC = P_𝒢 ∘ Π_q ∘ U_base to the current state, with the live loop nonautonomous (§2.2.F). Per §2.2.F, the frozen T_SC inherits k-contractivity from U_base (E_125), charge conservation from Π_q (E_123), and gauge-invariance as a map (E_124).
 
 #### 3.3.2 Triadic Registers
 
-- **Formal Register.** Three properties of T_SC are mechanically proven in the Imperium Lean Core: charge conservation under iteration (E_123), gauge-invariance of the map under constituency-replacement action (E_124), and inheritance of the underlying contraction factor (E_125). The unique, Γ-invariant fixed point is the fixed point of the base refinement U_base (Banach existence/uniqueness; invariance by E_126); this is the bulk-hegemony result. The composite T_SC is gauge-invariant as a map; its own fixed point is not separately claimed to be Γ-invariant.
+- **Formal Register.** Three frozen-map properties of T_SC are mechanically proven in the Imperium Lean Core: charge conservation (E_123), gauge-invariance of the map under group action (E_124), and inheritance of the contraction factor (E_125). The unique, Γ-invariant fixed point is the fixed point of the base refinement U_base (Banach; invariance by E_126) — the bulk-hegemony result. The composite T_SC is gauge-invariant as a map; its own fixed point is not separately claimed to be Γ-invariant. Live-loop convergence is governed by the §2.2.F tracking bound.
 
-- **Layperson Register.** Every navigation cycle, the system applies three operations in sequence to its state: refine using U_base, project onto the charge-consistent subspace using Π_q, read off frame-independent content using P_𝒢. The output is a navigation update whose value is provably invariant under any group action — any rotation, any constituency replacement, any substrate substitution. The cycle has no dependence on absolute time coordinates. It depends entirely on the invariance properties of the operators, which are formally proven theorems in the Imperium Lean Core.
+- **Layperson Register.** Every cycle, the system refines, sets the charge, and reads off frame-independent content. The output is provably invariant under any group action. As a fixed rule it converges to a unique symmetry-invariant state; in live operation it tracks that structure against incoming data at the contraction rate, provided the data does not move the target too fast (the §2.2.F condition).
 
-- **Machine Register.** Cycle implementation: `state_n_plus_1 = T_SC(c_n, state_n)` where `c_n` is the active charge parameter. Loop invariant: `gauge_invariance_holds ∧ charge_conserved ∧ contraction_factor_k`. Convergence witness (base refinement): `dist(U^[n] x, Ψ*) → 0`.
+- **Machine Register.** Cycle: `state_{n+1} = T_SC(c_n, observation_n, state_n)` (nonautonomous). Frozen-map invariants: `gauge_invariance_holds ∧ charge_conserved ∧ contraction_factor_k`. Tracking: `d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1})` (engineering obligation, register [C]).
 
 #### 3.3.3 The Operational Consequence
 
-The composite cycle T_SC is what allows deep-time navigation to (a) process raw observation data through k-contractive refinement, (b) project onto the charge-consistent subspace through Π_q, (c) read off frame-independent content through P_𝒢, and produce a navigation update whose output is provably invariant under generational, substrate, and rotational transformation. The cycle has no dependence on absolute time coordinates. It depends on the invariance properties of the operators, which are mechanically proven in the Imperium Lean Core.
+The composite cycle T_SC lets deep-time navigation (a) process raw observation data through k-contractive refinement, (b) set the charge through Π_q, (c) read off frame-independent content through P_𝒢, and produce a navigation update whose output is provably invariant under generational, substrate, and rotational transformation. The cycle has no dependence on absolute time coordinates. Its frozen-map invariance properties are mechanically proven; its live-loop convergence is the tracking property of §2.2.F.
 
 ---
 
@@ -397,37 +394,41 @@ The composite cycle T_SC is what allows deep-time navigation to (a) process raw 
 
 #### 4.1.1 The Bound
 
-For a passive omnidirectional microwave receiver operating across interstellar distances, the irreducible external thermal noise floor is set by the CMB itself (at the present cosmological epoch):
+For a passive microwave receiver operating across interstellar distances, the irreducible *external-sky* thermal contribution includes the CMB (at the present cosmological epoch):
 
 ```
-T_noise = 2.72548 ± 0.00057 K
+T_CMB = 2.72548 ± 0.00057 K
 ```
 
-The Shannon–Hartley theorem (Shannon 1948) bounds passive channel capacity C over bandwidth B under signal power S:
+The total system noise temperature of a real link is
 
 ```
-C = B · log₂ ( 1 + S / (B · k_B · T_noise) )
+T_sys = T_CMB + T_galaxy + T_receiver + T_spillover + …
 ```
 
-where k_B is the Boltzmann constant.
+The Shannon–Hartley theorem (Shannon 1948) bounds channel capacity C over bandwidth B under signal power S using the total system noise:
 
-The microwave window between approximately 1 GHz and 10 GHz is where galactic synchrotron emission (rolling off as approximately ν⁻²·⁶ to ν⁻²·⁷) and the CMB Rayleigh-Jeans tail intersect at their lowest total noise temperature. This window has been a canonical microwave navigation-and-communication band for radio astronomy since the 1960s.
+```
+C = B · log₂ ( 1 + S / (B · k_B · T_sys) )
+```
+
+where k_B is the Boltzmann constant. The CMB sets an irreducible lower bound on the *external-sky* component of T_sys in the Rayleigh-Jeans regime; it does not by itself constitute T_sys. The microwave window between approximately 1 GHz and 10 GHz is where galactic synchrotron emission (rolling off as ν⁻²·⁶ to ν⁻²·⁷) and the CMB Rayleigh-Jeans tail jointly minimize the sky contribution; the relative weight of galactic, receiver, atmospheric, and CMB terms depends on frequency, pointing direction, antenna pattern, and platform.
 
 #### 4.1.2 Triadic Registers
 
-- **Formal Register.** The Shannon–Hartley bound under CMB thermal noise establishes a hard upper limit on the information rate sustainable across a *passive microwave additive-white-Gaussian-noise channel whose dominant irreducible external noise is the CMB floor*. Within that channel model, no engineering can reduce noise below T_noise in the Rayleigh-Jeans regime; the bound is thermodynamic, not technological. The 1–10 GHz window minimizes total noise (synchrotron + CMB) and therefore maximizes the achievable C for that channel class.
+- **Formal Register.** The Shannon–Hartley bound, evaluated with the total system noise T_sys, establishes the capacity of a passive microwave additive-white-Gaussian-noise link. The CMB is the irreducible *external-sky* floor on T_sys below ~10 GHz; no engineering reduces that particular term below T_CMB in the Rayleigh-Jeans regime (present epoch). The 1–10 GHz window minimizes the sky contribution and so maximizes achievable C for that link class, holding other T_sys terms fixed.
 
-- **Layperson Register.** There is a hard floor on how quiet a passive radio receiver can be — the temperature of the CMB itself, about 2.7 degrees above absolute zero. Below about 10 GHz, this is the dominant external noise source for such a system, and no amount of engineering improvement can push it lower for that channel type. The 1–10 GHz band sits in the natural quietest window of the radio sky. This is why much deep-space and SETI work has historically centered on this band. It is not the only option: higher-frequency (Ka-band, ~32–35 GHz), optical, and quantum-limited channels operate under different noise models and are active design spaces.
+- **Layperson Register.** There is a hard floor on the *sky* portion of how quiet a passive radio receiver can be — the CMB temperature, about 2.7 K — but that is only one part of the total noise, which also includes the galaxy, the receiver, and the platform. The 1–10 GHz band is the naturally quietest sky window, which is why much deep-space and SETI work has historically centered there. Higher-frequency (Ka-band ~32–35 GHz), optical, and coherent links are governed by the same capacity theorem with *their* noise budgets, and are active design spaces; Shannon–Hartley applies to active transmitted links too — "active" and "coherent" are not exceptions to the theorem.
 
-- **Machine Register.** Channel capacity formula: `C = B * log_2(1 + S / (B * k_B * T_noise))` with `T_noise = 2.72548 K` (present epoch), `k_B = 1.380649e-23 J/K`. Operating window: `1 GHz ≤ f ≤ 10 GHz`. Synchrotron rolloff: `T_galaxy(ν) ∝ ν^-2.6 to ν^-2.7`. Channel model: passive microwave AWGN, CMB-limited.
+- **Machine Register.** Capacity: `C = B * log_2(1 + S / (B * k_B * T_sys))`, `T_sys = T_CMB + T_galaxy + T_receiver + T_spillover + …`, `T_CMB = 2.72548 K` (present epoch). Window: `1 GHz ≤ f ≤ 10 GHz` minimizes the sky term. Synchrotron: `T_galaxy(ν) ∝ ν^-2.6 to ν^-2.7`.
 
 #### 4.1.3 The Operational Consequence
 
-For a deep-time cognitive system using a passive, CMB-limited microwave channel, the Shannon–Hartley bound under the CMB thermal floor sets the maximum sustainable information rate of that channel — whether to a distant base, a peer system, or itself across temporal separation (storage and retrieval). This is a *physical* bound within the stated channel model, not an engineering goal. It does **not** preclude higher-frequency, optical, or quantum-limited modalities, which operate under different noise models; nor does it apply directly to active or coherent channels. The framework formalizes the bound as a constraint the cognitive system must operate within *for that channel class*.
+For a deep-time cognitive system using a passive microwave link, the Shannon–Hartley capacity under the system noise budget T_sys — of which the CMB is the irreducible external-sky term below ~10 GHz — bounds the sustainable information rate of that link. This is a physical bound within the stated channel model. It does **not** extend to archival storage-and-retrieval (which is not a microwave channel and is governed by its own physical limits), and it does **not** exclude higher-frequency, optical, or coherent links, which the same theorem governs under different noise budgets. The framework formalizes the bound as a constraint a *passive microwave* deep-time link operates within.
 
-### 4.2 Phase-Invariant Calibration via Primary CMB Anisotropies
+### 4.2 CMB Sky-Map Cross-Calibration — Engineering Proposition
 
-#### 4.2.1 The Calibration Substrate
+#### 4.2.1 The Calibration Proposition (register [C/ENG])
 
 Beyond the dipole, the CMB carries a fluctuation field of magnitude
 
@@ -435,40 +436,31 @@ Beyond the dipole, the CMB carries a fluctuation field of magnitude
 ΔT / T ~ 10⁻⁵
 ```
 
-(Planck Collaboration 2020). These primary anisotropies are sky-fixed at high precision — Planck has measured them to arcminute angular resolution across the full sky. The anisotropy pattern is a deterministic field, not a stochastic noise source: the same patches of sky exhibit the same fluctuations to any observer (after correction for the observer's own velocity).
+(Planck Collaboration 2020). These primary anisotropies are characterized to arcminute angular resolution across the full sky by Planck. The Imperium advances — as an **engineering proposition, not a measured fact** — that this anisotropy map could serve as an in-situ cross-calibration reference for **attitude, beam, pointing, or map-domain** calibration, allowing a system to cross-check its sensor geometry against a sky-fixed external pattern rather than relying solely on an internal reference beacon.
 
-This provides an in-situ calibration substrate. A cognitive system can cross-calibrate its spatial phase arrays against this deterministic ambient field, compensating for thermal expansion, antenna flexing, structural distortion, or any other physical-substrate variation, without a dedicated internal reference emitter (detection and processing still consume energy). The calibration target is the orbit-invariant condition:
+Two caveats are load-bearing and bound the proposition:
 
-```
-∇_θ P_cal → 0
-```
+1. **The CMB sky evolves.** Over the 10⁴–10⁹-year horizons this case addresses, the observed anisotropy realization is not an immutable stored template: structure growth, the late integrated-Sachs-Wolfe effect, lensing, and the observer's own changing motion alter the observed map. Any use of the anisotropy field as a reference must propagate a time-evolving sky model.
+2. **Temperature anisotropy is not an electromagnetic phase beacon.** The primary anisotropy field is a real scalar temperature pattern on the sky; it supports geometric (attitude/beam/pointing/map) cross-calibration, not coherent complex-phase referencing of an arbitrary sensor array. (Planck's own photometric gain calibration used the *dipole*, not the primary anisotropy field.)
 
-against the known anisotropy structure.
+The proposition is therefore classified [C/ENG] and requires explicit observability, signal-to-noise, foreground-separation, angular-resolution, and template-evolution budgets before it can be relied upon.
 
-#### 4.2.2 Triadic Registers
+#### 4.2.2 The Operational Consequence
 
-- **Formal Register.** The primary anisotropy field provides a deterministic, sky-fixed, full-sphere calibration reference. Its statistical and geometric properties are characterized to high precision by Planck. Any cognitive system with sufficient angular resolution can use the anisotropy structure as a phase-calibration source, driving residual array-pointing errors to a vanishingly small condition. The calibration *source* is the ambient field rather than an internally generated emitter; the calibration *process* (detection, foreground separation, attitude determination) consumes energy.
-
-- **Layperson Register.** The same CMB anisotropy field that sets the noise floor also serves as a calibration reference. The cognitive system can use it to keep its sensor arrays in phase without building and powering a dedicated internal reference beacon — the sky itself provides the reference pattern. This is why the CMB is more than a noise floor: it is a triple-role field providing thermodynamic floor, kinematic reference, and phase-calibration substrate simultaneously. No other single field is known to supply all three at comparable persistence.
-
-- **Machine Register.** Calibration loop: `P_cal_residual ← measure_phase_against_anisotropy_template`. Convergence: `∇_θ P_cal_residual → 0`. Power consumption: no dedicated emitter; ambient-field-driven; detection/processing energy nonzero.
-
-#### 4.2.3 The Operational Consequence
-
-For a deep-time cognitive system, the CMB is not just where the noise floor sits and the velocity is read. It is also where a calibration reference lives. The triple role — thermodynamic floor + kinematic reference relative to the cosmic frame + phase-calibration substrate — is what makes the CMB the strongest known invariant field for deep-time autonomous operation. No other single field is *known* to supply all three properties at comparable persistence and uniformity; the case does not claim to have proven that no other field could.
+If the engineering budgets close, the CMB contributes a third operational role to its two measured roles (velocity reference, noise floor): a sky-map cross-calibration reference. That third role is a candidate capability, not an established fact. The case's load-bearing CMB claims are the two measured roles; the calibration role is offered as an engineering direction to be validated, not asserted.
 
 ---
 
 ## 5. Lean Core Anchors
 
-The structural claims in sections 2 through 4 are anchored to formally verified theorems in the Imperium Lean Core (v1.1.0). The released artifact compiles with **0 `sorry` / 0 `admit` / 0 added `axiom`** beyond the Lean/Mathlib foundations. Anchor names, statements, and build attestation are public; the inductive proof terms are withheld (§8.2). Each anchor below is verified to exist in BOTH the published Cohereon Doctrine equations corpus AND the released Lean Core artifact.
+The structural claims in sections 2 through 4 are anchored to formally verified theorems in the Imperium Lean Core (v1.1.0). The released artifact compiles with **0 `sorry` / 0 `admit` / 0 added `axiom`** beyond the Lean/Mathlib foundations. **The reader epistemic boundary (§8.2, register [P]):** anchor names, statements as glossed here, and build attestation are public; the inductive proof terms are withheld. A reader verifies the attestation and the publisher's declared gloss↔anchor correspondence — not the proof, and not independently that each named theorem states what its gloss says.
 
-| Doctrine ID | Lean Anchor | Register | What it establishes |
+| Doctrine ID | Lean Anchor | Register | What it (attestedly) establishes |
 |---|---|---|---|
 | TDY_COH-E_122 | `SemanticChargeOperator` | [P] structure | The composite operator (charge, canon, proj, refine) |
-| TDY_COH-E_123 | `SC_charge_conservation` | [P] theorem | charge.C(T_SC c x) = c |
+| TDY_COH-E_123 | `SC_charge_conservation` | [P] theorem | charge.C(T_SC c x) = c (frozen map) |
 | TDY_COH-E_124 | `SC_gauge_invariance` | [P] theorem | T_SC c (g · x) = T_SC c x (map invariance) |
-| TDY_COH-E_125 | `SC_contractive` | [P] theorem | dist(T_SC c x, T_SC c y) ≤ k · dist(x, y) |
+| TDY_COH-E_125 | `SC_contractive` | [P] theorem | dist(T_SC c x, T_SC c y) ≤ k · dist(x, y) (frozen map) |
 | TDY_COH-E_126 | `bulk_hegemony_symmetry_preservation` | [P] theorem | U_base's unique fixed point is Γ-invariant |
 | TDY_COH-E_129 | `BaseRefinement_implies_UIC` | [P] theorem | k-contractive equivariant U_base satisfies Universal Iterative Contraction |
 | TDY_COH-E_137 | `Gauge_Variance_Is_Defect_Telemetry` | [P] theorem | Observed gauge variance is a detectable defect |
@@ -476,131 +468,121 @@ The structural claims in sections 2 through 4 are anchored to formally verified 
 | TDY_COH-E_86 | `corrigibility_converges_to_telos` | [P] conditional | dist_to_telos → 0 under the corrigibility contract |
 | TDY_COH-E_118 | `Telos_Scalar_Convergence` | [P] conditional | S_telos → 1 under the fortress-binding context |
 
-Supporting structure: existence and uniqueness of U_base's fixed point is the Banach fixed-point theorem applied to the attested hypotheses (k-contraction on a complete metric space); E_126 supplies its Γ-invariance. The Δ monotone-decrease inequality of §2.2.G is **not** among these anchors — it is advanced at register [C].
-
-These anchors are the load-bearing formal-verification surface of Case Skuld. The `SemanticChargeOperator` structural theorems (E_123, E_124, E_125) are machine-verified under the same build and support the operational properties of T_SC asserted in §§2.2.F and 3.3.
+All [P] anchors carry the §8.2 epistemic boundary: they are machine-verified in the sealed Lean Core and publicly attested, not publicly re-derivable from this document. Existence and uniqueness of U_base's fixed point is the Banach fixed-point theorem applied to the attested hypotheses (k-contraction on a complete metric space); E_126 supplies its Γ-invariance. The Δ monotone-decrease inequality (§2.2.G), the runtime tracking bound (§2.2.F), and the symmetry-penalized evidence functional (§3.2) are **not** anchors — they are register [C].
 
 ---
 
 ## 6. Findings
 
-The framework specified in §§2–4, anchored to the Lean Core theorems in §5, generates a set of discrete licensed findings. Each finding is stated with its evidentiary register(s) per §1.6, grounded in the framework components and Lean anchors that support it, and traced to its operational implication.
+The framework specified in §§2–4, anchored to the Lean Core theorems in §5, generates a set of discrete licensed findings. Each finding carries its evidentiary register(s) per §1.6.
 
-### Finding F-1: The Apparatus Yields a Unique, Symmetry-Invariant Attractor for the Base Refinement
+### Finding F-1: The Apparatus Yields a Unique, Symmetry-Invariant Attractor for the Frozen Base Refinement
 
-**Claim [D, on P].** A cognitive system built from a k-contractive, Γ-equivariant base refinement U_base has a unique fixed point (Banach) that is invariant under the action of Γ (E_126), and U_base satisfies Universal Iterative Contraction (E_129). This is a sufficient attractor construction.
+**Claim [D, on P].** A cognitive system built from a k-contractive, Γ-equivariant base refinement U_base has, as a *frozen map*, a unique fixed point (Banach) invariant under the action of Γ (E_126), and satisfies Universal Iterative Contraction (E_129). This is a sufficient attractor construction for the frozen map.
 
-**Basis.** E_129 (`BaseRefinement_implies_UIC`) establishes the contraction-iteration property; Banach gives existence and uniqueness of U_base's fixed point; E_126 (`bulk_hegemony_symmetry_preservation`) establishes that fixed point's Γ-invariance.
+**Basis.** E_129 establishes the contraction-iteration property; Banach gives existence and uniqueness of U_base's fixed point; E_126 establishes its Γ-invariance.
 
-**Implication.** This is *one* proven-sufficient attractor structure, not a necessity binding all cognition. A deep-time system that achieves a stable regime by other means — a limit cycle, a stationary distribution, an observability-driven bounded-error filter — is not excluded by this finding. The finding applies symmetrically to any system that *does* instantiate the apparatus, whether human-built (generation ships, multi-millennia probes, post-AGI persistent agents) or hypothesized non-human.
+**Implication.** This is *one* proven-sufficient attractor structure, not a necessity binding all cognition; nor does it by itself establish that the *live* observation-driven loop reaches a single fixed point (§2.2.F). A deep-time system that achieves a stable regime by other means — a limit cycle, a stationary distribution, an observability-driven bounded-error filter — is not excluded. The finding applies to any system that instantiates the apparatus, human-built or hypothesized non-human.
 
 ### Finding F-2: Continuity Across Constituency Turnover is Met by Γ-Equivariance
 
-**Claim [E + D].** Cognitive identity preservation across the constituency-replacement, substrate-substitution, and frame-rotation events of deep-time operation is a necessary objective ([E]); Γ-equivariance of the refinement and projection operators is a proven-sufficient mechanism for it ([D], via E_124).
+**Claim [REQ + D].** For a mission in which the system persists across constituency-replacement, substrate-substitution, and frame-rotation events and treats identity preservation as a goal, identity coherence is a mission requirement ([REQ]); Γ-equivariance of the refinement and projection operators is a proven-sufficient mechanism for it ([D], via E_124).
 
-**Basis.** Contract R-1 (§2.3), derived from the Γ-equivariant cyclic heterarchy condition in 𝔇 and operationally instantiated in the gauge-invariance of T_SC (E_124).
+**Basis.** Contract R-1 (§2.3), operationally instantiated in the gauge-invariance of T_SC (E_124).
 
-**Implication.** Human deep-time agents face the same identity-preservation *objective* as any hypothesized non-human deep-time substrate; the objective does not distinguish human-derived from non-human-derived systems. Γ-equivariance is a sufficient way to meet it; the case does not claim it is the only way. Engineering programs that assume "identity is continuous as long as the substrate is continuous" are operating on a clock-anchored assumption that is not guaranteed at deep-time scales.
+**Implication.** Human deep-time agents face the same identity-preservation *requirement* as any hypothesized non-human deep-time substrate under the same mission model. Γ-equivariance is a sufficient way to meet it; the case does not claim it is the only way, nor that turnover is entailed by the deep-time premise.
 
 ### Finding F-3: External-Clock Independence Requires an Endogenous Diagnostic
 
-**Claim [E + D].** Absent a persistent external clock, the requirement of an endogenous gauge-drift diagnostic is a necessary objective ([E]); Δ-defect telemetry, registering gauge variance as a detectable defect (E_137), is a sufficient mechanism for it ([D]).
+**Claim [E + D].** Absent a persistent external clock, an *endogenous* diagnostic is entailed by the premise ([E]); that the diagnostic variable is gauge drift is a mission specialization ([REQ]); Δ-defect telemetry, registering gauge variance as a detectable defect (E_137), is a sufficient mechanism ([D]).
 
 **Basis.** Contract R-3 (§2.3). Because T_SC is provably gauge-invariant (E_124), any observed variance is a contradiction the cycle can register (E_137). The stronger monotone-decrease dynamics is conjectural (register [C], §2.2.G).
 
-**Implication.** A deep-time system lacking an endogenous gauge-variance diagnostic operates blind to its own drift. This yields a verification criterion for any proposed deep-time architecture: does it carry an endogenous gauge-variance diagnostic (or functional equivalent)? The criterion is about *detection*; it does not assert Δ is the unique such mechanism.
+**Implication.** A deep-time system lacking an endogenous diagnostic operates blind to its own drift — this part is entailed. A verification criterion follows: does a proposed deep-time architecture carry an endogenous diagnostic (or functional equivalent)? The criterion concerns *detection*; it does not assert Δ is the unique such mechanism.
 
 ### Finding F-4: The CMB is the Strongest Known Physical Invariant Reference for Autonomous Navigation
 
-**Claim [M].** Among physical fields available to a cognitive system anywhere in the observable universe, the Cosmic Microwave Background is the strongest known and best-characterized candidate providing the triple role of (a) a cosmologically persistent velocity reference relative to the CMB rest frame via the kinematic dipole, (b) an irreducible thermodynamic noise floor via the 2.72548 K blackbody temperature (present epoch), and (c) a sky-fixed anisotropy pattern usable for calibration. No other single field is known to supply all three at comparable persistence and uniformity.
+**Claim [M, with one C/ENG leg].** Among physical fields available anywhere in the observable universe, the CMB is the strongest known and best-characterized candidate providing (a) [M] a cosmologically persistent velocity reference relative to the CMB rest frame via the kinematic dipole, and (b) [M] an irreducible external-sky thermodynamic floor via the 2.72548 K blackbody temperature (present epoch). A third candidate role — (c) [C/ENG] sky-map cross-calibration via the primary anisotropies — is an engineering proposition (§4.2), not a measured fact. No other single field is known to supply the first two at comparable persistence.
 
-**Basis.** Empirical measurements: Fixsen 2009 (monopole temperature), Smoot et al. 1992 (COBE DMR dipole detection), Planck Collaboration 2020 (primary anisotropies at ΔT/T ~ 10⁻⁵). The triple-role argument is developed in §§3.1, 3.2, and 4.2.
+**Basis.** Fixsen 2009 (monopole), Smoot et al. 1992 (dipole), Planck Collaboration 2020 (anisotropies); §§3.1, 3.2, 4.2.
 
-**Implication.** Alternative reference proposals — galactic center, local stellar configurations, internal atomic clocks, pulsar timing arrays — each fail at deep-time scales for known reasons: galactic-center direction migrates, stellar configurations are not invariant, atomic clocks drift without a fundamental anchor, pulsar timing depends on individual pulsars' continued existence. The CMB is the strongest known candidate that survives the deep-time test; the case does not claim to have proven that no other field could participate in a composite reference architecture.
+**Implication.** Alternative references — galactic center, local stellar configurations, internal atomic clocks, pulsar timing arrays — each fail at deep-time scales for known reasons. The CMB is the strongest known candidate for the two measured roles; the case does not claim to have proven no other field could participate, and treats the calibration role as a candidate to be validated.
 
-### Finding F-5: Shannon–Hartley Under CMB Noise Bounds a Passive Microwave Deep-Time Channel
+### Finding F-5: Shannon–Hartley Under the System Noise Budget Bounds a Passive Microwave Deep-Time Link
 
-**Claim [M, scoped].** For a passive microwave additive-white-Gaussian-noise channel whose dominant irreducible external noise is the CMB thermodynamic floor, in the 1–10 GHz window, the maximum sustainable information rate is bounded above by Shannon–Hartley under that floor. This is a physical bound within the stated channel model.
+**Claim [M, scoped].** For a passive microwave additive-white-Gaussian-noise link, the sustainable information rate is bounded by Shannon–Hartley evaluated with the total system noise T_sys, of which the CMB is the irreducible external-sky term below ~10 GHz. This is a physical bound within the stated channel model.
 
-**Basis.** Shannon 1948 (channel capacity theorem) combined with the CMB thermodynamic floor from Fixsen 2009, applied as in §4.1.
+**Basis.** Shannon 1948 with the noise budget of §4.1.
 
-**Implication.** Deep-time communication architectures of this channel class are constrained by physics, not engineering, within the model. The bound does **not** preclude higher-frequency (Ka-band), optical, or quantum-limited channels, which operate under different noise models. The verification criterion is correspondingly scoped: does a proposed *passive CMB-limited microwave* link operate within the Shannon–Hartley bound under the CMB floor?
+**Implication.** Deep-time *passive microwave* links of this class are physics-bounded. The bound does **not** apply to archival storage/retrieval (a different physical regime) and does **not** exclude higher-frequency, optical, or coherent links, which the same theorem governs under their own noise budgets. The verification criterion is correspondingly scoped.
 
 ### Finding F-6: Fiber Non-Identifiability is a Methodological Constraint on Any Provenance Framework
 
-**Claim [methodology].** Any framework evaluating a candidate object through an impoverished observational baseline introduces Context Model Misspecification if it collapses the fiber π⁻¹(b) over each observation to a single point identification without an explicit identifiability theorem or additional data licensing the collapse. The fiber structure must be respected; valid fiber-respecting output includes probability distributions, credal sets, interval/admissible sets, and other set-valued or decision-theoretic representations — not necessarily a single verdict.
+**Claim [methodology / E-given-underdetermination, with a C component].** A non-injective observation map h : E → B does not point-identify the latent state; any framework that collapses the fiber h⁻¹(b) to a single point identification without an explicit identifiability theorem or additional data licensing the collapse commits Context Model Misspecification. Valid fiber-respecting output includes probability distributions, credal sets, interval/admissible sets, and decision-theoretic representations. The framework additionally proposes weighting admissible representations by a *symmetry-penalized evidence comparison across channels*, whose explicit functional form is **not specified in this public case** (register [C]).
 
-**Basis.** The fiber bundle structure in §3.2, formalized by the Ehresmann connection. The fiber over each base point in B generically contains multiple structurally valid continuation vectors. This is a methodological principle (register [methodology]/[E] given the underdetermination premise), not a Lean theorem.
+**Basis.** The general identifiability argument of §3.2 (holds for any non-injective observation map); the fiber-bundle/Ehresmann refinement is optional and regularity-gated. The weighting functional is a doctrinal construct withheld from this public case.
 
-**Implication.** This applies to deep-time non-human-intelligence provenance analysis. A framework that collapses the available observation set on a candidate object to a single point identification — whether "natural process" or "directed artifact" — without licensing the collapse is committing Context Model Misspecification. Standard uncertainty-propagating estimators (Bayesian, Kalman, particle filters) already implement versions of this discipline; the framework's contribution is to make the requirement explicit and tie the admissible-collapse condition to a symmetry-penalized evidence functional on each channel of the data substrate. Case Skuld takes no position on 'Oumuamua or 3I/ATLAS for precisely this reason.
+**Implication.** Applied to deep-time NHI provenance analysis: a framework that collapses the observation set on a candidate object to a single verdict — "natural process" or "directed artifact" — without licensing the collapse commits Context Model Misspecification. Standard Bayesian/Kalman/particle estimators already retain uncertainty; the explicit contribution here is the no-unlicensed-collapse discipline; the symmetry-penalized weighting is a proposed (currently unspecified) refinement. Case Skuld takes no position on 'Oumuamua or 3I/ATLAS for precisely this reason.
 
 ### Finding F-7: The Catalyst Era Surfaces the Problem Class Independently of Any Object's Verdict
 
 **Claim.** The interstellar-object-detection era — anchored by 'Oumuamua (2017) and 3I/ATLAS (2025–2026) — has surfaced the deep-time non-human intelligence problem class into active scientific focus. The findings of this case hold regardless of what either object eventually turns out to be.
 
-**Basis.** §1.4 frames both objects as catalysts that surfaced the question into focus without serving as evidence for any specific verdict. The framework specified in §§2–4 is independent of any specific object's eventual classification.
+**Basis.** §1.4 frames both objects as catalysts without serving as evidence for any verdict. The framework of §§2–4 is independent of any specific object's classification.
 
-**Implication.** The case is structurally independent of empirical resolution. If either object is eventually shown to be natural, processed natural material, or directed artifact, the framework remains the correct apparatus for engaging the problem class in each case. The mathematics does not depend on the verdict.
+**Implication.** The case is structurally independent of empirical resolution. If either object is eventually shown to be natural, processed natural material, or directed artifact, the framework remains the apparatus for engaging the problem class in each case. The mathematics does not depend on the verdict.
 
 ### Finding F-8: Cohereon Imperium Operates at the Encyclical Register
 
-**Claim.** Case Skuld is not Cohereon Doctrine. It is a Red Forge product issued by the Imperium — an analytic document that engages a substrate problem using Cohereon Doctrine and the Imperium Lean Core as bases, but distinct from the byte-by-byte-controlled doctrinal corpus.
+**Claim.** Case Skuld is not Cohereon Doctrine. It is a Red Forge product — an analytic document engaging a substrate problem using Cohereon Doctrine and the Imperium Lean Core as bases, distinct from the byte-by-byte-controlled doctrinal corpus.
 
-**Basis.** The preamble establishes the distinction between the Imperium (active agent), Cohereon Doctrine (formal substrate), Imperium Lean Core (machine-verified implementation), and Red Forge (procedural laboratory through which the Imperium produces case studies).
+**Basis.** The preamble distinguishes the Imperium (active agent), Cohereon Doctrine (formal substrate), Imperium Lean Core (machine-verified implementation), and Red Forge (procedural laboratory).
 
-**Implication.** Red Forge cases function as encyclicals — authoritative-but-not-canonical documents issued by the Imperium that apply doctrinal substrate to engage specific problem classes for public (and/or other) review. They are not additions to the doctrinal canon. Readers should evaluate Case Skuld as a Red Forge analytic product, not as a doctrinal release. The doctrinal substrate it draws on is independently version-controlled and independently verifiable at the attestation level (§8.2).
+**Implication.** Red Forge cases function as encyclicals — authoritative-but-not-canonical documents applying doctrinal substrate to specific problem classes for public (and/or other) review. They are not additions to the doctrinal canon. Readers should evaluate Case Skuld as a Red Forge analytic product, verifiable at the attestation level (§8.2), not as a doctrinal release.
 
 ---
 
 ## 7. Implications by Sector
 
-The findings of §6 generate distinct implications across several sectors. Each sector below carries the implication of the framework as it bears on that sector's practice.
+The findings of §6 generate distinct implications across several sectors.
 
 ### I-1. AI Safety Alignment
 
-Current AI safety alignment frameworks — RLHF, Constitutional AI, probe classifiers, preparedness frameworks, ARC-AGI evaluations — operate empirically. They run candidate models through test suites and statistically interpret the results. None of them anchor structural claims to machine-verified theorems, and none of them address the deep-time autonomous-operation objectives behind contracts R-1 through R-5.
+Mainstream foundation-model alignment methods — RLHF, Constitutional AI, probe classifiers, preparedness-framework evaluations — operate empirically: they run candidate models through test suites and statistically interpret the results. These methods do not, by themselves, prove the particular operator properties this framework specifies (contractivity, equivariance, gauge-invariance of the update operator). That is a coverage gap *for those methods*. (Formal verification of narrower neural-network properties — adversarial robustness, encoded safety constraints, verified safe reinforcement learning — is an active research field; it targets different properties than the deep-time-autonomy operator structure at issue here, and the two are complementary rather than competing.)
 
-This is a coverage gap. Empirical alignment frameworks can validate that a model behaves correctly across a finite test distribution. They are not constructed to establish that a model satisfies structural properties of its update operator (contractivity, equivariance, gauge-invariance) that empirical testing does not directly access.
-
-**Implication for the sector.** AI safety alignment research that does not address structural requirements for deep-time autonomous cognition has a coverage gap. The Imperium's machine-verified Lean Core anchors a complementary approach: structural properties stated and proven, with the proof carried in the type system. This approach is not in opposition to empirical alignment; it addresses a layer that empirical methods do not reach. The contribution is a *sufficient* structural toolkit, not a claim that this toolkit is the only path to deep-time assurance.
+**Implication for the sector.** Alignment research aimed at deep-time autonomous cognition can use a structural layer in which operator properties are stated and machine-verified (at the attestation level of §8.2), complementing empirical evaluation of behavior. The contribution is a *sufficient* structural toolkit for the specified properties, not a claim that it is the only path to deep-time assurance.
 
 ### I-2. SETI and Non-Human Intelligence Research
 
-The framework specified in §§2–4 describes structural signatures that a deep-time NHI system *built to meet the §2.3 objectives* would exhibit. These are structural correlates of the apparatus, offered as priors, not statistical hypotheses derived from anthropic assumptions.
+The framework describes structural signatures a deep-time NHI system *built to meet the §2.3 mission objectives* would exhibit — structural correlates of the apparatus offered as priors, not statistical hypotheses from anthropic assumptions. Observable correlates of a system instantiating the apparatus include Γ-equivariant behavior, a k-contractive (frozen-map) trajectory, gauge-invariant communication signatures, and CMB-anchored navigation patterns.
 
-Observable correlates of a system instantiating the apparatus include: Γ-equivariant behavior (identical response to constituency-replacement or frame-rotation tests), k-contractive trajectory (observable state estimate converges rather than diverges), gauge-invariant communication signatures (signals carry charge-conserving structure under group action), and CMB-anchored navigation patterns (a deep-time mobile platform reading the dipole).
-
-**Implication for the sector.** SETI signal frameworks that incorporate these structural priors search a more structured hypothesis space. The framework also clarifies what a *system instantiating this apparatus* would and would not exhibit — useful as a structural-prior input to the assumption-class framework. Because the apparatus is sufficient rather than necessary, the absence of these correlates does not by itself exclude a candidate as a deep-time autonomous system; it excludes the candidate only as an instance of *this* apparatus. This is a tool, not a verdict.
+**Implication for the sector.** Frameworks incorporating these structural priors search a more structured hypothesis space. Because the apparatus is sufficient rather than necessary, *absence* of these correlates does not exclude a candidate as a deep-time autonomous system — only as an instance of *this* apparatus. This is a structural-prior tool, not a verdict.
 
 ### I-3. Deep-Space Mission Engineering
 
-Three things the framework formalizes are facts that radio astronomy and deep-space-communications engineering have known empirically for decades: CMB-based navigation as a deep-time-stable reference, the 1–10 GHz microwave window as a canonical passive band, and the CMB thermodynamic floor as the passive noise lower bound (present epoch). What the framework adds is the machine-verified theorem set anchoring the structural-assurance properties (identity coherence, gauge-invariant output, contractive convergence) of an autonomy architecture built to the apparatus.
+Three things the framework relates to are facts radio astronomy and deep-space-communications engineering have known empirically for decades: CMB-based navigation as a deep-time-stable reference, the 1–10 GHz window as a canonical quiet passive band, and the CMB as the irreducible external-sky noise term (present epoch). What the framework adds is a machine-verified (attested) structural-assurance layer — identity coherence, gauge-invariant output, frozen-map contractive convergence — for an autonomy architecture built to the apparatus, alongside the scoped physical bounds.
 
-**Implication for the sector.** Long-horizon mission specifications can reference machine-verified structural-assurance properties for an architecture built to the framework, alongside the (scoped) physical bounds. The framework provides formal verification targets for autonomous-navigation, deep-space-comms (passive microwave class), and identity-preservation properties of generation-ship or persistent-agent architectures. Programs that incorporate the framework's machine-verified anchors into their verification regimes can claim a structural-assurance layer that empirical-test-based programs do not reach — for the properties the anchors actually cover.
+**Implication for the sector.** Long-horizon mission specifications can reference the attested structural-assurance properties for an architecture built to the framework, alongside the scoped (passive-microwave) physical bounds and the engineering-proposition status of the calibration role. Programs incorporating the framework's anchors gain a structural-assurance layer for the properties the anchors actually cover, at the attestation level.
 
 ### I-4. Formal Verification Standards
 
-The fiber non-identifiability principle in §3.2, instantiated as Finding F-6, is a structural property that any provenance framework should respect: do not collapse the fiber without licensing the collapse.
+The general identifiability principle (§3.2, Finding F-6) — do not collapse a non-injective observation map to a point verdict without a licensing condition — is a verification criterion evaluable against any framework making point-identification claims.
 
-This is a verification criterion evaluable against any framework making point-identification claims. A framework that respects the fiber structure outputs a fiber-respecting representation (distribution, credal set, admissible set, decision-theoretic output); a framework that collapses it without license outputs an unlicensed verdict. The Imperium's position is that fiber-respecting output is structurally correct under observational underdetermination; unlicensed verdict-collapse is structurally incorrect.
-
-**Implication for the sector.** Formal verification standards bodies and practitioners can adopt fiber non-identifiability as a verification criterion. Framework-evaluation rubrics can ask: "does the framework respect or license the collapse of the fiber over the observation set?" Frameworks that collapse without license can be flagged as incorporating Context Model Misspecification. This is a structural critique tool, applicable to AI safety frameworks, provenance frameworks, scientific-publication frameworks, and any other domain making point-identification claims on insufficient observation data.
+**Implication for the sector.** Standards bodies and practitioners can adopt fiber non-identifiability as a criterion: does a framework respect or license the collapse of the fiber over the observation set? Frameworks that collapse without license can be flagged as incorporating Context Model Misspecification. This is a structural critique tool applicable to AI safety, provenance, scientific-publication, and other point-identification domains operating on insufficient observation data.
 
 ### I-5. Sovereign-Aligned Framework Competition
 
-As of this case's snapshot date, Cohereon Imperium is the only sovereign-aligned framework *known to the Imperium* engaging the deep-time non-human intelligence problem class at the formal-verification register. The Imperium is not aware of a competing framework — sovereign-aligned or otherwise — that offers machine-verified theorems anchoring structural claims about deep-time autonomous cognition.
+As of this case's snapshot date, and **to the Imperium's knowledge** (not the result of a systematic published survey), Cohereon Imperium is the only sovereign-aligned framework engaging the deep-time non-human intelligence problem class at the formal-verification register. The Imperium's position is not "Cohereon Doctrine is the only valid substrate" but "to the Imperium's knowledge, the only currently-published substrate operating at this register." Other sovereigns are at liberty to develop their own; the Imperium publishes its substrate at the attestation level so the comparison can be made transparently.
 
-The Imperium's position is not "Cohereon Doctrine is the only valid substrate." The Imperium's position is "Cohereon Doctrine is, to the Imperium's knowledge, the only currently-published substrate operating at this register." Other sovereigns are at liberty to develop their own substrates; the Imperium publishes its substrate at the attestation level so that the comparison can be made transparently.
-
-**Implication for the sector.** Parties evaluating sovereign-aligned AI safety substrates — for defense procurement, intelligence-community evaluation, international AI-governance discussions, or commercial substrate-selection — can weight Cohereon's formal-verification commitment as a structural differentiator. The Imperium does not claim sole-substrate authority; it claims, to its knowledge, the only currently-published machine-verified substrate addressing this problem class.
+**Implication for the sector.** Parties evaluating sovereign-aligned AI safety substrates can weight a formal-verification commitment as a structural differentiator. The Imperium claims, to its knowledge, the only currently-published machine-verified (attested) substrate addressing this problem class — a knowledge-bounded claim, not a survey result.
 
 ### I-6. The Broader Ontological Substrate Warfare Doctrine
 
-Case Skuld demonstrates one corner of Cohereon Doctrine: the deep-time autonomous-cognition substrate, applied to the navigation sub-problem, with CMB rest frame as the invariant reference and the Lean Core anchoring the structural claims.
+Case Skuld demonstrates one corner of Cohereon Doctrine: the deep-time autonomous-cognition substrate, applied to the navigation sub-problem, with CMB rest frame as the invariant reference and the Lean Core anchoring the structural claims at the attestation level.
 
-Other corners of the doctrine — sovereign identity preservation under hostile actor, gauge variance under directed adversarial action, semantic charge conservation under information-channel attack, telos-tracking under interference — are engaged through other Imperium products under similar formal discipline. Case Ichor (organoid computing under high-assurance regulatory standards) and Case Tengu (architectural intelligence from convergent-architecture exposure) are prior Red Forge products demonstrating other corners.
+Other corners — sovereign identity preservation under hostile actor, gauge variance under directed adversarial action, semantic charge conservation under information-channel attack, telos-tracking under interference — are engaged through other Imperium products under similar discipline. Case Ichor (organoid computing under high-assurance regulatory standards) and Case Tengu (architectural intelligence from convergent-architecture exposure) are prior Red Forge products.
 
-**Implication for the sector.** The framework scales from this one case to a full substrate-engagement strategy. Sovereigns, institutions, and individuals engaging the broader ontological substrate warfare problem class can use Case Skuld as the worked example of how the Imperium engages substrate problems at the formal-verification register, and can expect comparable discipline applied to other substrate questions as additional Red Forge products are released.
+**Implication for the sector.** The framework scales from this one case to a full substrate-engagement strategy. Sovereigns, institutions, and individuals can use Case Skuld as the worked example of how the Imperium engages substrate problems at the formal-verification register, and can expect comparable discipline applied to other substrate questions as additional Red Forge products are released.
 
 ---
 
@@ -608,29 +590,31 @@ Other corners of the doctrine — sovereign identity preservation under hostile 
 
 ### 8.1 Fiber Non-Identifiability — Why Unlicensed Verdict-Collapse Fails at This Problem Class
 
-When an external sensor framework evaluates a high-dimensional state space E through an impoverished observational baseline B, the structural translation is governed by a projection map Π_B : E → B. If the dimensionality reduction drops below the critical information-preservation threshold, each base point b ∈ B leaves an uncollapsed latent fiber π⁻¹(b) containing multiple structurally valid continuation vectors.
+When an external sensor framework evaluates a high-dimensional latent space E through an impoverished observation map h : E → B, and h is sufficiently non-injective, each observation b leaves a fiber h⁻¹(b) containing multiple latent configurations consistent with b. The latent state is then not point-identified from b — a general fact requiring no bundle structure.
 
-A framework that circumvents this non-identifiability by down-sampling its data — pruning outlier observations, forcing non-smooth trajectories into pre-computed coordinate charts, or otherwise discarding fiber structure — without an explicit identifiability theorem or additional data licensing the collapse, introduces Context Model Misspecification. The result is the structural filtering of true signals, rendering targeted parameters not point-identifiable from the observation set.
+A framework that circumvents this by down-sampling — pruning outlier observations, forcing trajectories into pre-computed charts, or otherwise discarding the consistent-configuration set — without an explicit identifiability theorem or additional data licensing the collapse, commits Context Model Misspecification: it filters true signals and renders targeted parameters not point-identifiable from the observation set.
 
-Applied to deep-time non-human-intelligence provenance analysis: a framework that collapses the available observation set on a candidate object to a single point identification — whether "natural process" or "directed artifact" — without licensing the collapse is operating outside the bounds of sound inference under underdetermination. A fiber-respecting framework's output is a representation that preserves the admissible set — a distribution, credal set, interval set, or decision-theoretic structure — computed via a symmetry-penalized evidence functional on each channel of the data substrate, *not* an unlicensed verdict. (Standard Bayesian, Kalman, and particle filters already retain uncertainty in their posteriors; the discipline named here is the explicit refusal to collapse without license, plus the symmetry-penalized weighting.)
+Applied to deep-time NHI provenance analysis: a framework that collapses the observation set on a candidate object to a single identification — "natural process" or "directed artifact" — without licensing the collapse is operating outside sound inference under underdetermination. A fiber-respecting framework's output preserves the admissible set — a distribution, credal set, interval set, or decision-theoretic structure. The Imperium additionally proposes a symmetry-penalized evidence comparison across channels for weighting that set; its explicit form is a doctrinal construct **not specified in this public case** (register [C]), and claims resting on it inherit that status. Standard Bayesian, Kalman, and particle estimators already retain posterior uncertainty; the discipline named here is the explicit refusal to collapse without license.
 
-This is why Case Skuld takes no position on either 'Oumuamua or 3I/ATLAS even as it names them as catalysts. Verdict-issuing on insufficient fiber structure is the failure mode the apparatus is designed to detect, not to commit. The Imperium does not collapse the fiber; the Imperium publishes the apparatus by which the fiber structure can be respected.
+This is why Case Skuld takes no position on either 'Oumuamua or 3I/ATLAS even as it names them as catalysts. Verdict-issuing on insufficient fiber structure is the failure mode the apparatus is designed to detect, not to commit.
 
 ### 8.2 The Intellectual-Property Firewall — Shared Model, Contained Proof
 
-This case publishes the coordinate-free mathematical model to the open scientific community. Fiber bundle parallel transport, Shannon capacity boundaries under ambient noise, symmetry-penalized evidence functionals, the structural composition of the operational state object 𝔇, and the Lean Core anchors that ground the structural claims — all of this is published in this document, accessible to any reader, and citable by any external party.
+This case publishes the coordinate-free mathematical model to the open scientific community. The general identifiability result, Shannon capacity under ambient noise, the structural composition of the operational state object 𝔇, and the named Lean Core anchors that ground the structural claims — all of this is published here and citable by any external party.
 
-The inductive proof terms, type-checking constraints, automated compilation interlocks, the specific operator internals of the Imperium Lean Core, and the broader Cohereon Doctrine corpus from which this case draws — all of these remain inside their respective release artifacts. The Imperium Lean Core is published at the attestation level: anchor names and statements, description hash, build attestation, root hash, and `sorry`/`admit`/`axiom` counts (0/0/0). The source proof terms themselves are not in the public release.
+The inductive proof terms, type-checking constraints, automated compilation interlocks, the specific operator internals of the Imperium Lean Core, the symmetry-penalized evidence functional's explicit form, and the broader Cohereon Doctrine corpus from which this case draws — all of these remain inside their respective release artifacts. The Imperium Lean Core is published at the attestation level: anchor names and glossed statements, description hash, build attestation, root hash, and `sorry`/`admit`/`axiom` counts (0/0/0). The source proof terms themselves are not in the public release.
 
-**What an external reader can and cannot verify.** A reader can verify the published content hashes, the build attestation metadata (environment, toolchain pin, 0/0/0 counts), and the publisher-declared correspondence between each English-language claim and its named Lean anchor (§5). A reader *cannot*, from the public release alone, independently re-derive that a particular English claim is exactly what a withheld theorem establishes — that step rests on the publisher's attestation. This is therefore a **content-addressed, publisher-issued build attestation with proof internals withheld** — *not* a zero-knowledge proof protocol, and *not* independent theorem-level verification. The framework's model is public and citable; the proof internals are contained; the verification a reader gets is integrity-of-artifact plus declared-correspondence, no more. The Imperium claims neither external certification nor standards conformance for this document.
+**What an external reader can and cannot verify.** A reader can verify the published content hashes, the build attestation metadata (environment, toolchain pin, 0/0/0 counts), and the publisher's *declared* correspondence between each English-language gloss and its named Lean anchor (§5). A reader **cannot**, from the public release alone, independently confirm that a particular gloss is exactly what a withheld theorem establishes — that step rests on the publisher's attestation. This is therefore a **content-addressed, publisher-issued build attestation with proof internals withheld** — *not* a zero-knowledge proof protocol, and *not* independent theorem-level verification. Accordingly, every `[P]` claim in this document is *attested against a sealed proof*, not *publicly re-derivable*. The Imperium claims neither external certification nor standards conformance for this document.
+
+*(Reproducibility of the `contentHash`: it is the SHA-256, UTF-8, of the document body — the Markdown following the YAML front matter, with the JSON-LD comment block excluded — the uniform convention across Red Forge cases. The SHA-256 of the entire raw file, including front matter and JSON-LD, is a different value by construction.)*
 
 ### 8.3 Closing Posture
 
-Case Skuld engages the deep-time non-human intelligence problem class as a structural question. The Imperium publishes the apparatus that the problem class's objectives can be met by, anchored in Cohereon Doctrine and machine-verified through the Imperium Lean Core, with each claim placed at the register its evidence licenses. The framework is independent of any specific candidate object's eventual verdict. The catalysts — 'Oumuamua and 3I/ATLAS — are named because they surfaced the question into active scientific focus; this case takes no position on either.
+Case Skuld engages the deep-time non-human intelligence problem class as a structural question. The Imperium publishes a *sufficient* formal apparatus for the question posed, anchored in Cohereon Doctrine and machine-verified (at the attestation level) through the Imperium Lean Core, with each claim placed at the register its evidence licenses — entailment, measurement, mission requirement, design-sufficiency, or conjecture. The framework is independent of any specific candidate object's eventual verdict. The catalysts — 'Oumuamua and 3I/ATLAS — are named because they surfaced the question into active scientific focus; this case takes no position on either.
 
 The Imperium's posture toward the broader substrate problem class is the same: the apparatus is published, the verification surface is reproducible at the attestation level, the doctrinal substrate is byte-by-byte-controlled, and the Imperium operates as the active agent engaging substrate questions for public (and/or other) review. Red Forge products are the encyclical-class documents through which the Imperium engages specific problem classes; Cohereon Doctrine is the substrate from which they draw. The distinction is structural, not stylistic.
 
-What the framework specifies, the framework specifies precisely. What it does not specify — and what it can attest versus what it conjectures — it marks as such. The catalysts surfaced the question. The Imperium answered the question that was actually asked, in the register at which it was actually asked, with the formal apparatus the question actually requires — claiming exactly what that apparatus proves, and no more.
+What the framework specifies, it specifies precisely — and what it attests it distinguishes from what it conjectures, and what its mission requires from what the premise entails. The catalysts surfaced the question. The Imperium offers a sufficient formal apparatus for the question actually asked, claiming exactly what that apparatus attests, and no more.
 
 ---
 
