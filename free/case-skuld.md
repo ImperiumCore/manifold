@@ -4,7 +4,7 @@ type: free_layer
 formal_title: "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints"
 section: "Red Forge"
 data_control: PUBLIC
-version: "1.1.1"
+version: "1.1.2"
 snapshot: "2026-06-13T00:00:00-04:00"
 lightning_cost_sats: 0
 source_url: "https://cohereon.io/case-skuld"
@@ -19,7 +19,7 @@ source_url: "https://cohereon.io/case-skuld"
     "Agent"
   ],
   "name": "TDY_COH-FREE_CASE_SKULD",
-  "version": "IMP-COH-100-1.1.1",
+  "version": "IMP-COH-100-1.1.2",
   "headline": "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints",
   "description": "Cohereon Doctrine v6.1 free-layer component.",
   "programmingLanguage": {
@@ -57,7 +57,7 @@ source_url: "https://cohereon.io/case-skuld"
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
   "snapshot": "2026-06-13T00:00:00-04:00",
-  "contentHash": "a63a2ccfdfa662b840ec001cad14fd7280c3cf0bf376db21c30b9d4d1e49b314"
+  "contentHash": "c3dd3032f656963dbc823477d9538e241f65dd02ab4f4c228e0fb3a28835343b"
 }
 </JSON-LD>
 -->
@@ -137,12 +137,12 @@ Every claim in this case occupies one evidentiary register, stated here so that 
 
 - **[P] Proven (attested, sealed).** A theorem mechanically verified in the Imperium Lean Core v1.1.0, cited by anchor (§5). The released artifact compiles with **zero `sorry`, zero `admit`, and zero added `axiom`** beyond the Lean/Mathlib foundations. **Important boundary (§8.2):** the proof terms are withheld, so a public reader verifies the build attestation and the publisher's *declared* correspondence between an English gloss and a named anchor — **not** the proof itself, and **not** independently that the named theorem *states* what the gloss says. `[P]` therefore means *publisher-attested against a sealed proof*, not *publicly re-derivable*.
 - **[M] Measured.** An empirical physical fact established in the peer-reviewed primary literature, cited at §9 (subject, at deep-time horizons, to the cosmological caveats noted).
-- **[E] Entailed.** A strict logical consequence of the deep-time premise *alone* (no persistent external clock or reference survives the horizon). This register is reserved for **clock-independence**: with no external clock, the system must self-reference — its timing and health diagnostics must be endogenous. This is the one objective the premise entails by itself.
+- **[E] Entailed (infrastructure independence).** A strict logical consequence of the deep-time premise *alone*: no mission function may require persistent externally-maintained clock or reference *infrastructure* across the operational horizon. Any timing, estimation, or health-monitoring function the mission adopts must therefore be realizable from onboard state and locally-observable physical fields (such as the CMB — itself an external natural field, but not maintained infrastructure). The premise entails this *infrastructure-independence* constraint; it does **not** by itself entail that the system possess any particular diagnostic — adopting one is a mission requirement ([REQ]).
 - **[REQ] Mission Requirement.** An assurance objective adopted under the stated **deep-time mission model** — a system that (i) persists across constituency and substrate turnover, (ii) treats identity preservation as a goal, and (iii) seeks a stable operating regime. `[REQ]` objectives are design commitments of *this* mission, **not** logical consequences of clock-loss; a different mission model could drop or alter them.
 - **[D] Design / Sufficient.** A property of *this* framework's construction: the apparatus is shown (at register [P]) to be a *sufficient* way to meet an [E] or [REQ] objective. `[D]` does **not** assert the apparatus is the *only* way.
 - **[C] Conjecture.** A proposition advanced as plausible and architecturally load-bearing but not presently at [P], [M], [E], or [REQ]; marked as such and not relied upon as established.
 
-**The load-bearing distinction.** Only **clock-independence** is entailed by the premise alone ([E]). The other objectives — identity preservation across turnover, bounded estimation error, a structural safety floor, a stable operating regime — are **mission requirements [REQ]** of the deep-time mission model, not entailments of clock-loss. The **apparatus** (the operational state object 𝔇 and its operators) is **[D]** — a machine-verified sufficient construction meeting those objectives. The case does **not** claim the apparatus is necessary: a system meeting the objectives by other means — an observability-driven filter with bounded error, or a stable regime that is a limit cycle, stationary distribution, or recurrent set rather than a fixed point — is not excluded.
+**The load-bearing distinction.** Only **infrastructure-independence** is entailed by the premise alone ([E]). The other objectives — identity preservation across turnover, bounded estimation error, a structural safety floor, a stable operating regime, and the adoption of any health diagnostic — are **mission requirements [REQ]** of the deep-time mission model, not entailments of clock-loss. The **apparatus** (the operational state object 𝔇 and its operators) is **[D]** — a machine-verified sufficient construction meeting those objectives. The case does **not** claim the apparatus is necessary: a system meeting the objectives by other means — an observability-driven filter with bounded error, or a stable regime that is a limit cycle, stationary distribution, or recurrent set rather than a fixed point — is not excluded.
 
 Specific scope notes carried by this ledger:
 
@@ -214,7 +214,7 @@ This is not a single variable or a tuple of measurements. It is the apparatus th
 
 - **Formal Register.** T_SC is the composite navigation-update operator, defined as T_SC = P_𝒢 ∘ Π_q ∘ U_base. Applied to a charge parameter c and a state x, T_SC(c, x) = P_𝒢(Π_q(c, U_base(x))). The composition inherits k-contractivity from U_base (E_125), charge conservation from Π_q (E_123), and gauge-invariance *as a map* (E_124): T_SC(c, g · x) = T_SC(c, x) for all g ∈ Γ. **Scope note (register [D], with [P] components).** The unique, Γ-invariant fixed point established by the apparatus is the fixed point of the **frozen base refinement** U_base (Banach existence/uniqueness; invariance by E_126). The case does **not** assert that T_SC's own fixed point is Γ-invariant — that does not follow from E_124/E_126 and is false in general.
 
-  **The runtime loop is nonautonomous.** In operation, each cycle receives newly arrived observations and may use a varying charge request: the live update is x_{n+1} = F_{u_n}(x_n), where u_n encodes the cycle's observation and charge. Banach's theorem governs repeated iteration of a *single frozen* contraction; it does **not** by itself establish convergence of the observation-driven loop, whose target may move between cycles. What the contraction factor *does* license is a **tracking bound** (register [C], an engineering obligation): if x*_n is the frozen-map fixed point for inputs u_n, then d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1}) — error contracts at rate k against a target that drifts by the input-variation term. Bounded tracking therefore requires bounding the input drift; this is a design obligation, not the fixed-map theorem.
+  **The runtime loop is nonautonomous.** In operation, each cycle receives newly arrived observations and may use a varying charge request: the live update is x_{n+1} = F_{u_n}(x_n), where u_n = (o_n, c_n) encodes the cycle's observation o_n and charge request c_n. Explicitly, F_u(x) = P_𝒢(Π_{c(u)}(U_{o(u)}(x))), where the observation o(u) conditions the refinement and c(u) is the charge request; the frozen binary operator T_SC(c, ·) — fixed c, no per-cycle observation conditioning — is the object the Lean anchors (E_123–E_126) cover, and it is *that* frozen operator, not the live family F_u, to which the proven properties attach. Banach's theorem governs repeated iteration of a *single frozen* contraction; it does **not** by itself establish convergence of the observation-driven loop, whose target may move between cycles. What the contraction factor *does* license is a **tracking bound** (register [C], an engineering obligation): if x*_n is the frozen-map fixed point for inputs u_n, then d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1}) — error contracts at rate k against a target that drifts by the input-variation term. Bounded tracking therefore requires bounding the input drift; this is a design obligation, not the fixed-map theorem.
 
 - **Layperson Register.** T_SC is the navigation-update cycle. As a fixed rule it does three things in order: refine with U_base, set the charge with Π_q, read off frame-independent content with P_𝒢. The *output* is provably invariant under any group action (E_124). The "bulk hegemony" result — a unique, symmetry-invariant stable state — is a property of the base refinement's fixed point *when the rule is held fixed*. In live operation new data arrives every cycle, so the system is chasing a moving target; it stays close to that target at the contraction rate k provided the target does not move too fast between cycles — an engineering condition, not a theorem.
 
@@ -265,7 +265,7 @@ By Banach this gives a unique fixed point and geometric convergence of the froze
 
 #### Contract R-3: Δ-Defect Telemetry as Self-Diagnostic
 
-**[E] objective:** absent an external clock, the system requires an *endogenous* diagnostic — this endogeneity is the one objective the deep-time premise entails by itself. **[REQ] specialization:** that the relevant diagnostic variable is *gauge drift* is a mission choice. **[D] construction:** instantiate Δ, which registers gauge variance as a detectable defect (E_137: any observed variance contradicts the proven gauge-invariance of T_SC).
+**[E] objective:** infrastructure-independence — any diagnostic the mission adopts must be realizable without persistent external infrastructure (the entailed part). **[REQ] specialization:** that the system carries a diagnostic at all, and that its variable is *gauge drift*, is a mission choice. **[D] construction:** instantiate Δ, which registers gauge variance as a detectable defect (E_137: any observed variance contradicts the proven gauge-invariance of T_SC).
 
 **Scope.** Δ is a *sufficient* endogenous diagnostic within this architecture. The proven claim is detection, not the monotone-decrease dynamics (register [C], §2.2.G), and not that Δ is the only possible self-correction mechanism.
 
@@ -289,7 +289,9 @@ This unique, gauge-invariant fixed point is what the framework calls *bulk hegem
 
 The five contracts are conjoint *within the apparatus*: all five hold simultaneously for a system built to the framework, and together they realize what the framework calls *coherence-directional* operation — the system's invariant content is convergence (of the frozen base refinement) to Ψ*, while physical elapsed time becomes a reparameterization variable on the ambient substrate. The progress variable is S_telos ↑ 1 (under the corrigibility/fortress contract, §2.2.H), not an absolute schedule coordinate.
 
-For a system instantiating the apparatus, "operational autonomy across deep time" means that its structural properties — identity coherence, gauge-invariant output, contractive convergence of the frozen refinement to a unique fixed point — are preserved under iteration without external supervision, with the live loop tracking that structure subject to the §2.2.F engineering condition. Of the underlying objectives these contracts serve, only clock-independence is entailed by the premise ([E]); the remainder are mission requirements ([REQ]); the contracts are a sufficient, machine-verified way to meet them ([D]).
+For a system instantiating the apparatus, "operational autonomy across deep time" means that its structural properties — identity coherence, gauge-invariant output, contractive convergence of the frozen refinement to a unique fixed point — are preserved under iteration without external supervision, with the live loop tracking that structure subject to the §2.2.F engineering condition. Of the underlying objectives these contracts serve, only infrastructure-independence is entailed by the premise ([E]); the remainder are mission requirements ([REQ]); the contracts are a sufficient, machine-verified way to meet them ([D]).
+
+**Necessary structure, not sufficient competence.** Satisfying R-1 through R-5 is *necessary* structure for a deep-time system built to this apparatus; it is **not sufficient** for operational competence. The contracts are algebraic — contraction, equivariance, orbit-invariance, charge-correctness — and are satisfiable by degenerate operators: a constant refinement that sets the state to a fixed group-invariant point meets all five vacuously while erasing every task-relevant coordinate and ignoring every observation. A non-vacuous implementation additionally requires conditions the algebraic contracts do not themselves guarantee — a validated correspondence between physical operations and the group action (the semantics map of §2.2.A), observation-responsiveness (an observability condition), and preservation of a task-sufficient invariant statistic. These non-vacuity conditions are **mission requirements ([REQ])**, and where their precise form is unspecified here, **conjectures ([C])**; they are **not** among the proven Lean anchors (§5), which establish the algebraic properties only. Accordingly, "satisfies R-1 through R-5" licenses "has the required structural properties," not "is a competent deep-time navigator" — the latter additionally requires demonstrating the non-vacuity conditions hold for a specific implementation.
 
 ---
 
@@ -332,7 +334,7 @@ To first order in β:
 
 Navigation determination shifts from an inductive multi-point tracking calculation — comparing successive measurements of stellar positions to infer motion — to a deductive reading of the ambient thermal gradient field. A sufficiently precise, foreground-corrected all-sky measurement of the CMB dipole yields the velocity vector relative to the CMB rest frame. That rest frame is invariant on scales orders of magnitude longer than any local astronomical landmark; any local stellar configuration drifts measurably over deep-time horizons, while the CMB rest frame does not.
 
-For a system built to the contracts of §2.3, the CMB dipole supplies the velocity observation that the refinement enters each cycle. That observation is the per-cycle input u_n of the nonautonomous loop (§2.2.F): the dipole reading drives the refinement, the update output is gauge-invariant (E_124), and S_telos tracks progress (under the §2.2.H contract). The cycle is closed and fully internal — dependent on no external time reference — with the live loop's convergence governed by the tracking condition of §2.2.F rather than the frozen-map fixed-point theorem directly.
+For a system built to the contracts of §2.3, the CMB dipole supplies an **infrastructure-independent velocity-frame observable** — the velocity vector relative to the CMB rest frame — which enters the refinement as the per-cycle input u_n of the nonautonomous loop (§2.2.F). It is **not**, by itself, a complete position-navigation-and-timing solution: full trajectory determination additionally requires a dynamics model, a boundary or initial position, attitude information, range or landmark observations, and a propagation parameter (proper time, path length, or event count). What the dipole closes is the **velocity-reference leg** of navigation, infrastructure-independently — not the navigation problem as a whole; the remaining legs are separate observables plus a dynamics model. Within that leg, the update output is gauge-invariant (E_124) and S_telos tracks progress (under the §2.2.H contract), with live-loop convergence governed by the §2.2.F tracking condition rather than the frozen-map fixed-point theorem directly.
 
 ### 3.2 The Invariant Fiber Bundle and Parallel Transport
 
@@ -380,7 +382,7 @@ The navigation update cycle is the application of T_SC = P_𝒢 ∘ Π_q ∘ U_b
 
 - **Layperson Register.** Every cycle, the system refines, sets the charge, and reads off frame-independent content. The output is provably invariant under any group action. As a fixed rule it converges to a unique symmetry-invariant state; in live operation it tracks that structure against incoming data at the contraction rate, provided the data does not move the target too fast (the §2.2.F condition).
 
-- **Machine Register.** Cycle: `state_{n+1} = T_SC(c_n, observation_n, state_n)` (nonautonomous). Frozen-map invariants: `gauge_invariance_holds ∧ charge_conserved ∧ contraction_factor_k`. Tracking: `d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1})` (engineering obligation, register [C]).
+- **Machine Register.** Live cycle (nonautonomous family, §2.2.F): `state_{n+1} = F_{u_n}(state_n)` with `u_n = (observation_n, c_n)` and `F_u(x) = P_G(Pi_{c(u)}(U_{o(u)} x))`. The frozen binary `T_SC(c, ·)` is the Lean-anchored operator; its proven invariants: `gauge_invariance_holds ∧ charge_conserved ∧ contraction_factor_k`. Live tracking: `d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1})` (engineering obligation, register [C]).
 
 #### 3.3.3 The Operational Consequence
 
@@ -494,11 +496,11 @@ The framework specified in §§2–4, anchored to the Lean Core theorems in §5,
 
 ### Finding F-3: External-Clock Independence Requires an Endogenous Diagnostic
 
-**Claim [E + D].** Absent a persistent external clock, an *endogenous* diagnostic is entailed by the premise ([E]); that the diagnostic variable is gauge drift is a mission specialization ([REQ]); Δ-defect telemetry, registering gauge variance as a detectable defect (E_137), is a sufficient mechanism ([D]).
+**Claim [E + REQ + D].** Infrastructure-independence is entailed by the premise ([E]): any diagnostic the mission adopts must not depend on persistent external infrastructure. That the system carries a diagnostic at all, with gauge drift as its variable, is a mission requirement ([REQ]); Δ-defect telemetry, registering gauge variance as a detectable defect (E_137), is a sufficient mechanism ([D]).
 
 **Basis.** Contract R-3 (§2.3). Because T_SC is provably gauge-invariant (E_124), any observed variance is a contradiction the cycle can register (E_137). The stronger monotone-decrease dynamics is conjectural (register [C], §2.2.G).
 
-**Implication.** A deep-time system lacking an endogenous diagnostic operates blind to its own drift — this part is entailed. A verification criterion follows: does a proposed deep-time architecture carry an endogenous diagnostic (or functional equivalent)? The criterion concerns *detection*; it does not assert Δ is the unique such mechanism.
+**Implication.** A deep-time system whose diagnostics depend on now-absent external infrastructure operates blind to its own drift; that adopted diagnostics must be infrastructure-independent is the entailed part, while carrying one at all is a mission requirement. A verification criterion follows: does a proposed deep-time architecture carry an infrastructure-independent diagnostic (or functional equivalent)? The criterion concerns *detection*; it does not assert Δ is the unique such mechanism.
 
 ### Finding F-4: The CMB is the Strongest Known Physical Invariant Reference for Autonomous Navigation
 
