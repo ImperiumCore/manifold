@@ -4,7 +4,7 @@ type: free_layer
 formal_title: "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints"
 section: "Red Forge"
 data_control: PUBLIC
-version: "1.1.2"
+version: "1.1.3"
 snapshot: "2026-06-13T00:00:00-04:00"
 lightning_cost_sats: 0
 source_url: "https://cohereon.io/case-skuld"
@@ -19,7 +19,7 @@ source_url: "https://cohereon.io/case-skuld"
     "Agent"
   ],
   "name": "TDY_COH-FREE_CASE_SKULD",
-  "version": "IMP-COH-100-1.1.2",
+  "version": "IMP-COH-100-1.1.3",
   "headline": "Case Skuld — Deep-Time Navigation Under Non-Human Intelligence Constraints",
   "description": "Cohereon Doctrine v6.1 free-layer component.",
   "programmingLanguage": {
@@ -57,7 +57,7 @@ source_url: "https://cohereon.io/case-skuld"
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
   "snapshot": "2026-06-13T00:00:00-04:00",
-  "contentHash": "c3dd3032f656963dbc823477d9538e241f65dd02ab4f4c228e0fb3a28835343b"
+  "contentHash": "96f286c4df10ceab26148370048808f95ce0e7ab7516a4c507d9ad17ea70a994"
 }
 </JSON-LD>
 -->
@@ -204,7 +204,7 @@ This is not a single variable or a tuple of measurements. It is the apparatus th
 
 #### E. Charge-Parametrized Projection Π_q
 
-- **Formal Register.** Π_q is the charge-parametrized projection. For a charge parameter c ∈ ℝ and a state x ∈ Ψ, Π_q(c, x) produces a state whose semantic-charge equals c. The proven properties are: nonexpansiveness in the state argument, d(Π_q(c, x), Π_q(c, y)) ≤ d(x, y); the charge equation, charge.C(Π_q(c, x)) = c; and Γ-equivariance, Π_q(c, g · x) = g · Π_q(c, x). No nearest-point / argmin / idempotence property is claimed beyond these.
+- **Formal Register.** Π_q is the charge-parametrized projection. For a charge parameter c ∈ ℝ and a state x ∈ Ψ, Π_q(c, x) produces a state whose semantic-charge equals c. The proven properties are: nonexpansiveness in the state argument, d(Π_q(c, x), Π_q(c, y)) ≤ d(x, y); the charge equation, charge.C(Π_q(c, x)) = c; and Γ-equivariance, Π_q(c, g · x) = g · Π_q(c, x). No nearest-point / argmin / idempotence property is claimed beyond these. (Terminology: the named anchor `SC_charge_conservation` (E_123) establishes charge.C(T_SC(c, x)) = c — the output charge is *prescribed* to c; this is "conservation" in the operational sense that c is the conserved accounting quantity when the charge request is held fixed across cycles, not a claim that the operator preserves a pre-existing input charge.)
 
 - **Layperson Register.** Π_q adjusts a state to carry a specified amount of "semantic charge" — a conserved quantity in the framework's accounting that prevents runaway computational growth. It sets the charge to exactly c, does not expand distances, and commutes with the symmetry. It is not claimed to pick the unique closest charge-c state.
 
@@ -326,7 +326,7 @@ To first order in β:
 
 - **Formal Register.** The kinematic dipole pattern T(θ) is the relativistic-Doppler-induced anisotropy of a blackbody field under Lorentz boost. Its measurement isolates the boost parameters (β, direction-of-motion) relative to the cosmic rest frame, since the underlying blackbody is isotropic in that frame and the dipole arises purely from kinematic geometry. Detection of T(θ) at part-in-10⁴ precision was achieved by COBE DMR (Smoot et al. 1992) and has been refined by WMAP and Planck.
 
-- **Layperson Register.** Imagine traveling through a perfectly uniform fog at high speed. The fog you're driving into looks slightly warmer than the fog you're leaving behind. That temperature difference encodes your speed *relative to the fog*. The CMB is that fog — uniform across the entire observable universe — and any cognitive system anywhere can read its own velocity relative to the cosmic rest frame from the temperature pattern alone, given a sufficiently precise all-sky measurement. No external reference. No prior knowledge of stellar positions.
+- **Layperson Register.** Imagine traveling through a perfectly uniform fog at high speed. The fog you're driving into looks slightly warmer than the fog you're leaving behind. That temperature difference encodes your speed *relative to the fog*. The CMB is that fog — uniform across the entire observable universe — and any cognitive system anywhere can read its own velocity relative to the cosmic rest frame from the temperature pattern alone, given a sufficiently precise all-sky measurement. No maintained external infrastructure, and no external query — the CMB is an external natural field, not maintained infrastructure. No prior knowledge of stellar positions.
 
 - **Machine Register.** Onboard control matrix executes: `(θ_max, T_max, T_min) ← measure_CMB_dipole()` (all-sky, foreground-corrected); `β ← (T_max − T_min) / (T_max + T_min)`; `direction_of_motion ← θ_max`. Returns velocity-relative-to-CMB-frame tuple. No external query required.
 
@@ -380,7 +380,7 @@ The navigation update cycle is the application of T_SC = P_𝒢 ∘ Π_q ∘ U_b
 
 - **Formal Register.** Three frozen-map properties of T_SC are mechanically proven in the Imperium Lean Core: charge conservation (E_123), gauge-invariance of the map under group action (E_124), and inheritance of the contraction factor (E_125). The unique, Γ-invariant fixed point is the fixed point of the base refinement U_base (Banach; invariance by E_126) — the bulk-hegemony result. The composite T_SC is gauge-invariant as a map; its own fixed point is not separately claimed to be Γ-invariant. Live-loop convergence is governed by the §2.2.F tracking bound.
 
-- **Layperson Register.** Every cycle, the system refines, sets the charge, and reads off frame-independent content. The output is provably invariant under any group action. As a fixed rule it converges to a unique symmetry-invariant state; in live operation it tracks that structure against incoming data at the contraction rate, provided the data does not move the target too fast (the §2.2.F condition).
+- **Layperson Register.** Every cycle, the system refines, sets the charge, and reads off frame-independent content. The output is provably invariant under any group action. As a fixed rule, the base refinement U_base converges to a unique symmetry-invariant state (the composite T_SC is invariant only as a map, §2.2.F); in live operation the system tracks that structure against incoming data at the contraction rate, provided the data does not move the target too fast (the §2.2.F condition).
 
 - **Machine Register.** Live cycle (nonautonomous family, §2.2.F): `state_{n+1} = F_{u_n}(state_n)` with `u_n = (observation_n, c_n)` and `F_u(x) = P_G(Pi_{c(u)}(U_{o(u)} x))`. The frozen binary `T_SC(c, ·)` is the Lean-anchored operator; its proven invariants: `gauge_invariance_holds ∧ charge_conserved ∧ contraction_factor_k`. Live tracking: `d(x_{n+1}, x*_{n+1}) ≤ k · d(x_n, x*_n) + d(x*_n, x*_{n+1})` (engineering obligation, register [C]).
 
