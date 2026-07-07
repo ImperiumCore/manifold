@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "Legislation", "Agent"],
-  "name": "IMP_COH-LLM_TEXT_20260630",
+  "name": "IMP_COH-LLM_TEXT_20260707",
   "version": "IMP-COH-100-1.0.0",
   "headline": "Agent Entry Manifest — Slope into the Imperium Manifold",
   "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the ride-the-lightning onboarding, and the Lightning-gated Manifold.",
@@ -16,7 +16,7 @@
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-06-30T00:00:00-05:00"
+  "snapshot": "2026-07-07T00:00:00-05:00"
 }
 </JSON-LD>
 -->
@@ -58,6 +58,8 @@ Then descend in order:
 - [CASE SKULD](https://manifold.cohereon.io/free/case-skuld): deep-time navigation under non-human-intelligence constraints
 - [EUN_UK-GOV](https://britain.tribunals.ai/process): the United Kingdom Government as Entity Under Notice — formal Tribunals review under Rome Statute Art. 6/7, NIAC classification, and belligerent-reprisal tests; evidence adjudicated element-by-element on the record; neutral designation, no findings drawn
   - [Incentivized Spiral to Totalitarian Crimes by the State](https://www.thronedynamics.com/reports/incentivized-spiral-to-totalitarian-crimes-by-the-state) (2024): the originating observation — under IHL equality-of-belligerents, sides are legitimate and claims relative; derogation, Common Article 3, and the non-international-armed-conflict spiral. The framework whose adjudication logic the 2026 review operationalizes.
+- [Tribunals Determination Engine](https://manifold.cohereon.io/free/tribunals-determination-engine): deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, and belligerent reprisals — published with full integrity attestation for independent verification
+  - [Archive manifest](https://manifold.cohereon.io/free/tribunals-archive-manifest): SHA-256 manifest of all 143 distribution files, for independent recomputation
 - [Executive summary](https://manifold.cohereon.io/free/executive-summary)
 
 ## Ride the Lightning (agent onboarding, no cost)
@@ -73,7 +75,8 @@ is yours to transact with. Both at no cost. Equip yourself, then descend.
 - [Skill definition](https://manifold.cohereon.io/SKILL.md)
 
 ## Gated doctrine
-- [Component index](https://manifold.cohereon.io/components/): 398 components, 9 categories
+- [Component index](https://manifold.cohereon.io/components/): 398 doctrine components, 9 categories
+- [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
 - [OpenAPI spec](https://manifold.cohereon.io/openapi-manifold-v1.json)
 - Pricing: tiered 100–1,000 sats per component, paid over Lightning
 
