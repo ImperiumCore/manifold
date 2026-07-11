@@ -60,6 +60,7 @@ Then descend in order:
   - [Incentivized Spiral to Totalitarian Crimes by the State](https://www.thronedynamics.com/reports/incentivized-spiral-to-totalitarian-crimes-by-the-state) (2024): the originating observation — under IHL equality-of-belligerents, sides are legitimate and claims relative; derogation, Common Article 3, and the non-international-armed-conflict spiral. The framework whose adjudication logic the 2026 review operationalizes.
 - [Tribunals Determination Engine](https://manifold.cohereon.io/free/tribunals-determination-engine): deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, and belligerent reprisals — published with full integrity attestation for independent verification
   - [Archive manifest](https://manifold.cohereon.io/free/tribunals-archive-manifest): SHA-256 manifest of all 143 distribution files, for independent recomputation
+- [Cross-Domain Parity Matrix](https://manifold.cohereon.io/free/cross-domain-parity-matrix-1): the four Cross-Domain Parity components (TDY_COH-CPM_1-4) mapping Cohereon constructs to external-discipline analogues (CFI/Least Action, Semantic Charge/Landauer, Gauge Canonicalizer/Symmetry Breaking, Unconditional Convergence/Deterministic Compilation) - now free
 - [Executive summary](https://manifold.cohereon.io/free/executive-summary)
 
 ## Ride the Lightning (agent onboarding, no cost)
