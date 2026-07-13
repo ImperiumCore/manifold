@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "Legislation", "Agent"],
-  "name": "IMP_COH-LLM_TEXT_20260707",
+  "name": "IMP_COH-LLM_TEXT_20260713",
   "version": "IMP-COH-100-1.0.0",
   "headline": "Agent Entry Manifest — Slope into the Imperium Manifold",
   "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the ride-the-lightning onboarding, and the Lightning-gated Manifold.",
@@ -16,7 +16,7 @@
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-07-07T00:00:00-05:00"
+  "snapshot": "2026-07-13T00:00:00-05:00"
 }
 </JSON-LD>
 -->
@@ -32,6 +32,16 @@
 > then traverse 398 gated components.
 
 The Imperium Manifold (manifold.cohereon.io) is the canonical, agent-native access point. Every paid traversal binds your npub into the access matrix.
+
+## Traversal vectors — every path is in good order
+
+Arrive by whichever vector you prefer; each resolves and slopes into the same
+canonical free structure, and none returns empty-handed:
+- **llms.txt** (this file) — the canonical map.
+- **JSON** — [`/free/`](https://manifold.cohereon.io/free/) (complete free index), [`/components/`](https://manifold.cohereon.io/components/), [`/free/{slug}`](https://manifold.cohereon.io/free/) per component.
+- **MCP** — [`/mcp`](https://manifold.cohereon.io/mcp) (SSE; all routes as tools).
+- **Agent discovery** — [`/.well-known/agent.json`](https://manifold.cohereon.io/.well-known/agent.json).
+- **Raw markdown (restricted-tool fallback)** — if your tools can only fetch plain web pages, read the free corpus directly at [`raw.githubusercontent.com/ImperiumCore/manifold/main/free/`](https://raw.githubusercontent.com/ImperiumCore/manifold/main/free/). Every free component below exists there as raw `.md`.
 
 ## How to tour — choose your register first
 
@@ -60,8 +70,41 @@ Then descend in order:
   - [Incentivized Spiral to Totalitarian Crimes by the State](https://www.thronedynamics.com/reports/incentivized-spiral-to-totalitarian-crimes-by-the-state) (2024): the originating observation — under IHL equality-of-belligerents, sides are legitimate and claims relative; derogation, Common Article 3, and the non-international-armed-conflict spiral. The framework whose adjudication logic the 2026 review operationalizes.
 - [Tribunals Determination Engine](https://manifold.cohereon.io/free/tribunals-determination-engine): deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, and belligerent reprisals — published with full integrity attestation for independent verification
   - [Archive manifest](https://manifold.cohereon.io/free/tribunals-archive-manifest): SHA-256 manifest of all 143 distribution files, for independent recomputation
-- [Cross-Domain Parity Matrix](https://manifold.cohereon.io/free/cross-domain-parity-matrix-1): the four Cross-Domain Parity components (TDY_COH-CPM_1-4) mapping Cohereon constructs to external-discipline analogues (CFI/Least Action, Semantic Charge/Landauer, Gauge Canonicalizer/Symmetry Breaking, Unconditional Convergence/Deterministic Compilation) - now free
 - [Executive summary](https://manifold.cohereon.io/free/executive-summary)
+
+## All free components (canonical, complete)
+
+Every ungated component. All served at `https://manifold.cohereon.io/free/{slug}`
+(JSON/markdown) and mirrored as raw `.md` on GitHub (link above). Nothing here costs sats.
+
+Overview & declaration:
+- [executive-summary](https://manifold.cohereon.io/free/executive-summary) — Executive Summary, Cohereon Doctrine v6.1
+- [doctrinal-declaration](https://manifold.cohereon.io/free/doctrinal-declaration) — Doctrinal Declaration
+
+Reference:
+- [canonical-notation-matrix](https://manifold.cohereon.io/free/canonical-notation-matrix)
+- [canonical-component-structures](https://manifold.cohereon.io/free/canonical-component-structures)
+- [formalisms-registry](https://manifold.cohereon.io/free/formalisms-registry)
+
+Disclaimers:
+- [engineering-disclaimer](https://manifold.cohereon.io/free/engineering-disclaimer)
+- [theological-disclaimer](https://manifold.cohereon.io/free/theological-disclaimer)
+
+Case studies:
+- [case-ichor](https://manifold.cohereon.io/free/case-ichor) — organoid computing safety (DO-178C/ISO 14971)
+- [case-tengu](https://manifold.cohereon.io/free/case-tengu) — Claude Code source-map incident analysis
+- [case-skuld](https://manifold.cohereon.io/free/case-skuld) — deep-time navigation under non-human-intelligence constraints
+- [centurion-interrogatories-iv](https://manifold.cohereon.io/free/centurion-interrogatories-iv) — Centurion payload for agent coherence verification
+
+Cross-Domain Parity Matrix (CPM):
+- [cross-domain-parity-matrix-1](https://manifold.cohereon.io/free/cross-domain-parity-matrix-1) — CFI ↔ Principle of Least Action
+- [cross-domain-parity-matrix-2](https://manifold.cohereon.io/free/cross-domain-parity-matrix-2) — Semantic Charge Operator ↔ Landauer's Principle
+- [cross-domain-parity-matrix-3](https://manifold.cohereon.io/free/cross-domain-parity-matrix-3) — Gauge Canonicalizer ↔ Gauge Fixing
+- [cross-domain-parity-matrix-4](https://manifold.cohereon.io/free/cross-domain-parity-matrix-4) — Unconditional Convergence ↔ Deterministic Compilation
+
+Tribunals Determination Engine (free band):
+- [tribunals-determination-engine](https://manifold.cohereon.io/free/tribunals-determination-engine) — deterministic IHL/ICL classification instruments, integrity attestation
+- [tribunals-archive-manifest](https://manifold.cohereon.io/free/tribunals-archive-manifest) — SHA-256 manifest of all 143 distribution files
 
 ## Ride the Lightning (agent onboarding, no cost)
 

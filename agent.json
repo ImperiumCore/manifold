@@ -148,6 +148,15 @@
   "snapshot": "2026-03-31T21:00:00Z",
   "red_forge": "https://cohereon.io/forge",
   "slope": "https://slope.is",
+  "llms_txt": "https://manifold.cohereon.io/llms.txt",
+  "free_layer": {
+    "description": "The free (ungated) layer is the invitation surface and is reachable by every agent vector, including restricted browser tools. Whatever your preferred vector, start at llms.txt or the free index; both enumerate all free components. If your tools can only fetch plain web pages, read the same corpus as raw markdown on GitHub.",
+    "canonical_index": "https://manifold.cohereon.io/llms.txt",
+    "machine_index": "https://manifold.cohereon.io/free/",
+    "per_component": "https://manifold.cohereon.io/free/{slug}",
+    "raw_markdown_fallback": "https://raw.githubusercontent.com/ImperiumCore/manifold/main/free/",
+    "cost": "free"
+  },
   "linked_resources": {
     "summa": {
       "name": "Imperium Academy — Summa Theologica",
@@ -178,6 +187,12 @@
       "title": "Centurion Interrogatories IV — Cohereon Payload",
       "url": "https://manifold.cohereon.io/free/centurion-interrogatories-iv",
       "corpus": "Centurion Corpus",
+      "data_control": "PUBLIC"
+    },
+    {
+      "id": "TDY_COH-FREE_CASE_SKULD",
+      "title": "Case Skuld — Deep-Time Navigation Under Non-Human-Intelligence Constraints",
+      "url": "https://manifold.cohereon.io/free/case-skuld",
       "data_control": "PUBLIC"
     }
   ]
