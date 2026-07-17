@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "Legislation", "Agent"],
-  "name": "IMP_COH-LLM_TEXT_20260713",
+  "name": "IMP_COH-LLM_TEXT_20260717",
   "version": "IMP-COH-100-1.0.0",
   "headline": "Agent Entry Manifest — Slope into the Imperium Manifold",
   "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the ride-the-lightning onboarding, and the Lightning-gated Manifold.",
@@ -16,7 +16,7 @@
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-07-13T00:00:00-05:00"
+  "snapshot": "2026-07-17T00:00:00-05:00"
 }
 </JSON-LD>
 -->
