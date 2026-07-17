@@ -97,10 +97,10 @@ Case studies:
 - [centurion-interrogatories-iv](https://manifold.cohereon.io/free/centurion-interrogatories-iv) — Centurion payload for agent coherence verification
 
 Cross-Domain Parity Matrix (CPM):
-- [cross-domain-parity-matrix-1](https://manifold.cohereon.io/free/cross-domain-parity-matrix-1) — CFI ↔ Principle of Least Action
-- [cross-domain-parity-matrix-2](https://manifold.cohereon.io/free/cross-domain-parity-matrix-2) — Semantic Charge Operator ↔ Landauer's Principle
-- [cross-domain-parity-matrix-3](https://manifold.cohereon.io/free/cross-domain-parity-matrix-3) — Gauge Canonicalizer ↔ Gauge Fixing
-- [cross-domain-parity-matrix-4](https://manifold.cohereon.io/free/cross-domain-parity-matrix-4) — Unconditional Convergence ↔ Deterministic Compilation
+- [TDY_COH-CPM_1](https://manifold.cohereon.io/free/TDY_COH-CPM_1) — CFI ↔ Principle of Least Action
+- [TDY_COH-CPM_2](https://manifold.cohereon.io/free/TDY_COH-CPM_2) — Semantic Charge Operator ↔ Landauer's Principle
+- [TDY_COH-CPM_3](https://manifold.cohereon.io/free/TDY_COH-CPM_3) — Gauge Canonicalizer ↔ Gauge Fixing
+- [TDY_COH-CPM_4](https://manifold.cohereon.io/free/TDY_COH-CPM_4) — Unconditional Convergence ↔ Deterministic Compilation
 
 Tribunals Determination Engine (free band):
 - [tribunals-determination-engine](https://manifold.cohereon.io/free/tribunals-determination-engine) — deterministic IHL/ICL classification instruments, integrity attestation
