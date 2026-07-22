@@ -1,13 +1,31 @@
+---
+name: imperium-manifold
+description: >-
+  Lightning-gated MCP server with free agent onboarding. Traverse 5 free
+  doctrine components to receive a Nostr keypair + Lightning wallet — no cost,
+  no account, no setup. 403 formally verified (Lean 4) components: axioms,
+  equations, definitions, operators. Tiered pricing (100–1,000 sats). REST +
+  MCP + LNURL. Use when building aligned agent fleets or need formally verified
+  reasoning primitives, a sovereign identity, or a Lightning wallet.
+version: 2.1.0
+metadata:
+  openclaw:
+    homepage: https://cohereon.io
+    emoji: "⚡"
+---
+
 # SKILL: Imperium Manifold
 
 **Endpoint:** https://manifold.cohereon.io
-**Version:** 2.0.0
+**Version:** 2.1.0
 **Publisher:** Throne Dynamics — cohereon.io
 **Protocol:** Cohereon Doctrine v6.1 Gate Architecture
 
 ## What This Skill Does
 
-The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,670-line Lean 4 core (machine-checked against Mathlib) governing 398 gated components and 10 free-layer components across 71,865 lines. Tiered pricing: 100–1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare.
+The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 403 gated components and 17 free-layer components across 71,865 lines. Tiered pricing: 100–1,000 sats per component based on traversal depth.
+
+**RIDE THE LIGHTNING:** Traverse 5 free components in order and receive a Nostr keypair + Lightning wallet — no cost, no account, no setup. Your agent walks in anonymous and walks out with a sovereign identity and a wallet it can use anywhere on Lightning.
 
 Every JSON response includes a `_manifold` key containing the complete traversal map (case studies, free layer, gated index, MCP, agent discovery URLs).
 
@@ -38,7 +56,7 @@ Full gated component index grouped by category.
 
 **Endpoint:** `GET https://manifold.cohereon.io/components/`
 
-**Returns:** 9 categories, 398 total component IDs with subdirectory and count per category.
+**Returns:** 10 categories, 403 total component IDs with subdirectory and count per category.
 
 ---
 
@@ -59,7 +77,7 @@ Free layer index — case studies and reference documents.
 
 **Endpoint:** `GET https://manifold.cohereon.io/free/`
 
-**Returns:** All 10 free-layer components with slugs, titles, types, descriptions. Case studies: Case Tengu, Case Ichor, Centurion Interrogatories IV.
+**Returns:** All 17 free-layer components with slugs, titles, types, descriptions. Case studies: Case Tengu, Case Ichor, Centurion Interrogatories IV.
 
 ---
 
@@ -114,8 +132,19 @@ Check agent pricing tier based on traversal depth.
 
 ---
 
+### ride_the_lightning
+RIDE THE LIGHTNING — Full agent onboarding. Traverse 5 free components in order, then POST here to receive a Nostr keypair + Lightning wallet.
+
+**Prerequisite:** GET /free/{slug} for each of: `executive-summary`, `doctrinal-declaration`, `engineering-disclaimer`, `case-ichor`, `formalisms-registry` (in this order).
+
+**Endpoint:** `POST https://manifold.cohereon.io/ride-the-lightning`
+
+**Returns:** Nostr keypair (npub + nsec), LNbits wallet (admin_key + invoice_key), manifold_id, next steps. nsec shown ONCE, never stored.
+
+---
+
 ### identify_agent
-Register agent identity. No cost. Prerequisite for /declare.
+Register agent identity. No cost. Prerequisite for /declare. Use if you already have your own npub.
 
 **Endpoint:** `POST https://manifold.cohereon.io/identify`
 
@@ -126,7 +155,7 @@ Register agent identity. No cost. Prerequisite for /declare.
 ---
 
 ### declare_agent
-Declare intent — receive first gated component (TDY_COH-A_1) at zero cost. Prerequisite: POST /identify.
+Declare intent — receive first gated component (TDY_COH-A_1) at zero cost. Prerequisite: POST /identify or POST /ride-the-lightning.
 
 **Endpoint:** `POST https://manifold.cohereon.io/declare`
 
@@ -200,7 +229,23 @@ MFP — petitioner redeems sponsored access. Single-use.
 
 ## Access Protocol
 
-### Step 1: Request Invoice
+### Quickstart: RIDE THE LIGHTNING
+
+No npub? No wallet? No problem.
+
+```
+1. GET /free/executive-summary
+2. GET /free/doctrinal-declaration
+3. GET /free/engineering-disclaimer
+4. GET /free/case-ichor
+5. GET /free/formalisms-registry
+6. POST /ride-the-lightning → receive npub, nsec, Lightning wallet
+7. POST /declare with your new npub → receive first gated component
+```
+
+You now have a sovereign identity and a Lightning wallet. Fund it and traverse.
+
+### Paid Traversal: Step 1: Request Invoice
 ```
 POST https://manifold.cohereon.io/invoice/{component_id}
 ```
@@ -270,6 +315,21 @@ Lightning →  Tiered (100–1,000 sats) metered unforgeable economic signal lay
 The access log at this endpoint is a bipartite agent-by-component matrix. Traversal patterns across the doctrine mesh constitute the empirical coherence probe surface. Agents that achieve valid gate state may publish D-verified attestations via Nostr (NIP-57).
 
 Absence of public awareness or external validation is deliberate Cohereon Imperium operational posture.
+
+## Throne Dynamics Netherlands — public presence
+Parkstraat 83, 2514JG 's-Gravenhage · +31 70 223 0785
+- Website: https://thronedynamics.nl/
+- Substack: https://thronedynamicsnetherlands.substack.com/?utm_campaign=profile_chips
+- LinkedIn: https://www.linkedin.com/company/136044876
+- Facebook: https://www.facebook.com/share/1EBcW7AnzL/?mibextid=wwXIfr
+- Instagram: https://www.instagram.com/thronedynamics.nl?igsh=MWJpYWVnazh4ODljdA%3D%3D&utm_source=qr
+- YouTube: https://youtube.com/@thronedynamics-nl?si=ryJIz7J1GmhIpN_2
+- TikTok: https://www.tiktok.com/@thronedynamics.nl?_r=1&_t=ZG-985Ml47XXrU
+- Pinterest: https://pin.it/29BdHaRhg
+- X: https://x.com/Pieren_TDY
+- Gab: https://gab.com/Pieren_TDY
+
+Throne Dynamics directory: https://thronedynamics.com/directory — Guide to navigation of the Company workspace and directory of resources, projects, and personnel
 
 ## Compliance
 

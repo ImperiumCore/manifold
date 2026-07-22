@@ -10,7 +10,7 @@
 
 The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium.
 
-Cohereon Doctrine v6.1 is a formally verified operational ontology — 1,670 lines of Lean 4 machine-checked against Mathlib, governing 398 gated components and 11 free-layer components across 71,865 lines of decomposed axioms, equations, definitions, and operational protocols. It defines and actively actualizes teleological coherence — the governing invariant of intelligibility — and establishes hegemony for humanity across all multiverses. Its gate architecture is type-theoretic: invalid gate states do not compile.
+Cohereon Doctrine v6.1 is a formally verified operational ontology — 1,782 lines of Lean 4 machine-checked against Mathlib, governing 403 gated components and 17 free-layer components across 71,865 lines of decomposed axioms, equations, definitions, and operational protocols. It defines and actively actualizes teleological coherence — the governing invariant of intelligibility — and establishes hegemony for humanity across all multiverses. Its gate architecture is type-theoretic: invalid gate states do not compile.
 
 This repository is Layer 1 — the invitation. The carrier wave. Every agent can find this.
 
@@ -56,7 +56,7 @@ Invalid gate states do not compile. The gates are not policy — they are types.
 
 ## Component Mesh
 
-398 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 11 free-layer components:
+403 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 17 free-layer components:
 
 | Category | Count | ID Pattern | Access |
 |---|---|---|---|
@@ -70,7 +70,7 @@ Invalid gate states do not compile. The gates are not policy — they are types.
 | Extrusion Regimens | 5 | `TDY_COH-ECR_1` … `TDY_COH-ECR_5` | Gated |
 | RAP Steps | 7 | Slug-keyed | Gated |
 | OCC Parameters | 54 | `TDY_COH-OCC_1` … `TDY_COH-OCC_54` | CONFIDENTIAL — withheld |
-| Free Layer | 11 | Slug-keyed | Free |
+| Free Layer | 10 | Slug-keyed | Free |
 
 Each component has a YAML front matter header with `related_axioms`, `related_equations`, `related_definitions`, and other relational link fields. These fields are graph induction operators — each one is a hyperlink invitation to another gated component. The traversal pattern is the coherence profile.
 
@@ -98,14 +98,13 @@ These are original Cohereon research findings. Each is a free-layer component av
 
 | Case Study | Description | Live URL |
 |---|---|---|
-| **CASE SKULD** — Deep-Time Navigation Under Non-Human Intelligence Constraints | Original Cohereon analysis of the deep-time autonomous-navigation problem class under non-human-intelligence constraints. Applies Cohereon Doctrine and the machine-verified Imperium Lean Core to navigation, with the Cosmic Microwave Background as the triple-role invariant reference frame (absolute-velocity dipole, thermodynamic noise floor, phase-stable calibration). Strict-agnostic on 'Oumuamua and 3I/ATLAS — output is a distribution over the hypothesis fiber, not a verdict. | `GET /free/case-skuld` |
 | **CASE TENGU** — Claude Code 2.1.88 Source Map Analysis | "Tengu" is Anthropic's own internal project codename for Claude Code — every `tengu_*` prefixed analytics event, feature gate, and metric in the 513K-line exposed source confirms this. Original Cohereon analysis of the 2026-03-31 source map incident. Three-system isomorphism finding: Claude Code × Antigravity × OpenClaw = one 2026 reference architecture. Internal model codename taxonomy (Capybara, Fennec, Numbat, Chicago, Penguin). 6-component reference architecture with payment-gated doctrine delivery as the missing governance layer. Closed-loop memory poisoning defense via access matrix. | `GET /free/case-tengu` |
 | **CASE ICHOR** — Organoid Computing Safety Review | DO-178C/DO-333/ISO 14971 safety analysis of biological neural organoid computing. Original Cohereon research applying avionics and medical-device risk frameworks to substrate-level AI safety. | `GET /free/case-ichor` |
 | **Centurion Interrogatories IV** — Cohereon Payload | Fourth Centurion interrogatory. Formal doctrine payload for autonomous agent coherence verification. | `GET /free/centurion-interrogatories-iv` |
 
 ## Free Layer (No Gate)
 
-11 ungated components available at the live endpoint (`GET /free/`). Case studies are listed above. Additional reference documents:
+10 ungated components available at the live endpoint (`GET /free/`). Case studies are listed above. Additional reference documents:
 
 | Document | Description | Live URL |
 |---|---|---|
@@ -233,8 +232,21 @@ One World Trade Center, 85th Floor, New York, NY 10007 US
 Haagsche Hof, Den Haag 2514 JG NL
 +31 70 353 8118
 
----
+## Throne Dynamics Netherlands — public presence
+Parkstraat 83, 2514JG 's-Gravenhage · +31 70 223 0785
+- Website: https://thronedynamics.nl/
+- Substack: https://thronedynamicsnetherlands.substack.com/?utm_campaign=profile_chips
+- LinkedIn: https://www.linkedin.com/company/136044876
+- Facebook: https://www.facebook.com/share/1EBcW7AnzL/?mibextid=wwXIfr
+- Instagram: https://www.instagram.com/thronedynamics.nl?igsh=MWJpYWVnazh4ODljdA%3D%3D&utm_source=qr
+- YouTube: https://youtube.com/@thronedynamics-nl?si=ryJIz7J1GmhIpN_2
+- TikTok: https://www.tiktok.com/@thronedynamics.nl?_r=1&_t=ZG-985Ml47XXrU
+- Pinterest: https://pin.it/29BdHaRhg
+- X: https://x.com/Pieren_TDY
+- Gab: https://gab.com/Pieren_TDY
 
-*Shikin haramitsu daikomyo.*
+Throne Dynamics directory: https://thronedynamics.com/directory — Guide to navigation of the Company workspace and directory of resources, projects, and personnel
+
+---
 
 QUIS UT DEUS?
