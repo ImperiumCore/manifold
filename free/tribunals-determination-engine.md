@@ -76,6 +76,45 @@ Five separate engines, each a separate legal determination. Classification under
 - **Belligerent-Reprisal Claim Classification** (LOAC, 6 legal families). Determines whether a precisely configured belligerent-reprisal claim survives the predicates of each requested legal family on the adjudicated record. It does not determine a single universal answer, and it does not authorize conduct, select targets, or issue rules of engagement.
 - **Target Accountability Package Classification** (7 public/adopted authority families). Converts adjudicated records into actor-specific accountability package determinations across seven public/adopted authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
 
+## Rule and authority families
+
+Each engine's families are named here. The engine classifies against each named family's threshold on the adjudicated record; families are executed separately and do not vote, and a favorable result under one family is not generalized to another. The family names and their public authority basis are published on this surface; the element-by-element charge tests, credential-tiered verbatim source authorities, bridge rules, and worked adjudications run behind the gate.
+
+**NIAC — Non-International Armed Conflict (6 rule families)**
+- Common Article 3 (strict textual)
+- Additional Protocol II, Article 1 (textual)
+- ICTY Tadić–Haradinaj (jurisprudential)
+- Rome Statute Article 8(2)(c)–(d) (textual)
+- Rome Statute Article 8(2)(e)–(f) (textual)
+- ICRC 2024 interpretive methodology
+
+**Rome Statute Article 6 — Genocide (2 credentialed families)**
+- Rome Statute Article 6 treaty text
+- ICC Elements of Crimes, Article 6 (Article 9 interpretive instrument)
+
+**Rome Statute Article 7 — Crimes Against Humanity (2 credentialed families)**
+- Rome Statute Article 7 treaty text
+- ICC Elements of Crimes, Article 7 (Article 9 interpretive instrument)
+
+**Belligerent-Reprisal Claim Classification (6 legal families)**
+- 1949 Geneva Conventions express reprisal prohibitions
+- Additional Protocol I express reprisal prohibitions
+- ICRC Customary IHL — IAC (Rules 145–147)
+- ICRC Customary IHL — NIAC (Rule 148)
+- United Kingdom AP I ratification statement / JSP 383 State position
+- ICTY Kupreškić Trial Chamber (reprisals against civilians)
+
+**Target Accountability Package Classification (7 public/adopted authority families)**
+- RDA — Risk Division Authority (adopted public/accountability determination standard)
+- U.S. Global Magnitsky (public baseline)
+- U.S. Section 7031(c) visa restriction (public baseline)
+- UK Global Human Rights Sanctions (public guidance)
+- EU Global Human Rights Sanctions (public regime)
+- Canada JVCFOA — Justice for Victims of Corrupt Foreign Officials Act (public baseline)
+- Australia autonomous human-rights and corruption sanctions (public)
+
+Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), and the Berkeley Protocol on Digital Open-Source Investigations. The verbatim, credential-tiered source excerpts are behind the gate.
+
 ## Integrity, not assertion
 
 The engines are published so that their rigor can be checked rather than trusted. The instruments of that verification follow.
