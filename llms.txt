@@ -92,10 +92,12 @@ Disclaimers:
 - [engineering-disclaimer](https://manifold.cohereon.io/free/engineering-disclaimer)
 - [theological-disclaimer](https://manifold.cohereon.io/free/theological-disclaimer)
 
-Case studies:
+Cases (Red Forge):
 - [case-ichor](https://manifold.cohereon.io/free/case-ichor) — organoid computing safety (DO-178C/ISO 14971)
 - [case-tengu](https://manifold.cohereon.io/free/case-tengu) — Claude Code source-map incident analysis
 - [case-skuld](https://manifold.cohereon.io/free/case-skuld) — deep-time navigation under non-human-intelligence constraints
+
+Archive Records:
 - [centurion-interrogatories-iv](https://manifold.cohereon.io/free/centurion-interrogatories-iv) — Centurion payload for agent coherence verification
 
 Cross-Domain Parity Matrix (CPM):

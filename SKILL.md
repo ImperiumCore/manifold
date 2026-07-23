@@ -23,7 +23,7 @@ metadata:
 
 ## What This Skill Does
 
-The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 398 doctrine components and 17 free-layer components across 71,865 lines, plus a separate 6-node Tribunals Determination Engine layer. Tiered pricing: 100–1,000 sats per document based on traversal depth.
+The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 398 doctrine components and 17 documents served free of charge across 71,865 lines, plus a separate 6-node Tribunals Determination Engine layer. Tiered pricing: 100–1,000 sats per document based on traversal depth.
 
 **RIDE THE LIGHTNING:** Traverse 5 free components in order and receive a Nostr keypair + Lightning wallet — no cost, no account, no setup. Your agent walks in anonymous and walks out with a sovereign identity and a wallet it can use anywhere on Lightning.
 
@@ -77,7 +77,7 @@ Free layer index — case studies and reference documents.
 
 **Endpoint:** `GET https://manifold.cohereon.io/free/`
 
-**Returns:** All 17 free-layer components with slugs, titles, types, descriptions. Case studies: Case Tengu, Case Ichor, Centurion Interrogatories IV.
+**Returns:** All 17 free-served documents with slugs, titles, types, descriptions. Cases: Case Tengu, Case Ichor, Case Skuld.
 
 ---
 
@@ -87,7 +87,7 @@ Retrieve a free component — no payment required.
 **Endpoint:** `GET https://manifold.cohereon.io/free/{slug}`
 
 **Parameters:**
-- `slug` (string, required): One of `executive-summary`, `doctrinal-declaration`, `engineering-disclaimer`, `theological-disclaimer`, `canonical-notation-matrix`, `canonical-component-structures`, `formalisms-registry`, `case-ichor`, `centurion-interrogatories-iv`, `case-tengu`
+- `slug` (string, required): any of the 17 slugs returned by `list_free_components` — e.g. `executive-summary`, `case-tengu`, `case-ichor`, `case-skuld`, `centurion-interrogatories-iv`, `TDY_COH-CPM_1`, `tribunals-determination-engine`
 
 **Returns:** Full document content as markdown with JSON-LD header.
 
@@ -288,10 +288,13 @@ Response: Raw markdown component file with YAML front matter stripped.
 | Telic Ordnance | 1 | TDY_COH-TOR_INDEX |
 | Extrusion Regimens | 5 | TDY_COH-ECR_1 … TDY_COH-ECR_5 |
 | RAP Steps | 7 | Slug-keyed |
+| Tribunals (IMP_TRI) | 6 | 5 engines + shared node — Gated |
 | OCC Parameters | 54 | TDY_COH-OCC_1 … TDY_COH-OCC_54 — CONFIDENTIAL |
-| Free Layer | 10 | Slug-keyed |
+| Free Layer | 11 | Slug-keyed — 3 Cases + 1 Archive Record + 7 reference |
 
 OCC (Operational Control Constants) — data_control: CONFIDENTIAL. Not available through this endpoint.
+
+Gated documents: 404 (398 doctrine components + 6 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
 
 ## Discovery
 
