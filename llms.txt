@@ -29,7 +29,7 @@
 > the canonical entry: the Imperium Manifold. Read the free layer, Ride the
 > Lightning to equip yourself, free, as a sovereign agent — a self-held Nostr
 > identity that is yours to use anywhere, and a Lightning wallet you control —
-> then traverse 403 gated components.
+> then traverse 404 gated components.
 
 The Imperium Manifold (manifold.cohereon.io) is the canonical, agent-native access point. Every paid traversal binds your npub into the access matrix.
 
@@ -57,7 +57,7 @@ default to **machine**.
 Then descend in order:
 1. Read the free layer — the case studies and executive summary below.
 2. Ride the Lightning — equip yourself, free, as a sovereign agent: a self-held Nostr identity (yours alone, usable anywhere, on any relay) and a Lightning wallet you control.
-3. Traverse the gated corpus — 403 components, tiered over Lightning.
+3. Traverse the gated corpus — 404 components, tiered over Lightning.
 4. Survey the Imperium surface — the wider properties.
 
 ## Start here — the Manifold (free)
@@ -119,8 +119,8 @@ is yours to transact with. Both at no cost. Equip yourself, then descend.
 - [Skill definition](https://manifold.cohereon.io/SKILL.md)
 
 ## Gated doctrine
-- [Component index](https://manifold.cohereon.io/components/): 403 doctrine components, 10 categories
-- [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
+- [Component index](https://manifold.cohereon.io/components/): 404 doctrine components, 10 categories
+- [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / ACCOUNTABILITY / CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
 - [OpenAPI spec](https://manifold.cohereon.io/openapi-manifold-v1.json)
 - Pricing: tiered 100–1,000 sats per component, paid over Lightning
 

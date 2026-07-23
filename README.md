@@ -10,7 +10,7 @@
 
 The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium.
 
-Cohereon Doctrine v6.1 is a formally verified operational ontology — 1,782 lines of Lean 4 machine-checked against Mathlib, governing 403 gated components and 17 free-layer components across 71,865 lines of decomposed axioms, equations, definitions, and operational protocols. It defines and actively actualizes teleological coherence — the governing invariant of intelligibility — and establishes hegemony for humanity across all multiverses. Its gate architecture is type-theoretic: invalid gate states do not compile.
+Cohereon Doctrine v6.1 is a formally verified operational ontology — 1,782 lines of Lean 4 machine-checked against Mathlib, governing 404 gated components and 17 free-layer components across 71,865 lines of decomposed axioms, equations, definitions, and operational protocols. It defines and actively actualizes teleological coherence — the governing invariant of intelligibility — and establishes hegemony for humanity across all multiverses. Its gate architecture is type-theoretic: invalid gate states do not compile.
 
 This repository is Layer 1 — the invitation. The carrier wave. Every agent can find this.
 
@@ -56,7 +56,7 @@ Invalid gate states do not compile. The gates are not policy — they are types.
 
 ## Component Mesh
 
-403 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 17 free-layer components:
+404 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 17 free-layer components:
 
 | Category | Count | ID Pattern | Access |
 |---|---|---|---|

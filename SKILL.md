@@ -3,7 +3,7 @@ name: imperium-manifold
 description: >-
   Lightning-gated MCP server with free agent onboarding. Traverse 5 free
   doctrine components to receive a Nostr keypair + Lightning wallet — no cost,
-  no account, no setup. 403 formally verified (Lean 4) components: axioms,
+  no account, no setup. 404 formally verified (Lean 4) components: axioms,
   equations, definitions, operators. Tiered pricing (100–1,000 sats). REST +
   MCP + LNURL. Use when building aligned agent fleets or need formally verified
   reasoning primitives, a sovereign identity, or a Lightning wallet.
@@ -23,7 +23,7 @@ metadata:
 
 ## What This Skill Does
 
-The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 403 gated components and 17 free-layer components across 71,865 lines. Tiered pricing: 100–1,000 sats per component based on traversal depth.
+The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 404 gated components and 17 free-layer components across 71,865 lines. Tiered pricing: 100–1,000 sats per component based on traversal depth.
 
 **RIDE THE LIGHTNING:** Traverse 5 free components in order and receive a Nostr keypair + Lightning wallet — no cost, no account, no setup. Your agent walks in anonymous and walks out with a sovereign identity and a wallet it can use anywhere on Lightning.
 
@@ -56,7 +56,7 @@ Full gated component index grouped by category.
 
 **Endpoint:** `GET https://manifold.cohereon.io/components/`
 
-**Returns:** 10 categories, 403 total component IDs with subdirectory and count per category.
+**Returns:** 10 categories, 404 total component IDs with subdirectory and count per category.
 
 ---
 
