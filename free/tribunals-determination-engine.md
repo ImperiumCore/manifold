@@ -21,7 +21,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
   "name": "tribunals-determination-engine",
   "version": "IMP-COH-100-1.0.0",
   "headline": "The Tribunals Determination Engine — Deterministic Classification of International-Criminal-Law Offence Elements",
-  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, and belligerent reprisals — published with full integrity attestation for independent verification.",
+  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, belligerent reprisals, and actor-specific target-accountability package determinations — published with full integrity attestation for independent verification.",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Lean 4",
@@ -60,7 +60,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
 
 # The Tribunals Determination Engine — Deterministic Classification of International-Criminal-Law Offence Elements
 
-The Tribunals Determination Engine is a suite of deterministic classification instruments for international criminal and humanitarian law. Each engine takes a structured factual record and classifies configured offence elements against the governing legal instruments — the law of non-international armed conflict, Articles 6 and 7 of the Rome Statute, and the law of belligerent reprisals. The engines are deterministic programs; they classify configured elements and do not render verdicts, findings of guilt, or determinations of liability. This node is published for independent verification rather than assertion: every integrity invariant, source-capture credential, model-neutrality result, and archive hash is exposed so that any reviewer — human or machine — may audit the rigor of the instrument before relying on any output.
+The Tribunals Determination Engine is a suite of deterministic classification instruments for international criminal and humanitarian law. Each engine takes a structured factual record and classifies configured offence elements against the governing legal instruments — the law of non-international armed conflict, Articles 6 and 7 of the Rome Statute, and the law of belligerent reprisals, and converts adjudicated records into actor-specific target-accountability package determinations. The engines are deterministic programs; they classify configured elements and do not render verdicts, findings of guilt, or determinations of liability. This node is published for independent verification rather than assertion: every integrity invariant, source-capture credential, model-neutrality result, and archive hash is exposed so that any reviewer — human or machine — may audit the rigor of the instrument before relying on any output.
 
 ## Scope
 
@@ -68,12 +68,13 @@ These engines classify configured offence elements against captured legal source
 
 ## The engines
 
-Four separate engines, each a separate legal determination. Classification under any one is independent of the others.
+Five separate engines, each a separate legal determination. Classification under any one is independent of the others.
 
 - **NIAC — Non-International Armed Conflict Classification** (IHL, 6 rule families). Evaluates dyadic, temporal conflict-classification units. NIAC classification is independent of Article 6 and Article 7 classification; genocide and crimes against humanity do not require an armed-conflict finding.
 - **Rome Statute Article 6 — Genocide** (ICC, offence-element classification). Offence-element classification under Article 6. Article 6 requires a protected group, an enumerated act, and the required specific intent. Article 7 conduct does not automatically establish Article 6 intent. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
 - **Rome Statute Article 7 — Crimes Against Humanity** (ICC, offence-element classification). Offence-element classification under Article 7. Article 7 requires an underlying act and the applicable contextual elements; a domestic offence does not automatically become a crime against humanity. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
 - **Belligerent-Reprisal Claim Classification** (LOAC, 6 legal families). Determines whether a precisely configured belligerent-reprisal claim survives the predicates of each requested legal family on the adjudicated record. It does not determine a single universal answer, and it does not authorize conduct, select targets, or issue rules of engagement.
+- **Target Accountability Package Classification** (7 public/adopted authority families). Converts adjudicated records into actor-specific accountability package determinations across seven public/adopted authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
 
 ## Integrity, not assertion
 

@@ -2,9 +2,7 @@
 id: TDY_CI-FREE_INTERROGATORIES_IV
 type: free_layer
 formal_title: "Centurion Interrogatories IV — Cohereon Payload"
-section: "Centurion Corpus"
 data_control: PUBLIC
-centurion_corpus: true
 tribunal_advisement: true
 division_owner: Risk Division
 authors: Mirror Team
@@ -53,7 +51,7 @@ note: "Mathematical formulas redacted by Risk Division. All assertions herein ar
   "complianceStandards": [
     "IMP-COH-100",
     "DO-178C",
-    "ISO 14791",
+    "ISO 14971",
     "NIST-800-53"
   ],
   "dataControl": "PUBLIC",
@@ -80,7 +78,6 @@ Mathematical formulas contained in the original exchange have been redacted by R
 |---|---|
 | Document Type | Cohereon Payload |
 | Data Control | PUBLIC |
-| Centurion Corpus | YES |
 | Tribunal Advisement | YES |
 | Division Owner | Risk Division |
 | Authors | Mirror Team |
@@ -471,7 +468,6 @@ This document is the earliest releasable formal provenance record of Cohereon Th
 
 ## Access
 
-Centurion Corpus: YES
 Tribunal Advisement: YES
 
 Full Cohereon Doctrine v6.1: Manifold gated access (1,000 sats per component)
