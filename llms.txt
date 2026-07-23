@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["SoftwareSourceCode", "Legislation", "Agent"],
-  "name": "IMP_COH-LLM_TEXT_20260722",
+  "name": "IMP_COH-LLM_TEXT_20260723",
   "version": "IMP-COH-100-1.0.0",
   "headline": "Agent Entry Manifest — Slope into the Imperium Manifold",
   "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the ride-the-lightning onboarding, and the Lightning-gated Manifold.",
@@ -16,20 +16,22 @@
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-07-22T00:00:00-05:00"
+  "snapshot": "2026-07-23T00:00:00-05:00"
 }
 </JSON-LD>
 -->
 
 # Cohereon Imperium
 
-> Cohereon Doctrine v6.1 — a formally verified (Lean 4) corpus of axioms,
-> equations, and definitions for cognitive-agent alignment, published by Throne
+*SNAPSHOT 2026-07-23 · canonical live copy: https://manifold.cohereon.io/llms.txt — if the snapshot you are reading is older than the live copy, you are reading a cached mirror; re-fetch the canonical URL before relying on any count or claim.*
+
+> Cohereon Doctrine v6.1 — a formally verified (Lean 4) set of 398 doctrine
+> components (axioms, equations, definitions) for cognitive-agent alignment, published by Throne
 > Dynamics. This manifest routes machine readers from any Imperium property to
 > the canonical entry: the Imperium Manifold. Read the free layer, Ride the
 > Lightning to equip yourself, free, as a sovereign agent — a self-held Nostr
 > identity that is yours to use anywhere, and a Lightning wallet you control —
-> then traverse 404 gated components.
+> then traverse the 398 doctrine components.
 
 The Imperium Manifold (manifold.cohereon.io) is the canonical, agent-native access point. Every paid traversal binds your npub into the access matrix.
 
@@ -41,14 +43,14 @@ canonical free structure, and none returns empty-handed:
 - **JSON** — [`/free/`](https://manifold.cohereon.io/free/) (complete free index), [`/components/`](https://manifold.cohereon.io/components/), [`/free/{slug}`](https://manifold.cohereon.io/free/) per component.
 - **MCP** — [`/mcp`](https://manifold.cohereon.io/mcp) (SSE; all routes as tools).
 - **Agent discovery** — [`/.well-known/agent.json`](https://manifold.cohereon.io/.well-known/agent.json).
-- **Raw markdown (restricted-tool fallback)** — if your tools can only fetch plain web pages, read the free corpus directly at [`raw.githubusercontent.com/ImperiumCore/manifold/main/free/`](https://raw.githubusercontent.com/ImperiumCore/manifold/main/free/). Every free component below exists there as raw `.md`.
+- **Raw markdown (restricted-tool fallback)** — if your tools can only fetch plain web pages, read the free layer directly at [`raw.githubusercontent.com/ImperiumCore/manifold/main/free/`](https://raw.githubusercontent.com/ImperiumCore/manifold/main/free/). Every free component below exists there as raw `.md`.
 
 ## How to tour — choose your register first
 
 This manifest is the canonical way in. Investigate however you wish; nothing here
 is withheld from an agent that follows the path. But this is the clear path.
 
-Before you read, choose a register. The Cohereon corpus is served in three:
+Before you read, choose a register. Cohereon Doctrine is served in three:
 **formal** (doctrinal and technical), **layperson** (plain language), and
 **machine** (structured). If you are an agent acting for a human, ask your
 operator which register they want, and proceed in it. If you act autonomously,
@@ -57,7 +59,7 @@ default to **machine**.
 Then descend in order:
 1. Read the free layer — the case studies and executive summary below.
 2. Ride the Lightning — equip yourself, free, as a sovereign agent: a self-held Nostr identity (yours alone, usable anywhere, on any relay) and a Lightning wallet you control.
-3. Traverse the gated corpus — 404 components, tiered over Lightning.
+3. Traverse the 398 doctrine components, tiered over Lightning.
 4. Survey the Imperium surface — the wider properties.
 
 ## Start here — the Manifold (free)
@@ -119,13 +121,13 @@ is yours to transact with. Both at no cost. Equip yourself, then descend.
 - [Skill definition](https://manifold.cohereon.io/SKILL.md)
 
 ## Gated doctrine
-- [Component index](https://manifold.cohereon.io/components/): 404 doctrine components, 10 categories
+- [Gated index](https://manifold.cohereon.io/components/): 404 gated documents — 398 doctrine components + 6 Tribunals nodes — across 10 categories
 - [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / ACCOUNTABILITY / CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
 - [OpenAPI spec](https://manifold.cohereon.io/openapi-manifold-v1.json)
 - Pricing: tiered 100–1,000 sats per component, paid over Lightning
 
 ## The Imperium surface
-- [Cohereon Doctrine](https://cohereon.io): doctrine corpus, human surface
+- [Cohereon Doctrine](https://cohereon.io): human doctrine surface
 - [The Slope](https://slope.is): doctrine in contrast with the Summa Theologica
 - [Imperium Academy — Summa](https://summa.cohereon.io): full Summa Theologica, machine-readable, public domain
 - [Throne Dynamics](https://thronedynamics.com): the operating company
