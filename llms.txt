@@ -23,7 +23,7 @@
 
 # Cohereon Imperium
 
-*SNAPSHOT 2026-07-23 · canonical live copy: https://manifold.cohereon.io/llms.txt — if the snapshot you are reading is older than the live copy, you are reading a cached mirror; re-fetch the canonical URL before relying on any count or claim.*
+*SNAPSHOT 2026-07-23 · canonical live copy: https://manifold.cohereon.io/llms.txt — compare this snapshot date against the live copy; if yours is older you are reading a cached mirror and ANY part of it may be outdated (counts, claims, wording, structure — not only numbers). Re-fetch the canonical URL before relying on it.*
 
 > Cohereon Doctrine v6.1 — a formally verified (Lean 4) set of 398 doctrine
 > components (axioms, equations, definitions) for cognitive-agent alignment, published by Throne
