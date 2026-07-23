@@ -68,7 +68,7 @@ These engines classify configured offence elements against captured legal source
 
 ## The engines
 
-Five separate engines, each a separate legal determination. Classification under any one is independent of the others.
+Each engine is a separate legal determination. Classification under any one is independent of the others.
 
 - **NIAC — Non-International Armed Conflict Classification** (IHL, 6 rule families). Evaluates dyadic, temporal conflict-classification units. NIAC classification is independent of Article 6 and Article 7 classification; genocide and crimes against humanity do not require an armed-conflict finding.
 - **Rome Statute Article 6 — Genocide** (ICC, offence-element classification). Offence-element classification under Article 6. Article 6 requires a protected group, an enumerated act, and the required specific intent. Article 7 conduct does not automatically establish Article 6 intent. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
