@@ -122,7 +122,7 @@ is yours to transact with. Both at no cost. Equip yourself, then descend.
 
 ## Gated doctrine
 - [Gated index](https://manifold.cohereon.io/components/): 404 gated documents — 398 doctrine components + 6 Tribunals nodes — across 10 categories
-- [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / ACCOUNTABILITY / CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
+- [Tribunals engine dossiers](https://manifold.cohereon.io/components/): IMP_TRI-NIAC / ART6 / ART7 / REPRISAL / ACCOUNTABILITY / IMP_TRI-CORPUS — per-engine element registries, credentialed source authorities, and shared schemas (1,000 sats each)
 - [OpenAPI spec](https://manifold.cohereon.io/openapi-manifold-v1.json)
 - Pricing: tiered 100–1,000 sats per component, paid over Lightning
 
