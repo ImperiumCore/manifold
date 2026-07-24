@@ -21,7 +21,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
   "name": "tribunals-determination-engine",
   "version": "IMP-COH-100-1.0.0",
   "headline": "The Tribunals Determination Engine — Deterministic Classification of International-Criminal-Law Offence Elements",
-  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, belligerent reprisals, and actor-specific target-accountability package determinations — published with full integrity attestation for independent verification.",
+  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, belligerent reprisals, command and superior responsibility, and actor-specific target-accountability package determinations — published with full integrity attestation for independent verification.",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Lean 4",
@@ -60,7 +60,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
 
 # The Tribunals Determination Engine — Deterministic Classification of International-Criminal-Law Offence Elements
 
-The Tribunals Determination Engine is a suite of deterministic classification instruments for international criminal and humanitarian law. Each engine takes a structured factual record and classifies configured offence elements against the governing legal instruments — the law of non-international armed conflict, Articles 6 and 7 of the Rome Statute, and the law of belligerent reprisals, and converts adjudicated records into actor-specific target-accountability package determinations. The engines are deterministic programs; they classify configured elements and do not render verdicts, findings of guilt, or determinations of liability. This node is published for independent verification rather than assertion: every integrity invariant, source-capture credential, model-neutrality result, and archive hash is exposed so that any reviewer — human or machine — may audit the rigor of the instrument before relying on any output.
+The Tribunals Determination Engine is a suite of deterministic classification instruments for international criminal and humanitarian law. Each engine takes a structured factual record and classifies configured offence elements against the governing legal instruments — the law of non-international armed conflict, Articles 6 and 7 of the Rome Statute, the law of belligerent reprisals, and command and superior responsibility under Rome Statute Article 28 and its national implementations, and converts adjudicated records into actor-specific target-accountability package determinations. The engines are deterministic programs; they classify configured elements and do not render verdicts, findings of guilt, or determinations of liability. This node is published for independent verification rather than assertion: every integrity invariant, source-capture credential, model-neutrality result, and archive hash is exposed so that any reviewer — human or machine — may audit the rigor of the instrument before relying on any output.
 
 ## Scope
 
@@ -75,6 +75,7 @@ Each engine is a separate legal determination. Classification under any one is i
 - **Rome Statute Article 7 — Crimes Against Humanity** (ICC, offence-element classification). Offence-element classification under Article 7. Article 7 requires an underlying act and the applicable contextual elements; a domestic offence does not automatically become a crime against humanity. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
 - **Belligerent-Reprisal Claim Classification** (LOAC, 6 legal families). Determines whether a precisely configured belligerent-reprisal claim survives the predicates of each requested legal family on the adjudicated record. It does not determine a single universal answer, and it does not authorize conduct, select targets, or issue rules of engagement.
 - **Target Accountability Package Classification** (7 public/adopted authority families). Converts adjudicated records into actor-specific accountability package determinations across seven public/adopted authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
+- **Command / Superior Responsibility Classification** (ICL, 10 legal families). Determines whether an identified natural person bears command or superior responsibility under each separately executed legal family. It consumes exact links to separately generated offence-family outputs and does not determine the underlying offence, jurisdiction, admissibility, immunity, sentence, State responsibility, or sanctions designation.
 
 ## Rule and authority families
 
@@ -113,7 +114,19 @@ Each engine's families are named here. The engine classifies against each named 
 - Canada JVCFOA — Justice for Victims of Corrupt Foreign Officials Act (public baseline)
 - Australia autonomous human-rights and corruption sanctions (public)
 
-Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), and the Berkeley Protocol on Digital Open-Source Investigations. The verbatim, credential-tiered source excerpts are behind the gate.
+**Command / Superior Responsibility Classification (10 legal families)**
+- Rome Statute Article 28(a) — military commander or effective military commander
+- Rome Statute Article 28(b) — other superior
+- Customary IHL Rule 153 — commanders and other superiors (war crimes only)
+- UK International Criminal Court Act 2001, section 65 — military branch
+- UK International Criminal Court Act 2001, section 65 — other-superior branch
+- Canada Crimes Against Humanity and War Crimes Act, sections 5/7 — military branch
+- Canada Crimes Against Humanity and War Crimes Act, sections 5/7 — other-superior branch
+- Australia Criminal Code, section 268.115 — military branch
+- Australia Criminal Code, section 268.115 — other-superior branch
+- Germany VStGB, section 4 — military commanders and other superiors
+
+Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), the Berkeley Protocol on Digital Open-Source Investigations, Rome Statute Article 28 with ICC and ICTY/ICTR/IRMCT superior-responsibility jurisprudence, Additional Protocol I Articles 86–87, and the national command-responsibility statutes of the United Kingdom, Canada, Australia, and Germany. The verbatim, credential-tiered source excerpts are behind the gate.
 
 ## Integrity, not assertion
 
