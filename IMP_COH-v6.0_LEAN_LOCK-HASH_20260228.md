@@ -41,7 +41,8 @@
   ],
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
-  "status": "OFFICIAL RELEASE",
+  "status": "ARCHIVED",
+  "supersededBy": "IMP_COH-v6.0_LEAN_LOCK-HASH_20260324",
   "snapshot": "2026-02-28T00:00:00-05:00"
 }
 </JSON-LD>
