@@ -186,7 +186,7 @@ Four prohibitions bind the credentialing:
 
 ### Archive attestation
 
-The distribution comprises 143 files; 141 are listed in the manifest and hash-verified under SHA-256. Files listed in `MANIFEST.json` are hash-verified (`verified=true`). Files not in the manifest (the manifest self-reference, generated diagnostic output, caches) are shown with `in_manifest=false` and are part of the distribution. The full manifest of file hashes is published for independent recomputation.
+The full distribution is published with a SHA-256 manifest of every file — the Tribunals Determination Engine — Archive Manifest — hash-verified for independent recomputation. Every file's hash may be recomputed independently against the distribution; the archive manifest carries the complete per-file hash table.
 
 ### Security
 
