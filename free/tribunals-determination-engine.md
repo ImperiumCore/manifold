@@ -74,7 +74,7 @@ Each engine is a separate legal determination. Classification under any one is i
 - **Rome Statute Article 6 — Genocide** (ICC, offence-element classification). Offence-element classification under Article 6. Article 6 requires a protected group, an enumerated act, and the required specific intent. Article 7 conduct does not automatically establish Article 6 intent. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
 - **Rome Statute Article 7 — Crimes Against Humanity** (ICC, offence-element classification). Offence-element classification under Article 7. Article 7 requires an underlying act and the applicable contextual elements; a domestic offence does not automatically become a crime against humanity. This registry does not itself determine ICC jurisdiction, admissibility, modes of liability, State responsibility, or remedy.
 - **Belligerent-Reprisal Claim Classification** (LOAC, 6 legal families). Determines whether a precisely configured belligerent-reprisal claim survives the predicates of each requested legal family on the adjudicated record. It does not determine a single universal answer, and it does not authorize conduct, select targets, or issue rules of engagement.
-- **Target Accountability Package Classification** (7 public/adopted authority families). Converts adjudicated records into actor-specific accountability package determinations across seven public/adopted authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
+- **Target Accountability Package Classification** (6 public authority families). Converts adjudicated records into actor-specific accountability package determinations across six public authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
 - **Command / Superior Responsibility Classification** (ICL, 10 legal families). Determines whether an identified natural person bears command or superior responsibility under each separately executed legal family. It consumes exact links to separately generated offence-family outputs and does not determine the underlying offence, jurisdiction, admissibility, immunity, sentence, State responsibility, or sanctions designation.
 
 ## Rule and authority families
@@ -105,8 +105,7 @@ Each engine's families are named here. The engine classifies against each named 
 - United Kingdom AP I ratification statement / JSP 383 State position
 - ICTY Kupreškić Trial Chamber (reprisals against civilians)
 
-**Target Accountability Package Classification (7 public/adopted authority families)**
-- RDA — Risk Division Authority (adopted public/accountability determination standard)
+**Target Accountability Package Classification (6 public authority families)**
 - U.S. Global Magnitsky (public baseline)
 - U.S. Section 7031(c) visa restriction (public baseline)
 - UK Global Human Rights Sanctions (public guidance)
