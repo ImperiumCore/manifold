@@ -130,7 +130,7 @@ is yours to transact with. Both at no cost. Equip yourself, then descend.
   - Rome Statute Article 6 — Genocide (2 credentialed families): Rome Statute Art. 6 text; ICC Elements of Crimes
   - Rome Statute Article 7 — Crimes Against Humanity (2 credentialed families): Rome Statute Art. 7 text; ICC Elements of Crimes
   - Belligerent-Reprisal (6 legal families): 1949 Geneva Conventions prohibitions; Additional Protocol I prohibitions; ICRC Customary IHL Rules 145–147 (IAC); ICRC Rule 148 (NIAC); UK AP I ratification / JSP 383; ICTY Kupreškić
-  - Target Accountability (7 authority families): RDA (Risk Division Authority); U.S. Global Magnitsky; U.S. Section 7031(c); UK Global Human Rights Sanctions; EU Global Human Rights Sanctions; Canada JVCFOA; Australia autonomous sanctions
+  - Target Accountability (6 authority families): U.S. Global Magnitsky; U.S. Section 7031(c); UK Global Human Rights Sanctions; EU Global Human Rights Sanctions; Canada JVCFOA; Australia autonomous sanctions
   - Command / Superior Responsibility (10 legal families): Rome Statute Art. 28(a) military; Art. 28(b) other superior; Customary IHL Rule 153 (war crimes only); UK ICC Act 2001 s.65 military; s.65 other superior; Canada CAHWCA ss.5/7 military; ss.5/7 other superior; Australia Criminal Code s.268.115 military; s.268.115 other superior; Germany VStGB s.4
 - [OpenAPI spec](https://manifold.cohereon.io/openapi-manifold-v1.json)
 - Pricing: tiered 100–1,000 sats per component, paid over Lightning
