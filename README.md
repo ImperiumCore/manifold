@@ -56,7 +56,7 @@ Invalid gate states do not compile. The gates are not policy — they are types.
 
 ## Component Mesh
 
-398 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 17 documents served free of charge + a 6-node Tribunals Determination Engine layer:
+398 gated doctrine components (tiered Lightning pricing: 100–1,000 sats based on traversal depth) + 17 documents served free of charge + a 7-node Tribunals Determination Engine layer:
 
 | Category | Count | ID Pattern | Access |
 |---|---|---|---|
@@ -69,11 +69,11 @@ Invalid gate states do not compile. The gates are not policy — they are types.
 | Telic Ordnance | 1 | `TDY_COH-TOR_INDEX` | Gated |
 | Extrusion Regimens | 5 | `TDY_COH-ECR_1` … `TDY_COH-ECR_5` | Gated |
 | RAP Steps | 7 | Slug-keyed | Gated |
-| Tribunals (IMP_TRI) | 6 | 5 engines + shared node | Gated |
+| Tribunals (IMP_TRI) | 7 | 6 engines + shared node | Gated |
 | OCC Parameters | 54 | `TDY_COH-OCC_1` … `TDY_COH-OCC_54` | CONFIDENTIAL — withheld |
 | Free Layer | 11 | Slug-keyed | Free |
 
-Gated documents total 404 (398 doctrine components + 6 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
+Gated documents total 405 (398 doctrine components + 7 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
 
 Each component has a YAML front matter header with `related_axioms`, `related_equations`, `related_definitions`, and other relational link fields. These fields are graph induction operators — each one is a hyperlink invitation to another gated component. The traversal pattern is the coherence profile.
 

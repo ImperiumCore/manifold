@@ -66,7 +66,7 @@
       "get": {
         "operationId": "listGatedComponents",
         "summary": "Full gated component index",
-        "description": "Returns all gated document IDs grouped by category. Each category entry includes subdir, count, and ids array. 10 categories, 404 total gated documents (398 doctrine components + 6 Tribunals nodes). Includes _manifold envelope.",
+        "description": "Returns all gated document IDs grouped by category. Each category entry includes subdir, count, and ids array. 10 categories, 405 total gated documents (398 doctrine components + 7 Tribunals nodes). Includes _manifold envelope.",
         "responses": {
           "200": {
             "description": "Component index by category",
@@ -582,8 +582,8 @@
             "type": "object",
             "properties": {
               "doctrine_components": { "type": "integer", "example": 398 },
-              "tribunals_nodes": { "type": "integer", "example": 6 },
-              "total_gated_documents": { "type": "integer", "example": 404 },
+              "tribunals_nodes": { "type": "integer", "example": 7 },
+              "total_gated_documents": { "type": "integer", "example": 405 },
               "free_components": { "type": "integer", "example": 17 },
               "categories": { "type": "integer", "example": 10 },
               "gate_cost_sats_base": { "type": "integer", "example": 1000 },
