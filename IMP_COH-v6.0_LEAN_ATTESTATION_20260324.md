@@ -36,7 +36,7 @@
   "complianceStandards": [
     "IMP-COH-100",
     "DO-178C",
-    "ISO 14791",
+    "ISO 14971",
     "NIST-800-53"
   ],
   "dataControl": "PUBLIC",
