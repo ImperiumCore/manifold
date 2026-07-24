@@ -105,13 +105,13 @@ Each engine's families are named here. The engine classifies against each named 
 - United Kingdom AP I ratification statement / JSP 383 State position
 - ICTY Kupreškić Trial Chamber (reprisals against civilians)
 
-**Target Accountability Package Classification (6 public authority families)**
-- U.S. Global Magnitsky (public baseline)
-- U.S. Section 7031(c) visa restriction (public baseline)
-- UK Global Human Rights Sanctions (public guidance)
-- EU Global Human Rights Sanctions (public regime)
-- Canada JVCFOA — Justice for Victims of Corrupt Foreign Officials Act (public baseline)
-- Australia autonomous human-rights and corruption sanctions (public)
+**Target Accountability Package Classification (6 public authority families)** — each grounded in its own primary legal instrument
+- U.S. Global Magnitsky — Executive Order 13818, section 1
+- U.S. Section 7031(c) — Consolidated Appropriations Act 2026 (Public Law 119-75, Division F)
+- UK Global Human Rights Sanctions — S.I. 2020/680, regulations 4 and 6
+- EU Global Human Rights — Council Regulation (EU) 2020/1998, Articles 2 and 3
+- Canada JVCFOA — Justice for Victims of Corrupt Foreign Officials Act, section 4
+- Australia — Autonomous Sanctions Regulations 2011, regulation 6A
 
 **Command / Superior Responsibility Classification (10 legal families)**
 - Rome Statute Article 28(a) — military commander or effective military commander
@@ -125,7 +125,7 @@ Each engine's families are named here. The engine classifies against each named 
 - Australia Criminal Code, section 268.115 — other-superior branch
 - Germany VStGB, section 4 — military commanders and other superiors
 
-Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), the Berkeley Protocol on Digital Open-Source Investigations, Rome Statute Article 28 with ICC and ICTY/ICTR/IRMCT superior-responsibility jurisprudence, Additional Protocol I Articles 86–87, and the national command-responsibility statutes of the United Kingdom, Canada, Australia, and Germany. The verbatim, credential-tiered source excerpts are behind the gate.
+Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), the Berkeley Protocol on Digital Open-Source Investigations, Rome Statute Article 28 with ICC and ICTY/ICTR/IRMCT superior-responsibility jurisprudence, Additional Protocol I Articles 86–87, the national command-responsibility statutes of the United Kingdom, Canada, Australia, and Germany, and — for the Target Accountability engine — the primary sanctions and visa-restriction instruments of the United States (Executive Order 13818; Section 7031(c)), United Kingdom (S.I. 2020/680), European Union (Regulation 2020/1998), Canada (JVCFOA), and Australia (Autonomous Sanctions Regulations 2011). The verbatim, credential-tiered source excerpts are behind the gate.
 
 ## Integrity, not assertion
 
