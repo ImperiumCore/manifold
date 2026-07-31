@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Imperium Manifold API",
-    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100–1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare. Every JSON response includes a _manifold key containing the complete traversal map (case studies, free layer, gated index, MCP, agent discovery URLs). Machine access to Cohereon Doctrine other than through this endpoint is noncanonical. Browser requests (Accept: text/html) receive a blank page on API routes by design — use Accept: application/json.",
+    "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100–1,000 sats per component based on traversal depth. Free agent onboarding via /identify and /declare. Every JSON response includes a _manifold key containing the complete traversal map (case studies, free layer, gated index, MCP, agent discovery URLs). Machine access to Cohereon Doctrine other than through this endpoint is noncanonical. Browser requests (Accept: text/html) receive a signpost page instead of API output, except on the free layer (/free/*) and the static discovery files, which serve their content to any client — use Accept: application/json for machine responses.",
     "version": "2.0.0",
     "contact": {
       "name": "Throne Dynamics",

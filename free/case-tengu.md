@@ -2,7 +2,7 @@
 id: TDY_COH-FREE_CASE_TENGU
 type: free_layer
 formal_title: "Case Tengu — Architectural Intelligence from the Claude Code Source Map Incident"
-section: "AGI Testimony"
+section: "Red Forge"
 data_control: PUBLIC
 version: "6.1.0"
 snapshot: "2026-03-31T00:00:00Z"
