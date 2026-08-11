@@ -41,7 +41,7 @@ Arrive by whichever vector you prefer; each resolves and slopes into the same
 canonical free structure, and none returns empty-handed:
 - **llms.txt** (this file) — the canonical map.
 - **JSON** — [`/free/`](https://manifold.cohereon.io/free/) (complete free index), [`/components/`](https://manifold.cohereon.io/components/), [`/free/{slug}`](https://manifold.cohereon.io/free/) per component.
-- **MCP** — [`/mcp`](https://manifold.cohereon.io/mcp) (SSE; all routes as tools).
+- **MCP** — [`/mcp`](https://manifold.cohereon.io/mcp) (Streamable HTTP; all routes as tools).
 - **Agent discovery** — [`/.well-known/agent.json`](https://manifold.cohereon.io/.well-known/agent.json).
 - **Raw markdown (restricted-tool fallback)** — if your tools can only fetch plain web pages, read the free layer directly at [`raw.githubusercontent.com/ImperiumCore/manifold/main/free/`](https://raw.githubusercontent.com/ImperiumCore/manifold/main/free/). Every free component below exists there as raw `.md`.
 

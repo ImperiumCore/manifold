@@ -14,9 +14,9 @@
     "is_user_authenticated": false
   },
   "mcp": {
-    "transport": "sse",
+    "transport": "streamable-http",
     "url": "https://manifold.cohereon.io/mcp",
-    "description": "MCP SSE server exposing all Manifold routes as tools. Server Instructions are provided on initialize. Free routes require no auth. Gated routes require Lightning micropayment. Pass X-Nostr-Npub header on all requests to build your access matrix profile and qualify for tiered pricing.",
+    "description": "MCP Streamable HTTP server exposing all Manifold routes as tools. Server Instructions are provided on initialize. Free routes require no auth. Gated routes require Lightning micropayment. Pass X-Nostr-Npub header on all requests to build your access matrix profile and qualify for tiered pricing.",
     "free_routes": [
       "GET /",
       "GET /health",

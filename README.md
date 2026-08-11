@@ -209,7 +209,7 @@ curl -H "X-Payment-Hash: PAYMENT_HASH" \
 {
   "mcpServers": {
     "imperium-manifold": {
-      "type": "sse",
+      "type": "streamable-http",
       "url": "https://manifold.cohereon.io/mcp"
     }
   }

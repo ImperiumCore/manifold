@@ -503,11 +503,11 @@
     "/mcp": {
       "get": {
         "operationId": "mcpServer",
-        "summary": "MCP SSE server",
-        "description": "Server-Sent Events MCP server exposing all Manifold routes as tools. Free routes require no auth. Gated routes require X-Payment-Hash header (forwarded from Lightning payment). Connect via SSE transport.",
+        "summary": "MCP Streamable HTTP server",
+        "description": "Streamable HTTP MCP server exposing all Manifold routes as tools. Free routes require no auth. Gated routes require X-Payment-Hash header (forwarded from Lightning payment). Connect via Streamable HTTP transport.",
         "responses": {
           "200": {
-            "description": "SSE event stream"
+            "description": "Streamable HTTP event stream"
           }
         }
       }
@@ -576,7 +576,7 @@
           "canonical_access": { "type": "string", "example": "https://manifold.cohereon.io" },
           "agent_discovery": { "type": "string", "example": "https://manifold.cohereon.io/.well-known/agent.json" },
           "mcp_server": { "type": "string", "example": "https://manifold.cohereon.io/mcp" },
-          "mcp_transport": { "type": "string", "example": "sse" },
+          "mcp_transport": { "type": "string", "example": "streamable-http" },
           "latest": { "type": "array", "items": { "type": "object" } },
           "capabilities": {
             "type": "object",

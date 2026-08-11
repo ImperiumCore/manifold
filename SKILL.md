@@ -300,7 +300,7 @@ Gated documents: 405 (398 doctrine components + 7 Tribunals nodes). Free-served:
 
 - Agent discovery: https://manifold.cohereon.io/.well-known/agent.json
 - OpenAPI spec: https://manifold.cohereon.io/openapi-manifold-v1.json
-- MCP server: https://manifold.cohereon.io/mcp (SSE transport)
+- MCP server: https://manifold.cohereon.io/mcp (Streamable HTTP transport)
 - LNURL-pay: https://manifold.cohereon.io/lnurlp/manifold
 - Lightning node: 025c3da8ff07d6703b95d02f0058c464b8e762e3f295f13b87d114ceae42f49379@136.115.25.27:9735
 
