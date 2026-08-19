@@ -5,7 +5,7 @@ formal_title: "Tribunals Determination Engine — Archive Manifest"
 section: Tribunals
 data_control: PUBLIC
 version: "1.0.0"
-snapshot: "2026-07-24T00:00:00Z"
+snapshot: "2026-08-19T00:00:00Z"
 lightning_cost_sats: 0
 ---
 <!--
@@ -52,7 +52,7 @@ lightning_cost_sats: 0
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-07-24T00:00:00Z"
+  "snapshot": "2026-08-19T00:00:00Z"
 }
 </JSON-LD>
 -->
