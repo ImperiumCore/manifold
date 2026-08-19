@@ -21,7 +21,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
   "name": "tribunals-determination-engine",
   "version": "IMP-COH-100-1.0.0",
   "headline": "The Tribunals Determination Engine — Deterministic Classification of International-Criminal-Law Offence Elements",
-  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, belligerent reprisals, command and superior responsibility, and actor-specific target-accountability package determinations — published with full integrity attestation for independent verification.",
+  "description": "Deterministic classification instruments for international criminal and humanitarian law — NIAC, Rome Statute Articles 6 and 7, belligerent reprisals, command and superior responsibility, actor-specific target-accountability package determinations, and the UNCITRAL arbitration and enforcement framework — published with full integrity attestation for independent verification.",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Lean 4",
@@ -53,7 +53,7 @@ standards: ["DO-178C", "ISO 14971", "IMP-COH-100"]
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-07-07T00:35:44Z"
+  "snapshot": "2026-08-19T12:45:31Z"
 }
 </JSON-LD>
 -->
