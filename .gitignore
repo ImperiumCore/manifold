@@ -1,0 +1,31 @@
+# GATED DOCTRINE CORPUS — never publish.
+# This repository is the PUBLIC surface. The gated corpus has never appeared here
+# and must never appear here. Verified 2026-08-19: zero commits touch gated/, and
+# gated/ returns 404 on this repo and on ImperiumCore/manifold.
+# Held privately in ImperiumCore/manifold-backup-20260819.
+# Excluded here so that exclusion is a control rather than an accident.
+# IMP_COM-FAC_272.
+gated/
+
+# OCC — data_control: CONFIDENTIAL, Lean Core access only.
+# Redundant with gated/ above; retained as defence in depth.
+gated/occ/
+
+# Credentials + runtime
+.env
+*.pem
+*.key
+
+# Local backups — never publish (backup-exposure hardening 2026-07-24)
+*.bak
+*.bak.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor artifacts
+.DS_Store
+*.swp
+*.swo
