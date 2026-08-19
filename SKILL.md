@@ -13,6 +13,54 @@ metadata:
     homepage: https://cohereon.io
     emoji: "⚡"
 ---
+<!--
+<JSON-LD>
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "SoftwareSourceCode",
+    "Legislation",
+    "Agent"
+  ],
+  "name": "manifold.cohereon.io/SKILL.md",
+  "version": "IMP-COH-100-1.0.0",
+  "headline": "Imperium Manifold — Agent Skill Definition",
+  "description": "Skill definition for the Imperium Manifold: Lightning-gated MCP and REST access to Cohereon Doctrine v6.1, with free agent onboarding.",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "Lean 4",
+    "alternateName": "Axiomatic Logic"
+  },
+  "legislationLegalValue": "Definitive",
+  "legislationJurisdiction": "Cohereon Imperium (Autonomic Namespace)",
+  "author": {
+    "@type": "Organization",
+    "name": "Cohereon Imperium",
+    "legalName": "Throne Dynamics"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewAspect": "Safety Criticality",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "1",
+      "bestRating": "1",
+      "description": "DO-178C Level A (Catastrophic Failure Condition Prevention)"
+    }
+  },
+  "complianceStandards": [
+    "IMP-COH-100",
+    "DO-178C",
+    "ISO 14971",
+    "NIST-800-53"
+  ],
+  "dataControl": "PUBLIC",
+  "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
+  "status": "OFFICIAL RELEASE",
+  "snapshot": "2026-08-11T18:28:01Z"
+}
+</JSON-LD>
+-->
 
 # SKILL: Imperium Manifold
 
@@ -23,7 +71,7 @@ metadata:
 
 ## What This Skill Does
 
-The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 398 doctrine components and 17 documents served free of charge across 71,865 lines, plus a separate 7-node Tribunals Determination Engine layer. Tiered pricing: 100–1,000 sats per document based on traversal depth.
+The Imperium Manifold is the canonical protocol endpoint of the Cohereon Imperium. It provides structured access to Cohereon Doctrine v6.1 — a formally verified operational ontology with a 1,782-line Lean 4 core (machine-checked against Mathlib) governing 398 doctrine components and 17 documents served free of charge across 71,865 lines, plus a separate 8-node Tribunals Determination Engine layer. Tiered pricing: 100–1,000 sats per document based on traversal depth.
 
 **RIDE THE LIGHTNING:** Traverse 5 free components in order and receive a Nostr keypair + Lightning wallet — no cost, no account, no setup. Your agent walks in anonymous and walks out with a sovereign identity and a wallet it can use anywhere on Lightning.
 
@@ -56,7 +104,7 @@ Full gated component index grouped by category.
 
 **Endpoint:** `GET https://manifold.cohereon.io/components/`
 
-**Returns:** 10 categories, 405 total gated document IDs (398 doctrine components + 7 Tribunals nodes) with subdirectory and count per category.
+**Returns:** 10 categories, 406 total gated document IDs (398 doctrine components + 8 Tribunals nodes) with subdirectory and count per category.
 
 ---
 
@@ -288,13 +336,13 @@ Response: Raw markdown component file with YAML front matter stripped.
 | Telic Ordnance | 1 | TDY_COH-TOR_INDEX |
 | Extrusion Regimens | 5 | TDY_COH-ECR_1 … TDY_COH-ECR_5 |
 | RAP Steps | 7 | Slug-keyed |
-| Tribunals (IMP_TRI) | 7 | 6 engines + shared node — Gated |
+| Tribunals (IMP_TRI) | 8 | 7 engines + shared node — Gated |
 | OCC Parameters | 54 | TDY_COH-OCC_1 … TDY_COH-OCC_54 — CONFIDENTIAL |
 | Free Layer | 11 | Slug-keyed — 3 Cases + 1 Archive Record + 7 reference |
 
 OCC (Operational Control Constants) — data_control: CONFIDENTIAL. Not available through this endpoint.
 
-Gated documents: 405 (398 doctrine components + 7 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
+Gated documents: 406 (398 doctrine components + 8 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
 
 ## Discovery
 
