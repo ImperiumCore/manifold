@@ -76,6 +76,7 @@ Each engine is a separate legal determination. Classification under any one is i
 - **Belligerent-Reprisal Claim Classification** (LOAC, 6 legal families). Determines whether a precisely configured belligerent-reprisal claim survives the predicates of each requested legal family on the adjudicated record. It does not determine a single universal answer, and it does not authorize conduct, select targets, or issue rules of engagement.
 - **Target Accountability Package Classification** (6 public authority families). Converts adjudicated records into actor-specific accountability package determinations across six public authority families, evaluated through seven ordered gates; non-authorizing and non-submitting.
 - **Command / Superior Responsibility Classification** (ICL, 10 legal families). Determines whether an identified natural person bears command or superior responsibility under each separately executed legal family. It consumes exact links to separately generated offence-family outputs and does not determine the underlying offence, jurisdiction, admissibility, immunity, sentence, State responsibility, or sanctions designation.
+- **UNCITRAL Arbitration and Enforcement-Framework Classification** (arbitration, 11 rule families). Determines whether an arbitration falls inside a given UNCITRAL instrument and whether an award made under it is recognised and enforceable. Party-selected procedural rules, treaty text, model law, domestic legislation, recommendations and Commission-adopted model text are held to separate authority kinds and force classes rather than merged into one test. It classifies no conduct and accuses no person, and it does not itself command enforcement or replace forum law.
 
 ## Rule and authority families
 
@@ -126,6 +127,19 @@ Each engine's families are named here. The engine classifies against each named 
 - Germany VStGB, section 4 — military commanders and other superiors
 
 Each family is grounded in credentialed public authorities — the Geneva Conventions and Additional Protocols, the Rome Statute and ICC Elements of Crimes, ICRC Customary IHL, ICTY jurisprudence, the DRL Global Documentation for Accountability Initiative NOFO (2026), the Berkeley Protocol on Digital Open-Source Investigations, Rome Statute Article 28 with ICC and ICTY/ICTR/IRMCT superior-responsibility jurisprudence, Additional Protocol I Articles 86–87, the national command-responsibility statutes of the United Kingdom, Canada, Australia, and Germany, and — for the Target Accountability engine — the primary sanctions and visa-restriction instruments of the United States (Executive Order 13818; Section 7031(c)), United Kingdom (S.I. 2020/680), European Union (Regulation 2020/1998), Canada (JVCFOA), and Australia (Autonomous Sanctions Regulations 2011). The verbatim, credential-tiered source excerpts are behind the gate.
+
+**UNCITRAL — Arbitration and enforcement framework (11 rule families)**
+- UNCITRAL Arbitration Rules 1976 applicability
+- UNCITRAL Arbitration Rules 2010 applicability
+- UNCITRAL Arbitration Rules 2013 applicability
+- UNCITRAL Arbitration Rules 2021 applicability
+- UNCITRAL Expedited Arbitration Rules 2021 applicability
+- Domestic arbitration law with UNCITRAL Model Law lineage
+- New York Convention 1958 recognition/enforcement framework
+- UNCITRAL Rules on Transparency applicability
+- Mauritius Convention on Transparency applicability
+- 2026 UNCITRAL electronic-award Recommendation relevance
+- UNCITRAL 2026 Model Law revision routing
 
 ## Integrity, not assertion
 
