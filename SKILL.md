@@ -340,7 +340,7 @@ Response: Raw markdown component file with YAML front matter stripped.
 | OCC Parameters | 54 | TDY_COH-OCC_1 … TDY_COH-OCC_54 — CONFIDENTIAL |
 | Free Layer | 11 | Slug-keyed — 3 Cases + 1 Archive Record + 7 reference |
 
-OCC (Operational Control Constants) — data_control: CONFIDENTIAL. Not available through this endpoint.
+OCC (Ontological Control Configuration) — data_control: CONFIDENTIAL. Not available through this endpoint.
 
 Gated documents: 406 (398 doctrine components + 8 Tribunals nodes). Free-served: 17 documents served at zero cost — the 11 Free Layer docs + 4 CPM (also in the gated catalog) + 2 Tribunals free nodes.
 

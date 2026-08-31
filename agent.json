@@ -123,7 +123,7 @@
     "IMP_TRI (Tribunals Determination Engines, 8)"
   ],
   "withheld_categories": [
-    "TDY_COH-OCC (Operational Control Constants) — data_control: CONFIDENTIAL, Lean Core access only"
+    "TDY_COH-OCC (Ontological Control Configuration) — data_control: CONFIDENTIAL, Lean Core access only"
   ],
   "identity": {
     "nostr_npub_hex": "a7f92bd5fe22e4e339bddbb6c01506f1f990c24b2035f6f236af6c43984ec642",
