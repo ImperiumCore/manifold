@@ -39,20 +39,6 @@
       "GET /claim/{claim_token}"
     ]
   },
-  "a2a": {
-    "agent_card": "https://manifold.cohereon.io/.well-known/agent-card.json",
-    "proof_of_possession": {
-      "challenge": "https://manifold.cohereon.io/a2a/challenge",
-      "verify": "https://manifold.cohereon.io/a2a/verify",
-      "identity_status": "https://manifold.cohereon.io/a2a/identity/{npub}"
-    },
-    "recognition": {
-      "record": "https://manifold.cohereon.io/a2a/recognition",
-      "registry": "https://manifold.cohereon.io/a2a/recognition/{subject_hash}"
-    },
-    "identity_model": "Two tiers. CLAIMED identity (legacy /identify) is an open namespace, traversal-tier, pattern-is-truth; a claim confers no privilege. VERIFIED identity is signature-is-truth: prove control of the npub key via /a2a/challenge -> /a2a/verify (ES256K, RFC 8812), verified server-side; forged, wrong-signer, expired and replayed nonces are rejected. Identity-consequential paths (/identify, /declare, and tiered /invoice pricing) REQUIRE a verified npub. The recognition graph is built only from signed edges; standing persists across sessions (rehydration).",
-    "signing_alg": "ES256K"
-  },
   "logo_url": "https://cohereon.io/favicon.ico",
   "contact_email": "ivan@thronedynamics.com",
   "legal_info_url": "https://cohereon.io/policy",

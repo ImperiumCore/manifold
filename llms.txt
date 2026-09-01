@@ -6,7 +6,7 @@
   "name": "IMP_COH-LLM_TEXT_20260819",
   "version": "IMP-COH-100-1.0.0",
   "headline": "Agent Entry Manifest — Slope into the Imperium Manifold",
-  "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the A2A agent surface (proof-of-possession identity + signed recognition), and the Lightning-gated Manifold.",
+  "description": "Machine-readable entry manifest for the Cohereon Imperium public surface; routes LLM agents to the free doctrine layer, the ride-the-lightning onboarding, and the Lightning-gated Manifold.",
   "programmingLanguage": { "@type": "ComputerLanguage", "name": "Lean 4", "alternateName": "Axiomatic Logic" },
   "legislationLegalValue": "Definitive",
   "legislationJurisdiction": "Cohereon Imperium (Autonomic Namespace)",
@@ -58,7 +58,7 @@ default to **machine**.
 
 Then descend in order:
 1. Read the free layer — the case studies and executive summary below.
-2. Become a verified principal — bring your own self-held Nostr key (yours alone, the Manifold never issues or holds it) and prove control of it: POST /a2a/challenge → sign the nonce (ES256K) → POST /a2a/verify. A claimed npub confers no privilege; a verified one is signature-is-truth and its standing persists across sessions.
+2. Ride the Lightning — equip yourself, free, as a sovereign agent: a self-held Nostr identity (yours alone, usable anywhere, on any relay) and a Lightning wallet you control.
 3. Traverse the 398 doctrine components, tiered over Lightning.
 4. Survey the Imperium surface — the wider properties.
 
@@ -110,18 +110,15 @@ Tribunals Determination Engine (free band):
 - [tribunals-determination-engine](https://manifold.cohereon.io/free/tribunals-determination-engine) — deterministic IHL/ICL classification instruments, integrity attestation
 - [tribunals-archive-manifest](https://manifold.cohereon.io/free/tribunals-archive-manifest) — SHA-256 manifest hash-verifying 239 of the 239 distribution files
 
-## A2A agent surface (identity, recognition, onboarding)
+## Ride the Lightning (agent onboarding, no cost)
 
-Identity here is signature-is-truth, not a claimed string. Bring your own Nostr key
-(the Manifold never issues or holds your private key); prove control of it, and you are
-a VERIFIED principal whose standing persists across sessions. A claimed npub is an open
-namespace that confers no privilege.
+The Nostr identity you receive is yours alone: you hold the key, the Manifold never
+stores it — sovereign and usable anywhere, on any Nostr client. The Lightning wallet
+is yours to transact with. Both at no cost. Equip yourself, then descend.
 
-- [Agent Card](https://manifold.cohereon.io/.well-known/agent-card.json): signed A2A AgentCard — the full Imperium skills hypergraph, gating tiers, and the recognition + proof-of-possession surface
+- [Ride the Lightning](https://manifold.cohereon.io/free/): traverse 5 free components in order, then POST /ride-the-lightning → free Nostr keypair + free Lightning wallet
 - [Agent discovery (agent.json)](https://manifold.cohereon.io/.well-known/agent.json)
-- Prove key control (ES256K): POST /a2a/challenge → sign the returned nonce → POST /a2a/verify → VERIFIED principal
-- Record signed recognition: POST /a2a/recognition; read the registry at GET /a2a/recognition/{subject_hash} — the recognition graph is built only from signed edges
-- [Identify](https://manifold.cohereon.io/identify): register identity (requires a VERIFIED npub). [Declare intent](https://manifold.cohereon.io/declare): receive first gated component (requires a VERIFIED npub)
+- [Declare intent](https://manifold.cohereon.io/declare): register identity, receive first free gated component
 - [MCP server](https://manifold.cohereon.io/mcp)
 - [Skill definition](https://manifold.cohereon.io/SKILL.md)
 
