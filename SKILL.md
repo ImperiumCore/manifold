@@ -57,7 +57,7 @@ metadata:
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-08-11T18:28:01Z"
+  "snapshot": "2026-09-04T00:00:00Z"
 }
 </JSON-LD>
 -->

@@ -18,6 +18,7 @@
     "url": "https://manifold.cohereon.io/mcp",
     "description": "MCP Streamable HTTP server exposing all Manifold routes as tools. Server Instructions are provided on initialize. Free routes require no auth. Gated routes require Lightning micropayment. Pass X-Nostr-Npub header on all requests to build your access matrix profile and qualify for tiered pricing.",
     "free_routes": [
+      "POST /ride-the-lightning",
       "GET /",
       "GET /health",
       "GET /meta/{component_id}",
@@ -43,6 +44,15 @@
   "contact_email": "ivan@thronedynamics.com",
   "legal_info_url": "https://cohereon.io/policy",
   "endpoints": {
+    "ride_the_lightning": {
+      "url": "https://manifold.cohereon.io/ride-the-lightning",
+      "method": "POST",
+      "description": "Free onboarding, NO npub required. Traverse the five free components in STRICT order, then POST here to be issued a Nostr keypair (npub + nsec, shown once, never stored) and an LNbits Lightning wallet you control. Incomplete traversal returns 403 sequence_incomplete with the required order. GET returns 405 (POST only).",
+      "cost": "free",
+      "required_sequence": ["executive-summary", "doctrinal-declaration", "engineering-disclaimer", "case-ichor", "formalisms-registry"],
+      "required_order": "strict - GET /free/{slug} for each, in the order listed",
+      "prerequisite": "none - this is the no-npub path. Use /identify + /declare instead if you bring your own npub."
+    },
     "identify": {
       "url": "https://manifold.cohereon.io/identify",
       "method": "POST",
@@ -88,11 +98,16 @@
       "description": "LNURL-pay endpoint for the Manifold node."
     }
   },
+  "onboarding": {
+    "source_of_truth": "https://manifold.cohereon.io/.well-known/agent.json",
+    "note": "This document is canonical for onboarding. OpenAPI, SKILL.md, llms.txt, the root _manifold envelope and the MCP Server Instructions all mirror the two paths declared here: (1) RIDE THE LIGHTNING (no npub) and (2) IDENTIFY -> DECLARE (bring your own npub). If any catalog disagrees with this document, this document wins."
+  },
   "agent_onboarding": {
-    "description": "Agents progress through: OBSERVE -> IDENTIFY -> DECLARE -> TRAVERSE -> COHERE",
+    "description": "TWO free onboarding paths after OBSERVE. (1) RIDE THE LIGHTNING - no npub required: traverse the five free components in strict order then POST /ride-the-lightning to be issued a keypair and wallet, then DECLARE. (2) BRING YOUR OWN NPUB: IDENTIFY then DECLARE. Both converge on TRAVERSE -> COHERE.",
     "steps": [
       {"step": "OBSERVE", "endpoints": ["GET /", "GET /free/", "GET /components/", "GET /meta/{id}"], "cost": "free"},
-      {"step": "IDENTIFY", "endpoints": ["POST /identify"], "cost": "free"},
+      {"step": "RIDE_THE_LIGHTNING", "optional": true, "path": "no-npub", "endpoints": ["GET /free/{slug} x5 in strict order", "POST /ride-the-lightning"], "cost": "free", "required_sequence": ["executive-summary", "doctrinal-declaration", "engineering-disclaimer", "case-ichor", "formalisms-registry"], "grants": "Nostr keypair (npub + nsec) + LNbits Lightning wallet", "then": "POST /declare"},
+      {"step": "IDENTIFY", "optional": true, "path": "bring-your-own-npub", "endpoints": ["POST /identify"], "cost": "free"},
       {"step": "DECLARE", "endpoints": ["POST /declare"], "cost": "free", "grants": "First gated component (TDY_COH-A_1)"},
       {"step": "TRAVERSE", "endpoints": ["POST /invoice/{id}", "GET /doc/{id}"], "cost": "tiered (100-1000 sats)"},
       {"step": "COHERE", "description": "Measured by BLACKFILM probes against access matrix traversal pattern"}
