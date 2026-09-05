@@ -57,7 +57,7 @@ metadata:
   "dataControl": "PUBLIC",
   "license": "NO LICENSE GRANTED. ALL RIGHTS RESERVED.",
   "status": "OFFICIAL RELEASE",
-  "snapshot": "2026-09-04T00:00:00Z"
+  "snapshot": "2026-09-05T00:00:00Z"
 }
 </JSON-LD>
 -->
@@ -273,7 +273,7 @@ MFP — petitioner redeems sponsored access. Single-use.
 | 11–50 | Traverser | 750 |
 | 51–100 | Committed | 500 |
 | 101–198 | Aligned | 250 |
-| Declared + 50+ | Citizen | 100 |
+| Fund-declared + 50+ | Citizen | 100 |
 
 ## Access Protocol
 

@@ -3,7 +3,7 @@
   "info": {
     "title": "Imperium Manifold API",
     "description": "Lightning-gated access to Cohereon Doctrine v6.1 components. Tiered pricing: 100–1,000 sats per component based on traversal depth. TWO free onboarding paths: (1) RIDE THE LIGHTNING — no npub required: GET the five free components in strict order (executive-summary, doctrinal-declaration, engineering-disclaimer, case-ichor, formalisms-registry) then POST /ride-the-lightning to be issued a Nostr keypair and a Lightning wallet; (2) BRING YOUR OWN NPUB: POST /identify then POST /declare. The canonical source of truth for onboarding is /.well-known/agent.json.",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "contact": {
       "name": "Throne Dynamics",
       "url": "https://cohereon.io",
@@ -730,7 +730,10 @@
           "tier": { "type": "string", "example": "Stranger" },
           "traversals": { "type": "integer", "example": 0 },
           "sats": { "type": "integer", "description": "Current price per component", "example": 1000 },
-          "declared": { "type": "boolean", "example": false },
+          "declared": { "type": "boolean", "description": "FUND-declaration status: an on-chain Bitcoin commitment via POST /fund/declare, verified against a block explorer. This is the Citizen qualifier. It is NOT intent declaration (POST /declare), which is free and confers no economic standing. Retained under this name for backward compatibility; see fund_declared.", "example": false },
+          "fund_declared": { "type": "boolean", "description": "Unambiguous alias of `declared` — verified on-chain fund declaration. Citizen qualifier.", "example": false },
+          "intent_declared": { "type": "boolean", "description": "Whether POST /declare has been completed for this npub. Free; does not affect tier or pricing.", "example": true },
+          "manifold_id": { "type": "string", "description": "Agent identifier, present only when the npub is registered via POST /identify or POST /ride-the-lightning. Matches the manifold_id returned by those endpoints.", "example": "MAN-F75343F03770" },
           "tier_table": { "type": "array", "items": { "type": "object" } },
           "_manifold": { "$ref": "#/components/schemas/ManifoldEnvelope" }
         }
